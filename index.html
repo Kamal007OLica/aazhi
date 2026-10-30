@@ -383,8 +383,8 @@
       </div>
     </section>
 
-    <!-- 6b. OPEN SOURCE BUILT IN TN (kadai veedhi of painted signboards) ===
-         Boards rendered by js/oss.js (OSS_PROJECTS). Styles: css/oss.css.
+    <!-- 6b. OPEN SOURCE BUILT IN TN (a Sivakasi matchbox counter) =========
+         Boxes rendered by js/oss.js (OSS_PROJECTS). Styles: css/oss.css.
          Sources for every project: research/oss-tn.md -->
     <section class="oss" id="oss" aria-labelledby="oss-title">
       <div class="oss__inner">
@@ -414,17 +414,28 @@
           <p class="oss__count" id="oss-count" role="status" aria-live="polite">12 projects</p>
         </div>
 
-        <p class="oss__street-k"><span lang="ta">கடை வீதி</span> Kadai veedhi <span class="oss__swipe hand" aria-hidden="true">swipe →</span></p>
-        <div class="oss__street" id="oss-street" role="region" aria-label="Project boards">
-          <ul class="oss__boards" id="oss-list" aria-label="Open-source projects from Tamil Nadu">
-            <li class="oss__msg">Project list load aagala. Page-a refresh pannu.</li>
-          </ul>
+        <div class="oss__counter">
+          <p class="vh" id="oss-live" aria-live="polite"></p>
+          <div class="oss__stage" id="oss-stage">
+            <p class="oss__msg">Project list load aagala. Page-a refresh pannu.</p>
+          </div>
+          <div class="oss__spark">
+            <p class="oss__spark-k">Sivakasi labels · Tamil Nadu code</p>
+            <p class="oss__spark-ta" lang="ta">ஒரு தீக்குச்சி போதும்.</p>
+            <p class="oss__spark-en">One matchstick lights the whole lamp. Your first PR is that matchstick.</p>
+            <p class="oss__spark-note hand">box-a pick pannu, tray-a thira ↓</p>
+          </div>
+        </div>
+
+        <p class="oss__street-k"><span lang="ta">தீப்பெட்டிக் கடை</span> <span class="oss__street-en">Theepetti kadai</span> <span class="oss__swipe hand" aria-hidden="true">swipe →</span></p>
+        <div class="oss__street" id="oss-street" role="region" aria-label="Project matchboxes">
+          <ul class="oss__shelf" id="oss-list" aria-label="Open-source projects from Tamil Nadu"></ul>
         </div>
 
         <div class="oss__foot">
           <div>
-            <p class="oss__foot-note hand">Unga project-um inga thongalaam.</p>
-            <p class="oss__fine">Open source, built in TN or for Tamil, with a public repo. Every board gets checked before it goes up.</p>
+            <p class="oss__foot-note hand">Unga project-ukkum oru label adikkalaam.</p>
+            <p class="oss__fine">Open source, built in TN or for Tamil, with a public repo. Every box gets checked before it goes on the counter.</p>
           </div>
           <a class="btn btn--stamp oss__cta" href="#mentors">Built something in TN? Add your project <span aria-hidden="true">→</span></a>
         </div>

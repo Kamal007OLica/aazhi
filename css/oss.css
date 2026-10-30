@@ -1,8 +1,9 @@
 /* ஆழி — #oss "நம்ம ஊரு code": open source built in Tamil Nadu.
-   Metaphor: a kadai veedhi (shop street) of hand-painted signboards, each hung
-   from a nail on two strings. Sea-teal ground (between paper #route and oxblood #muthukuli).
-   Desktop: boards hang in a loose, tilted street. Phones: a scroll-snap rail.
-   No box grids: paint, grain, strings, nails, a chalk menu board. */
+   Metaphor: a Sivakasi matchbox counter. Every project is a matchbox with a vintage
+   label (brand ribbon, sunburst emblem, fine print); one box sits open on the counter
+   with its tray slid out, the rest wait in a row. Open source, open the box.
+   Sea-teal ground (between paper #route and oxblood #muthukuli).
+   No box grids: labels, rays, kraft trays, matchsticks, a chalk menu board. */
 
 .oss {
   --oss-sea-lift: color-mix(in srgb, var(--sea) 82%, var(--paper));
@@ -176,191 +177,378 @@
   color: var(--paper-2);
 }
 
-/* ---------- the street ---------- */
+/* ---------- the counter: one box open, a lit match beside it ---------- */
+.oss__counter {
+  --W: 470px;                              /* the open box's sleeve width; the tray adds .6W */
+  --kraft: #c9a679;                         /* inside of a matchbox: kraft card */
+  --kraft-wall: #a7835a;
+  --wood: #ecd6a4;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+.oss__stage { width: calc(var(--W) * 1.62); min-height: calc(var(--W) / 1.45 + var(--W) * .08); }
+
+.oss__spark { position: relative; max-width: 26rem; padding-top: 3.5rem; }
+.oss__spark-k {
+  margin: 0;
+  font: 700 var(--t-xs)/1.3 var(--f-narrow);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--paper-3);
+}
+.oss__spark-ta { margin: .5rem 0 0; font: 900 clamp(2rem, 1.3rem + 2.4vw, 3.4rem)/1.12 var(--f-tamil); color: var(--salmon); }
+.oss__spark-en {
+  margin: .7rem 0 0;
+  font: 400 var(--t-lg)/1.02 var(--f-display);
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.oss__spark-note { margin: 1rem 0 0; font-size: 1.45rem; color: var(--lavender); transform: rotate(-2deg); transform-origin: left center; }
+/* a lit matchstick leaning over the line */
+.oss__spark::before, .oss__spark::after { content: ""; position: absolute; pointer-events: none; }
+.oss__spark::before {                       /* the stick + its red head */
+  left: .4rem; top: 1.1rem;
+  width: 92px; height: 7px;
+  border-radius: 2px;
+  background:
+    radial-gradient(ellipse 9px 7px at 92% 50%, #c4291f 0 85%, transparent 90%),
+    linear-gradient(var(--wood), #cfae74);
+  transform: rotate(-24deg);
+  transform-origin: left center;
+  box-shadow: 0 2px 2px rgba(0,0,0,.35);
+}
+.oss__spark::after {                        /* the flame */
+  left: 84px; top: -.95rem;
+  width: 18px; height: 30px;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(ellipse at 50% 72%, #fff6d8 0 18%, #ffcf5a 34%, #f2875f 62%, rgba(229, 71, 14, 0) 72%);
+  filter: drop-shadow(0 0 10px rgba(255, 196, 90, .7));
+  transform-origin: 50% 90%;
+}
+
+/* ---------- a matchbox ---------- */
+.mbox { position: relative; }
+.mbox__body {
+  position: relative;
+  width: var(--W);
+  aspect-ratio: 1.45;
+  transform: rotate(-1.5deg);
+}
+.mbox__sleeve {
+  position: absolute; inset: 0; z-index: 2;
+  transition: transform .9s var(--ease-spring);
+}
+.mbox.is-open .mbox__sleeve { transform: translateX(-1.5%); }
+
+/* the tray: kraft card with walls, slides out to the right */
+.mbox__tray {
+  position: absolute; z-index: 1;
+  top: 3.5%; bottom: 3.5%; left: 1%;
+  width: 98%;
+  background: var(--kraft);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 0 calc(var(--W) * .018) var(--kraft-wall),
+    inset 0 0 calc(var(--W) * .06) rgba(70, 35, 10, .45),
+    0 20px 26px -18px rgba(0, 0, 0, .75);
+  transition: transform .9s var(--ease-spring);
+}
+.mbox__tray::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: var(--fibers), var(--grain);
+  background-size: 400px, 180px;
+  opacity: .5; mix-blend-mode: multiply;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.mbox.is-open .mbox__tray { transform: translateX(62%); }
+/* only the part that clears the sleeve is ever seen */
+.mbox__tray-in {
+  position: absolute; z-index: 1;
+  inset: 0 0 0 40%;
+  padding: calc(var(--W) * .045) calc(var(--W) * .05) calc(var(--W) * .04) calc(var(--W) * .035);
+  display: flex; flex-direction: column; gap: calc(var(--W) * .02);
+  color: var(--ink);
+  --focus: var(--ink);
+}
+.mbox__sticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.stick {
+  position: relative;
+  height: 18px;
+  display: flex; align-items: center;
+  padding: 0 26px 0 8px;
+  background: linear-gradient(var(--wood), #d6b67c);
+  border-radius: 2px;
+  font: 700 10.5px/1 var(--f-mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  box-shadow: 0 1px 1.5px rgba(40, 15, 0, .45);
+}
+.stick span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.stick::after {                              /* the red head */
+  content: "";
+  position: absolute; right: -4px; top: 50%;
+  width: 22px; height: 22px; margin-top: -11px;
+  border-radius: 46% 54% 54% 46% / 50%;
+  background: radial-gradient(circle at 36% 34%, #e5594a, #a8221a 58%, #6d140f);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+}
+.stick:nth-child(2) { margin-right: 6%; }
+.stick:nth-child(3) { margin-right: 2%; }
+.mbox__desc {
+  margin: 2px 0 0;
+  padding: .55rem .7rem .6rem;
+  background: var(--paper) var(--fibers);
+  font: 500 13.5px/1.42 var(--f-body);
+  box-shadow: 0 2px 5px rgba(40, 15, 0, .3);
+  transform: rotate(-1.2deg);
+}
+.mbox__note { margin: 0; font-size: 1.2rem; line-height: 1.05; color: var(--oxblood); }
+.mbox__link {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: .4em;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 0 1em;
+  font: 800 var(--t-sm)/1 var(--f-body);
+  color: var(--paper);
+  background: var(--ink);
+  border-radius: 3px;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 var(--stamp);
+  transition: transform .15s var(--ease-out), box-shadow .15s var(--ease-out);
+}
+.mbox__link:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--stamp); }
+
+/* the long side of the box: the striker */
+.mbox__strike {
+  position: absolute; z-index: 2;
+  left: 1.5%; right: 1.5%; top: 100%;
+  height: 7%;
+  display: grid; place-items: center;
+  background-color: #5b2416;
+  background-image: var(--grain);
+  background-size: 120px;
+  background-blend-mode: overlay;
+  border-radius: 0 0 5px 5px;
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, .5), 0 10px 14px -10px rgba(0, 0, 0, .7);
+}
+.mbox__strike span {
+  font: 700 calc(var(--W) * .021)/1 var(--f-mono);
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: rgba(236, 231, 220, .62);
+}
+
+/* ---------- the label (Sivakasi matchbox art) ---------- */
+.mlabel {
+  --lbl: var(--chilli); --lbl-ink: var(--ink); --rule: var(--ink);
+  --disc: var(--paper); --emb: var(--ink);
+  --ray: color-mix(in srgb, var(--lbl) 72%, #fff);
+  --shade: color-mix(in srgb, var(--oxblood) 55%, transparent);
+  container-type: inline-size;
+  position: absolute; inset: 0;
+  display: block;
+  overflow: hidden;
+  background: var(--lbl);
+  color: var(--lbl-ink);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 16px 24px -14px rgba(0, 0, 0, .75), 0 3px 6px -3px rgba(0, 0, 0, .4);
+}
+.mlabel::after {                              /* printed on card: grain + fibres */
+  content: "";
+  position: absolute; inset: 0; z-index: 2;
+  background-image: var(--fibers), var(--grain);
+  background-size: 400px, 160px;
+  opacity: .4; mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.mlabel__frame {
+  position: absolute; inset: 3.4cqw;
+  isolation: isolate;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;
+  padding: 2cqw 3cqw;
+  text-align: center;
+  border: .8cqw solid var(--rule);
+  outline: .35cqw solid var(--rule);
+  outline-offset: 1cqw;
+}
+.mlabel__brand {
+  padding: 1.1cqw 4.4cqw 1cqw 4.8cqw;
+  font: 700 2.9cqw/1 var(--f-narrow);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--lbl);
+  background: var(--rule);
+  clip-path: polygon(0 0, 100% 0, 95.5% 50%, 100% 100%, 0 100%, 4.5% 50%);
+}
+.mlabel__disc {
+  position: relative;
+  flex: none;
+  width: 25cqw; aspect-ratio: 1;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--disc);
+  color: var(--emb);
+  border: .6cqw solid var(--rule);
+  box-shadow: 0 0 0 .9cqw var(--lbl), 0 0 0 1.25cqw var(--rule);
+}
+.mlabel__disc::before {                      /* the sunburst, centred on the emblem */
+  content: "";
+  position: absolute; z-index: -1;
+  left: 50%; top: 50%;
+  width: 340%; aspect-ratio: 1;
+  translate: -50% -50%;
+  background: repeating-conic-gradient(var(--ray) 0deg 5.5deg, transparent 5.5deg 11.25deg);
+  -webkit-mask: radial-gradient(circle, #000 0 22%, rgba(0, 0, 0, .55) 40%, transparent 66%);
+          mask: radial-gradient(circle, #000 0 22%, rgba(0, 0, 0, .55) 40%, transparent 66%);
+  opacity: .7;
+}
+.mlabel__disc svg { width: 80%; height: 80%; overflow: visible; }
+.mlabel__disc .cut { fill: var(--disc); }
+.mlabel__disc .cut-line { fill: none; stroke: var(--disc); stroke-width: 2.6; stroke-linecap: round; }
+.mlabel__disc .ink-line { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.mlabel__disc .thin { stroke-width: 1.7; }
+.mlabel__name {
+  display: block;
+  font: 400 10cqw/.9 var(--f-display);
+  letter-spacing: .015em;
+  text-transform: uppercase;
+  text-shadow: .55cqw .55cqw 0 var(--shade);
+  overflow-wrap: anywhere;
+}
+.mlabel__name[data-long] { font-size: 7.4cqw; }
+.mlabel__ta { display: block; max-width: 94%; font: 800 3.5cqw/1.28 var(--f-tamil); }
+.mlabel__fine {
+  display: flex; flex-direction: column; gap: .5cqw;
+  font: 700 1.95cqw/1.2 var(--f-mono);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+.mlabel__sticker {
+  position: absolute; z-index: 3;
+  top: 4.6cqw; right: 3.8cqw;
+  width: 16.5cqw; aspect-ratio: 1;
+  display: grid; place-items: center;
+  padding: 2.4cqw;
+  font: 400 2.9cqw/.95 var(--f-display);
+  letter-spacing: .04em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--stamp);
+  clip-path: polygon(50% 0%, 58% 9.8%, 69.1% 3.8%, 72.8% 15.9%, 85.4% 14.6%, 84.1% 27.2%, 96.2% 30.9%, 90.2% 42%, 100% 50%, 90.2% 58%, 96.2% 69.1%, 84.1% 72.8%, 85.4% 85.4%, 72.8% 84.1%, 69.1% 96.2%, 58% 90.2%, 50% 100%, 42% 90.2%, 30.9% 96.2%, 27.2% 84.1%, 14.6% 85.4%, 15.9% 72.8%, 3.8% 69.1%, 9.8% 58%, 0% 50%, 9.8% 42%, 3.8% 30.9%, 15.9% 27.2%, 14.6% 14.6%, 27.2% 15.9%, 30.9% 3.8%, 42% 9.8%);
+  transform: rotate(14deg);
+}
+.mlabel__sticker--deep { background: var(--ink); color: var(--salmon); }
+.mlabel__sticker--archive { background: var(--paper-3); color: var(--ink); }
+.mlabel__sticker:empty { display: none; }
+
+/* small boxes in the row: just the brand mark and the name */
+@container (max-width: 260px) {
+  .mlabel__brand, .mlabel__ta, .mlabel__fine { display: none; }
+  .mlabel__frame { justify-content: center; gap: 4cqw; inset: 4.2cqw; border-width: 1.1cqw; outline-width: .6cqw; outline-offset: 1.4cqw; }
+  .mlabel__disc { width: 37cqw; }
+  .mlabel__name { font-size: 12.5cqw; }
+  .mlabel__name[data-long] { font-size: 9.6cqw; }
+  .mlabel__sticker { width: 23cqw; padding: 3cqw; top: 2.6cqw; right: 2.4cqw; font-size: 4.3cqw; }
+}
+
+/* the inks, by trade */
+.mlabel--ai        { --lbl: var(--lavender); --shade: color-mix(in srgb, var(--violet) 60%, transparent); }
+.mlabel--tamil     { --lbl: #e3a21a; --shade: color-mix(in srgb, var(--stamp) 55%, transparent); }
+.mlabel--apps      { --lbl: var(--salmon); --rule: var(--oxblood); }
+.mlabel--fonts     { --lbl: var(--paper); --rule: var(--stamp); --disc: var(--ink); --emb: var(--paper); --ray: color-mix(in srgb, var(--chilli) 22%, var(--paper)); --shade: color-mix(in srgb, var(--chilli) 45%, transparent); }
+.mlabel--community { --lbl: var(--oxblood); --lbl-ink: var(--paper); --rule: var(--paper); --emb: var(--oxblood); --ray: color-mix(in srgb, var(--oxblood) 70%, var(--chilli)); --shade: color-mix(in srgb, var(--chilli) 70%, transparent); }
+.mlabel--community::after { mix-blend-mode: soft-light; }
+
+/* ---------- the row of boxes ---------- */
 .oss__street-k {
-  margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
   display: flex; align-items: center; gap: 1rem;
   font: 700 var(--t-xs)/1.3 var(--f-narrow);
   letter-spacing: var(--track-wide);
   text-transform: uppercase;
   color: var(--paper-3);
 }
-.oss__street-k::after { /* the wire the boards hang from */
+.oss__street-k::after { /* the edge of the counter */
   content: "";
   flex: 1;
   height: 2px;
   background: linear-gradient(90deg, rgba(236,231,220,.55), rgba(236,231,220,.15));
 }
-.oss__street-k [lang="ta"] { font-weight: 900; letter-spacing: 0; font-size: 1.2em; color: var(--paper); }
+.oss__street-k [lang="ta"] { font-weight: 900; letter-spacing: 0; font-size: 1.2em; color: var(--paper); white-space: nowrap; }
+@media (max-width: 480px) { .oss__street-en { display: none; } }
 .oss__swipe { display: none; }
 
 .oss__street { position: relative; }
 .oss__street:focus-visible { outline-offset: 6px; }
-
-.oss__boards {
-  list-style: none; margin: 0; padding: 3.2rem 0 1rem;
-  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
-  gap: 4.4rem clamp(1.1rem, 2.2vw, 2rem);
-}
-
 .oss__msg { color: var(--paper); font-weight: 600; }
 
-.oss-board {
-  --paint: var(--paper);
-  --paint-ink: var(--ink);
-  --frame: var(--stamp);
-  --stamp-c: var(--stamp);
-  --edge: color-mix(in srgb, var(--paint) 70%, #000);
-  --focus: var(--paint-ink);
-  position: relative;
-  flex: 1 1 15rem;
-  max-width: 19.5rem;
-  display: flex;
+.oss__shelf {
+  list-style: none; margin: 0; padding: 2rem 0 1.25rem;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+  gap: 2.4rem clamp(1.1rem, 2vw, 1.8rem);
+}
+.oss-pick {
+  --w: clamp(150px, 13.2vw, 182px);
+  width: var(--w);
   transform: rotate(var(--r, 0deg));
-  transform-origin: 50% -46px;           /* swings from its nail */
-  transition: transform .5s var(--ease-spring);
+  transition: transform .45s var(--ease-spring);
 }
-.oss-board[hidden] { display: none; }
-/* boards hang at different drops and widths: a street, not a grid */
-.oss-board:nth-child(3n+1) { flex-basis: 17rem; max-width: 21.5rem; }
-.oss-board:nth-child(4n+2) { margin-top: 1.8rem; }
-.oss-board:nth-child(4n+3) { margin-top: .5rem; }
-.oss-board:nth-child(4n)   { margin-top: 2.6rem; }
-.oss-board:hover, .oss-board:focus-within { transform: rotate(calc(var(--r, 0deg) * -0.6)); }
-
-/* two strings from the board's screws up to one nail */
-.oss-board__hang {
-  position: absolute; left: 22%; right: 22%; top: -44px; height: 44px;
-  background:
-    linear-gradient(to top left, transparent calc(50% - 1px), rgba(236,231,220,.75) calc(50% - 1px), rgba(236,231,220,.75) calc(50% + .5px), transparent calc(50% + .5px)) left / 50% 100% no-repeat,
-    linear-gradient(to top right, transparent calc(50% - 1px), rgba(236,231,220,.75) calc(50% - 1px), rgba(236,231,220,.75) calc(50% + .5px), transparent calc(50% + .5px)) right / 50% 100% no-repeat;
-  pointer-events: none;
-}
-.oss-board__hang::after {
-  content: "";
-  position: absolute; left: 50%; top: -6px;
-  width: 12px; height: 12px; margin-left: -6px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #fff, var(--paper-3) 45%, #6b625a);
-  box-shadow: 0 2px 2px rgba(0,0,0,.5);
-}
-
-.oss-board__plate {
-  position: relative; isolation: isolate;
+.oss-pick[hidden] { display: none; }
+.oss-pick:nth-child(even) { margin-top: 1rem; }
+.oss-pick:nth-child(3n) { margin-top: .4rem; }
+.oss-pick:hover, .oss-pick:focus-within { transform: rotate(0deg) translateY(-6px); }
+.oss-pick__btn {
+  position: relative;
+  display: block;
   width: 100%;
-  display: flex; flex-direction: column;
-  padding: 1.5rem 1.35rem 1.25rem;
-  background: var(--paint);
-  color: var(--paint-ink);
-  border: 4px solid var(--edge);
+  margin: 0; padding: 0;
+  border: 0; background: none;
+  color: inherit; font: inherit;
+  cursor: pointer;
   border-radius: 6px;
-  /* hand-painted pinstripe frame inside the edge */
-  box-shadow:
-    inset 0 0 0 5px var(--paint),
-    inset 0 0 0 7px var(--frame),
-    0 24px 34px -20px rgba(0,0,0,.75),
-    0 6px 10px -6px rgba(0,0,0,.45);
+  --focus: var(--paper);
 }
-.oss-board__plate::before { /* the two screws the strings tie to */
+.oss-pick__btn:focus-visible { outline: 3px solid var(--paper); outline-offset: 6px; }
+.oss-pick__btn::before {                      /* the tray, peeking out on hover */
   content: "";
-  position: absolute; left: 22%; right: 22%; top: 7px; height: 8px;
-  background:
-    radial-gradient(circle 4px at 4px 4px, var(--edge) 92%, transparent) left / 8px 8px no-repeat,
-    radial-gradient(circle 4px at 4px 4px, var(--edge) 92%, transparent) right / 8px 8px no-repeat;
-  transform: translateX(0);
-  margin: 0 -4px;
+  position: absolute; z-index: 0;
+  top: 5%; bottom: 5%; left: 2%; right: 2%;
+  background: var(--kraft, #c9a679);
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 4px var(--kraft-wall, #a7835a);
+  transition: transform .45s var(--ease-spring);
 }
-.oss-board__plate::after { /* paint texture */
-  content: "";
-  position: absolute; inset: 0; z-index: -1;
-  background-image: var(--fibers), var(--grain);
-  background-size: 400px, 200px;
-  opacity: .35; mix-blend-mode: multiply;
-  border-radius: inherit;
-  pointer-events: none;
-}
+.oss-pick:hover .oss-pick__btn::before,
+.oss-pick__btn:focus-visible::before { transform: translateX(22%); }
+.oss-pick__box { position: relative; z-index: 1; display: block; aspect-ratio: 1.45; }
+.oss-pick__box .mbox__strike { height: 9%; }
 
-.oss-board__trade {
-  margin: 0;
-  font: 700 var(--t-xs)/1.3 var(--f-narrow);
-  letter-spacing: .2em;
-  text-transform: uppercase;
+/* the box that's on the counter leaves an empty slot behind */
+.oss-pick.is-out .oss-pick__box, .oss-pick.is-out .oss-pick__btn::before { visibility: hidden; }
+.oss-pick.is-out .oss-pick__btn::after {
+  content: "on the counter ↑";
+  position: absolute; inset: 0 0 -9% 0;
+  display: grid; place-items: center;
+  font: 700 1.25rem/1 var(--f-hand);
+  color: var(--paper-2);
+  border: 2px dashed rgba(236, 231, 220, .4);
+  border-radius: 6px;
 }
-.oss-board__trade [lang="ta"] { letter-spacing: 0; font-weight: 700; }
-.oss-board[data-long] .oss-board__name { font-size: clamp(1.6rem, 1.3rem + .9vw, 2rem); }
-.oss-board__name {
-  margin: .4rem 0 0;
-  font: 400 clamp(1.9rem, 1.5rem + 1.2vw, 2.5rem)/.92 var(--f-display);
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0 color-mix(in srgb, var(--frame) 55%, transparent);
-  overflow-wrap: anywhere;
-}
-.oss-board__ta {
-  margin: .45rem 0 0;
-  font: 800 var(--t-md)/1.3 var(--f-tamil);
-}
-.oss-board__desc { margin: .7rem 0 0; font-size: var(--t-sm); line-height: 1.45; }
-.oss-board__prop {
-  margin: .85rem 0 0;
-  padding-top: .65rem;
-  border-top: 2px dotted color-mix(in srgb, var(--paint-ink) 45%, transparent);
-  font: 600 var(--t-xs)/1.35 var(--f-body);
-}
-.oss-board__prop-k { font: italic 700 1.05em/1 var(--f-hand); font-size: 1.3em; margin-right: .2em; }
-.oss-board__meta {
-  margin: .5rem 0 0;
-  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .7rem;
-  font: 700 var(--t-xs)/1.3 var(--f-mono);
-}
-.oss-board__lic { /* licence, as a small painted tag */
-  padding: .1em .45em;
-  border: 1.5px solid currentColor;
-  border-radius: 3px;
-}
-.oss-board__link {
-  align-self: flex-start;
-  display: inline-flex; align-items: center; gap: .35em;
-  min-height: 44px;
-  margin-top: auto;
-  padding-top: .6rem;
-  font: 800 var(--t-sm)/1 var(--f-body);
-  color: var(--paint-ink);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: .22em;
-}
-.oss-board__link:hover { text-decoration-thickness: 4px; }
-.oss-board__stamp {
-  position: absolute; bottom: 1.2rem; right: 1rem;
-  padding: .3em .45em .25em;
-  font: 400 var(--t-xs)/1 var(--f-display);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--stamp-c);
-  border: 2px solid currentColor;
-  outline: 1px solid currentColor; outline-offset: 2px;
-  border-radius: 3px;
-  transform: rotate(9deg);
-  opacity: .92;
-}
-.oss-board__note {
-  margin-top: .3rem;
-  font-size: 1.2rem;
-  color: var(--paint-ink);
-  transform: rotate(-1.5deg);
-  transform-origin: left center;
-}
+.oss-pick.is-out { transform: rotate(0deg); }
 
-/* paints, by trade */
-.oss-board--hardware  { --paint: var(--chilli);   --paint-ink: var(--ink);   --frame: var(--paper);  --stamp-c: var(--ink); }
-.oss-board--ai        { --paint: var(--lavender); --paint-ink: var(--ink);   --frame: var(--violet); --stamp-c: var(--stamp); }
-.oss-board--tamil     { --paint: var(--paper);    --paint-ink: var(--ink);   --frame: var(--stamp);  --stamp-c: var(--stamp); }
-.oss-board--apps      { --paint: var(--salmon);   --paint-ink: var(--ink);   --frame: var(--ink);    --stamp-c: var(--oxblood); }
-.oss-board--fonts     { --paint: var(--ink);      --paint-ink: var(--paper); --frame: var(--salmon); --stamp-c: var(--salmon); --edge: #000; }
-.oss-board--community { --paint: var(--violet);   --paint-ink: var(--paper); --frame: var(--paper);  --stamp-c: var(--paper); }
-.oss-board--fonts .oss-board__plate::after,
-.oss-board--community .oss-board__plate::after { mix-blend-mode: soft-light; opacity: .5; }
+/* the flight between slot and counter (View Transitions, where supported) */
+::view-transition-group(mbox-pick),
+::view-transition-group(mbox-home) { animation-duration: .6s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .25s; }
 
 /* ---------- CTA ---------- */
 .oss__foot {
@@ -382,9 +570,40 @@
   .oss__menu { max-width: 34rem; margin-top: 2.2rem; }
 }
 
-/* phones: the street becomes a scroll-snap rail */
+/* the counter stacks: the line first, then the box */
+@media (max-width: 1180px) {
+  .oss__counter { grid-template-columns: 1fr; justify-items: center; }
+  .oss__counter { --W: min(470px, calc((100vw - 2 * var(--gutter)) / 1.62)); }
+  .oss__spark { order: -1; max-width: 40rem; justify-self: start; }
+}
+
+/* phones: the tray slides down out of the box, and the row becomes a scroll rail */
 @media (max-width: 760px) {
-  .oss__swipe { display: inline; font-size: 1.25rem; letter-spacing: 0; text-transform: none; color: var(--lavender); }
+  .oss__counter { --W: min(460px, calc(100vw - 2 * var(--gutter))); }
+  .oss__stage { width: var(--W); min-height: 0; }
+  .mbox__body { aspect-ratio: auto; display: flex; flex-direction: column; transform: rotate(-1deg); }
+  .mbox__sleeve { position: relative; order: -1; height: calc(var(--W) / 1.45); }
+  .mbox.is-open .mbox__sleeve { transform: none; }
+  .mbox__strike { top: calc(var(--W) / 1.45); height: calc(var(--W) * .05); }
+  .mbox__tray {
+    position: relative;
+    top: auto; bottom: auto; left: auto;
+    width: 95%;
+    margin: calc(var(--W) * -.1) auto 0;
+    transform: translateY(-40%);
+    opacity: 0;
+    transition: transform .9s var(--ease-spring), opacity .35s;
+  }
+  .mbox.is-open .mbox__tray { transform: none; opacity: 1; }
+  .mbox__tray-in {
+    position: relative; inset: auto;
+    padding: calc(var(--W) * .16) calc(var(--W) * .06) calc(var(--W) * .06);
+    gap: .7rem;
+  }
+  .oss__spark { padding-top: 3.2rem; }
+
+  .oss__swipe { display: inline; margin-left: auto; font-size: 1.25rem; letter-spacing: 0; text-transform: none; color: var(--lavender); }
+  .oss__street-k::after { display: none; }
   .oss__street {
     margin-inline: calc(var(--gutter) * -1);
     overflow-x: auto;
@@ -394,37 +613,31 @@
     scrollbar-width: thin;
     scrollbar-color: rgba(236,231,220,.5) transparent;
   }
-  .oss__boards {
+  .oss__shelf {
     flex-wrap: nowrap; justify-content: flex-start;
-    gap: 1.1rem;
-    padding: 3.4rem var(--gutter) 1.6rem;
     width: max-content;
+    gap: 1.1rem;
+    padding: 1.6rem var(--gutter) 1.8rem;
   }
-  .oss-board,
-  .oss-board:nth-child(3n+1) {
-    flex: 0 0 min(80vw, 19.5rem);
-    max-width: none;
-    scroll-snap-align: start;
-    transform: rotate(calc(var(--r, 0deg) * .5));
-  }
-  .oss-board:nth-child(n) { margin-top: 0; }
-  .oss-board:hover, .oss-board:focus-within { transform: rotate(0deg); }
+  .oss-pick { --w: 150px; scroll-snap-align: start; }
+  .oss-pick:nth-child(n) { margin-top: 0; }
 }
 
-/* ---------- motion: boards drop onto their nails ---------- */
+/* ---------- motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
-  .oss--ready .oss-board:not(.is-in) {
-    opacity: 0;
-    transform: translateY(-26px) rotate(calc(var(--r, 0deg) * 5));
-  }
-  .oss--ready .oss-board {
-    transition: transform .9s var(--ease-spring) var(--d, 0s), opacity .4s var(--d, 0s);
-  }
-  .oss--ready .oss-board.is-in:hover,
-  .oss--ready .oss-board.is-in:focus-within { transition-delay: 0s; transition-duration: .5s; }
+  .oss__spark::after { animation: oss-flicker 1.6s ease-in-out infinite alternate; }
+}
+@keyframes oss-flicker {
+  0%   { transform: scale(1, 1) rotate(-3deg); opacity: .95; }
+  40%  { transform: scale(.92, 1.08) rotate(2deg); opacity: 1; }
+  70%  { transform: scale(1.05, .94) rotate(-1deg); opacity: .9; }
+  100% { transform: scale(.97, 1.04) rotate(3deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mbox__sleeve, .mbox__tray, .oss-pick, .oss-pick__btn::before { transition: none; }
 }
 
 @media (forced-colors: active) {
-  .oss-board__plate, .oss__menu { border: 2px solid CanvasText; }
+  .mlabel, .mbox__tray, .oss__menu { border: 2px solid CanvasText; }
   .oss-chip[aria-pressed="true"] { outline: 3px solid Highlight; }
 }
