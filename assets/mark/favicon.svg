@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">ஆழி</title>
+  <!-- app icon and favicon: chilli tile, ink ழ, paper wing. Same drawing as the mark, no fold facet. -->
+  <rect width="64" height="64" rx="14" fill="#e5470e"/>
+  <g transform="translate(8 7.2) scale(0.54)">
+    <path fill="#ece7dc" d="M40 62H99.5L40 77.95Z"/>
+    <path fill="#161311" fill-rule="evenodd" d="M0 4.5L13 1V46H38V25.5A25.5 25.5 0 0 1 89 25.5V37A20 20 0 0 1 69 57H51V66A25.5 25.5 0 0 1 0 66V62H13V66A12.5 12.5 0 0 0 38 66V57H0ZM51 46V24A12.5 12.5 0 0 1 76 24V37A9 9 0 0 1 67 46Z"/>
+  </g>
+</svg>

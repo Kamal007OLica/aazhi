@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ஆழி Aazhi · Creating the next big tech minds from Tamil rural roots</title>
+  <link rel="icon" href="assets/mark/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Creating the next big tech minds from Tamil rural roots. Aazhi is a Tamil tech school for students from Tamil Nadu's smaller towns. Classes in Tamil, notes in English. 6 courses free forever, 3 live cohorts that end in an offer letter.">
+  <meta name="theme-color" content="#c3c2bf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/logo.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/mentors.css">
+  <link rel="stylesheet" href="css/takeoff.css">
+  <link rel="stylesheet" href="css/oss.css">
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/mentors.js"></script>
+  <script type="module" src="js/oss.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- 1. NAV ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a class="logo logo--h nav__logo" href="#top" aria-label="Aazhi, home">
+        <svg class="logo__mark" viewBox="0 0 100 92" aria-hidden="true" focusable="false"><path class="logo__wing" d="M40 62H99.5L40 69.97Z"/><path class="logo__fold" d="M40 69.97L99.5 62L40 77.95Z"/><path class="logo__ltr" d="M0 4.5L13 1V46H38V25.5A25.5 25.5 0 0 1 89 25.5V37A20 20 0 0 1 69 57H51V66A25.5 25.5 0 0 1 0 66V62H13V66A12.5 12.5 0 0 0 38 66V57H0ZM51 46V24A12.5 12.5 0 0 1 76 24V37A9 9 0 0 1 67 46Z"/></svg>
+        <span class="logo__word" aria-hidden="true"><span class="logo__ta" lang="ta">ஆழி</span><span class="logo__en">aazhi<b>.</b></span></span>
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <ul>
+          <li><a href="#karai">Karai <span class="nav__sub">(free)</span></a></li>
+          <li><a href="#oss">Open source</a></li>
+          <li><a href="#muthukuli">Muthukuli <span class="nav__sub">(cohorts)</span></a></li>
+          <li><a href="flows.html">Flows</a></li>
+          <li><a href="brand.html">Brand</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--ink nav__cta" href="#karai">Start free <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- 2. HERO: classic split on fog. The pitch on the left; on the right an ASCII tribute to
+         Dr. A. P. J. Abdul Kalam (from assets/portrait/kalam-source.png), the SLV-3 arc and a
+         faint ASCII sea. A tribute, never an endorsement. -->
+
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__split">
+        <div class="hero__sky" aria-hidden="true">
+          <div class="hero__sea" id="hero-sea" data-sky="off"></div>
+        </div>
+
+        <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="hero__eyebrow"><span>Tamil tech school</span> <span class="hero__dot" aria-hidden="true">·</span> <span>Classes in Tamil, notes in English</span></p>
+          <h1 id="hero-title" class="hero__title">Creating the next big <mark class="hl hl--lav hero__hl">tech minds</mark> from Tamil rural roots.</h1>
+          <p class="hero__tamil" lang="ta">மண்ணில் வேர். விண்ணில் கனவு.</p>
+          <p class="hero__sub">Learn backend, cloud and AI in Tamil, from your own town. 6 courses free forever. 3 live cohorts when you're ready to go deep.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--ink" href="#karai">Start free, no login <span aria-hidden="true">→</span></a>
+            <a class="btn btn--line" href="#muthukuli">See live cohorts</a>
+          </div>
+          <ul class="hero__trust" aria-label="Aazhi at a glance">
+            <li>1000+ students</li>
+            <li>Tamil live classes</li>
+            <li>Free forever courses</li>
+          </ul>
+        </div>
+
+        <figure class="hero__portrait">
+          <p class="vh">A tribute to Dr. A. P. J. Abdul Kalam, drawn entirely in code characters from a pencil sketch: his silver hair, a warm smile, his hand at his chin.</p>
+          <div class="hero__flight" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+              <path class="hero__flight-path" d="M 80 104 C 93 84, 99 50, 101 6" fill="none" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <span class="hero__flight-tag">SLV-3 · Rohini · 18.07.1980</span>
+            <span class="hero__plane">
+              <svg viewBox="0 0 400 220" focusable="false">
+                <path fill="#f06a43" d="M8 118 392 14 196 112Z"/>
+                <path fill="#e5470e" d="M196 112 392 14 236 140Z"/>
+                <path fill="#b8360b" d="M196 112 236 140 168 206Z"/>
+                <path fill="#d4400c" d="M8 118 196 112 150 132Z"/>
+              </svg>
+            </span>
+          </div>
+          <div class="hero__arch">
+<pre id="ascii-hero" class="hero__ascii" aria-hidden="true">
+                                             ..:--==-:::..
+                                     .:-::::=====----:-=++==-.
+                                  :::....        .-------::-+**- ...
+                                .-..   ...:...:-+*#**+-::--...\=--::-:
+                              .=:......--...---......-...  .:.....:: :-
+                             =-.... .-/   .     . .:-====+-. ......-. .+
+                            +/...  /*/.  ... ....===:..:-=-:-.... .=.   +.
+                          .+..:.  =%/.   ..... =%+=+=+=...==.:. .  : ... +:
+                         .= ..  .##.:.. ..  ..|@#-**+*+-..:-.:... .. ...:.+=
+                        :/...  /%+:.: ...=.  :.#=..:::::::.  ...... ......:-=
+                       ::.... -%+-:-. .  |-. :.=*:..........  .....:-==\.:.:-+
+                      -.:....*%*-:-=... ..+=..=.-:-:....::... .::.::-=*+*=..:\*
+                     -...:..#%=*::*+.=- .:=+..=:-::...::::.:....::--=*%###=.. -+
+                    -...*..*@+:--|@= #%. -=-. =--:::.......:::::--==+=+*#+..  :=.
+                 .:=.-.#-.|@+=--:*@#*@#.-+-.  +--.... ....::..:-=+.  ..  ... .-:-
+               .::= -:-@|.=%=-+#%@%*+=/=**+..-=-:.:.......::..::-.. ..........=.-
+             .-:.+|.-.*@|.*%+==+/... ..-=-./===::--::.....:-::-*-./+#%%%#+:..-*--.
+            :-: .+.::.=@= -@=.   . .....  .....:-:...........:-*+=-#@%#+/.-+-=#-:.
+           :::  |#|...:*@|.\:  :#@@%@@%#+-:...:....  .   ....:-+*=+#%*-..*%+=+%|:.
+           -::..=+| ::..#|.-=:-+#%%%@%%@%#*::---..............:+#+#@%/.:=##+=*%.:.
+           =+. -=*-:....=---#*=+#*#@%+=+#%-=%+==:.::....:-::::+**##%%|::*###*##.:.
+           =*. -+*%+\...*#-=+==%#.:=#=.\*#++#%=-::::...       ....-+#+-+##**##*...
+          .-+|.|++%%#=.:*=-=-:.:-::.....:=*-*%+::-:::::-*#*-. . .   -+*++%%#%#+...
+          -:--. -=+%%*:=*-:--::-::::++-+#%%*#%-::-=+=*+*#%%%%+::-=-...+#-:-=+*+ ..
+          -:.::..\+*##-#=-::.:-:-==-+==+=%%#%=:..:++=++*##%#+-=#++#=.-*%%###%*=. -
+          :--:-.......++-:...:-::-....::=++=-. ..:==+#*+#@@*.-==#+#=-=+#@@#%*#=  :.
+        .:-.|+-=---: =*-:...........:::-++=-.  .::-=+#**=:...:=+==+=--=*@##%#+....:
+      ..:::. \##*+##%%-:.:...........:=+*=-.  .:::::**=++:.::-=-:::-:-=#%*#**|. :.:
+       :: +...\#@%%@%*-:::::..:::..:=%#=*=:   .:--=:::--::*=:--:..---=+#*%**=:..-.:
+       :. .=--::::#%%+-::--:::--::-*%*  ==:  ..:==*+::...... .:::-+===*+%#**:-..*.-
+       =. -.::\--=%##=-:----=++=-**=--+*+=-....:. \%*-:..   .:.--=*=+*+=@##=-:..#.-
+       .*=-\..  .=%#*+::::-=+**+=-...-=#%**-::::.  =%#-::...+=-.:-+#**:-@%#:-:.-+.-
+         :#%+==\.+%++=:::::=#%*::-..:--:=+-==*%%%*-:%%---:.:#*:-::*%*+-+@#--:./#|-.
+          :---=%@@#:+=:::::=%%=:--...:::-+++=-::::..=#===-..#%--. -*+#+**=+-:.*=.=
+         :-+\.|##@#:++-:::-=#%++#+::::-::-=-:. .....-+*=--::*@+-: .+*@*#%%#**+-.+
+          =+*-*/.*#:-#=::--=*%+::=%%#%%#+-.::::. .::-+*+==-:-#%--..*%@%#%%%+-*#==
+           .:+. -.==*%*::--+###:..:*#++-+*++#**##+-=+%%+=--:-*+-:  **/=+####*+//:
+           :+  ..  :%@%-:-++**==-:::-====--=:.:+%@@#%@*=-::.:#==:..#/.------::.+
+          *.         *@#+==+=-=#*-::--::-===-:.:::-%@#+=::..:%+=. |-.*@@#*++=:=
+        .-            -#%*++--+**==+***%%%%##++***#%%*+:::.:**--. ##@@%*++===:
+-===--=-:  .:.       ...*#+-:-=+=+##*=::..:.. .  ...:=+-::=##-=: .=-==-:-+*+
+   .=---.. ..:.       . :.=-:-=-:-+:. .:--::-::.........-+#@=+=. =*-::-=+/
+       .:==+\ :         :...:-:..:-+*##*#*+***++-::-:::. .-*+*=. *%=:=%#
+         ...=*..        . :. \-.:-++==**##**###%%#*++=::...  :-. *@+**:
+           .-#%\.         .: ..:..:::+=--::-=+**+*#@@%#+=--....:.=*.
+             ::+           -....:---+=.:-.::::::-*-.-*@@%#*+-..--:-
+                .           :.:....==:--::--::..--::. .:-+#%*:..::::
+                               ... .-=*@@@@%%#**+===--::... .....  ::
+                                 .-=+=::-::-----===***=++-...   .   -.
+                                 :-=-.:::::::..:-:. .-+%%*+:.... .   =
+                             .::.\**++--=+*+=:.:-=::.....=+:. ...    .-
+                    ..:::..:=:.....=*\. ...-=%%*---:-:...   .......   .-
+                             :::.....*=......*@@%%#=--:--... .::....  ..-
+                               .::... .+-... .*@%@@=-:::--::..............
+                                 .-::...\--:...=#%#|.:--:.................
+                                  .........::...\+*-:===-::..............
+                                     .............---::.........
+                                                   ..
+</pre>
+          </div>
+          <figcaption>
+            <p id="ascii-caption" class="hero__caption">Dr. A. P. J. Abdul Kalam · <span lang="ta">இராமேஸ்வரம்</span> → ISRO → Rashtrapati Bhavan</p>
+          </figcaption>
+          <p class="hero__hand hand">Rameswaram-oda newspaper paiyan. <span>India-voda Missile Man.</span></p>
+        </figure>
+        </div>
+      </div>
+
+      <div class="hero__cols">
+        <div class="hero__col">
+          <h2 class="hero__col-h">english!</h2>
+          <p>Aazhi is a tech school for students from Tamil Nadu's smaller towns. Classes are in Tamil, notes are in English. Six courses are free forever. Three live cohorts take you from your first commit to your first offer letter.</p>
+          <p>Aazhi means the deep sea. You start at the shore and go deeper when you're ready.</p>
+        </div>
+        <div class="hero__col" lang="ta">
+          <h2 class="hero__col-h">தமிழ்!</h2>
+          <p>ஆழின்னா ஆழ்கடல். சின்ன ஊர்ல இருந்து பெரிய கனவோட வர்றவங்களுக்கான டெக் பள்ளி இது. வகுப்பு தமிழ்ல, notes இங்கிலீஷ்ல.</p>
+          <p>ஆறு course எப்பவும் இலவசம். கரையில கால் நனை. அப்புறம் ஆழத்துக்கு வா.</p>
+        </div>
+        <nav class="hero__col hero__links" aria-label="Quick links">
+          <div>
+            <h2 class="hero__col-h">kaththukko</h2>
+            <ul>
+              <li><a href="#karai">6 free courses</a></li>
+              <li><a href="#resume">Resume Review</a></li>
+              <li><a href="#route">The route</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="hero__col-h">paaru</h2>
+            <ul>
+              <li><a href="#muthukuli">3 live cohorts</a></li>
+              <li><a href="#proof">Postcards home</a></li>
+              <li><a href="#faq">Doubts? FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="hero__col-h">join</h2>
+            <ul>
+              <li><a href="#karai">Start free</a></li>
+              <li><a href="flows.html">Flows</a></li>
+              <li><a href="brand.html">Brand</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 3. TOWN TICKER ===================================================== -->
+    <section class="ticker" id="ticker" aria-label="Where our people went: town to city">
+      <div class="ticker__viewport">
+        <div class="ticker__track">
+          <ul class="ticker__list">
+            <li><span lang="ta">கோவில்பட்டி</span> <i aria-hidden="true">→</i> Bengaluru</li>
+            <li>Karur <i aria-hidden="true">→</i> Chennai</li>
+            <li><span lang="ta">தூத்துக்குடி</span> <i aria-hidden="true">→</i> Hyderabad</li>
+            <li>Nagercoil <i aria-hidden="true">→</i> Bengaluru</li>
+            <li>Theni <i aria-hidden="true">→</i> Coimbatore</li>
+            <li><span lang="ta">சிவகாசி</span> <i aria-hidden="true">→</i> Pune</li>
+            <li>Kumbakonam <i aria-hidden="true">→</i> Chennai</li>
+            <li>Pudukkottai <i aria-hidden="true">→</i> Bengaluru</li>
+            <li><span lang="ta">விழுப்புரம்</span> <i aria-hidden="true">→</i> Chennai</li>
+            <li>Dindigul <i aria-hidden="true">→</i> Hyderabad</li>
+            <li>Namakkal <i aria-hidden="true">→</i> Bengaluru</li>
+            <li><span lang="ta">ஈரோடு</span> <i aria-hidden="true">→</i> Coimbatore</li>
+            <li>Tirunelveli <i aria-hidden="true">→</i> Chennai</li>
+            <li>Thanjavur <i aria-hidden="true">→</i> Remote, from home</li>
+          </ul>
+          <ul class="ticker__list" aria-hidden="true">
+            <li><span lang="ta">கோவில்பட்டி</span> <i>→</i> Bengaluru</li>
+            <li>Karur <i>→</i> Chennai</li>
+            <li><span lang="ta">தூத்துக்குடி</span> <i>→</i> Hyderabad</li>
+            <li>Nagercoil <i>→</i> Bengaluru</li>
+            <li>Theni <i>→</i> Coimbatore</li>
+            <li><span lang="ta">சிவகாசி</span> <i>→</i> Pune</li>
+            <li>Kumbakonam <i>→</i> Chennai</li>
+            <li>Pudukkottai <i>→</i> Bengaluru</li>
+            <li><span lang="ta">விழுப்புரம்</span> <i>→</i> Chennai</li>
+            <li>Dindigul <i>→</i> Hyderabad</li>
+            <li>Namakkal <i>→</i> Bengaluru</li>
+            <li><span lang="ta">ஈரோடு</span> <i>→</i> Coimbatore</li>
+            <li>Tirunelveli <i>→</i> Chennai</li>
+            <li>Thanjavur <i>→</i> Remote, from home</li>
+          </ul>
+        </div>
+      </div>
+      <button class="ticker__toggle" id="ticker-toggle" type="button" aria-pressed="false">Pause</button>
+    </section>
+
+    <!-- 4. MANIFESTO (ref 2: chilli field, paper stack) =================== -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="manifesto__inner">
+        <div class="manifesto__head">
+          <h2 id="manifesto-title" class="manifesto__title">Before you open VS Code, 5 bayangal we kill first.</h2>
+          <p class="manifesto__ta" lang="ta">பயத்தோட ஆரம்பிக்காதே. பயத்தை முடிச்சுட்டு ஆரம்பி.</p>
+          <p class="manifesto__lede">Every student from a small town carries the same five fears into their first class. We name them out loud, then we deal with them. One by one.</p>
+          <div class="circled">
+            <p class="circled__text hand">psst. ellaarukkum indha bayam irundhudhu. normal dhaan.</p>
+            <svg class="circled__ring" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M150 8 C 236 6, 292 30, 290 62 C 288 98, 214 114, 140 112 C 66 110, 10 94, 12 60 C 14 28, 70 10, 160 12 C 196 13, 228 18, 250 26" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="stack">
+          <span class="stack__bookmark" aria-hidden="true"></span>
+          <svg class="stack__binder" viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+            <path d="M30 6 Q60 -10 90 6" fill="none" stroke="#8d8a86" stroke-width="4" stroke-linecap="round"/>
+            <path d="M30 6 L 34 40" stroke="#8d8a86" stroke-width="4" stroke-linecap="round"/>
+            <path d="M90 6 L 86 40" stroke="#8d8a86" stroke-width="4" stroke-linecap="round"/>
+            <path d="M14 40 L 106 40 L 98 86 L 22 86 Z" fill="#161311"/>
+            <path d="M22 46 L 98 46" stroke="#3a3430" stroke-width="2"/>
+          </svg>
+          <svg class="stack__clip" viewBox="0 0 40 110" aria-hidden="true" focusable="false">
+            <path d="M28 30 L28 88 C28 100 12 100 12 88 L12 18 C12 4 34 4 34 18 L34 80" fill="none" stroke="#7d7a76" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M28 30 L28 88 C28 100 12 100 12 88 L12 18 C12 4 34 4 34 18 L34 80" fill="none" stroke="#e8e6e2" stroke-width="1" stroke-linecap="round" transform="translate(-.8 -.8)" opacity=".7"/>
+          </svg>
+          <p class="tape" aria-hidden="true">bayam list · v1</p>
+
+          <div class="stack__sheet">
+            <ol class="fears">
+              <li class="fear">
+                <h3 class="fear__name"><span class="fear__no" aria-hidden="true">01</span> <mark class="hl hl--lav">English</mark> bayam</h3>
+                <p>English theriyaadhu-nu bayama? Code-ku grammar podhum, accent illa. Class Tamil-la, notes simple English-la. Interview English-a thani-ya practice pannuvom.</p>
+                <p class="fear__ta" lang="ta">தமிழ்ல புரியும். இங்கிலீஷ்ல ஜெயிக்கலாம்.</p>
+              </li>
+              <li class="fear">
+                <h3 class="fear__name"><span class="fear__no" aria-hidden="true">02</span> <mark class="hl hl--sal">Laptop</mark> illa bayam</h3>
+                <p>Laptop illaya? Phone-la start pannu. Seriously. Karai-oda first lessons phone browser-laye odum. Laptop vaangura varaikkum wait panna vendaam.</p>
+                <p class="fear__ta" lang="ta">ஃபோன் போதும். இன்னைக்கே ஆரம்பி.</p>
+              </li>
+              <li class="fear">
+                <h3 class="fear__name"><span class="fear__no" aria-hidden="true">03</span> <mark class="hl hl--lav">Kaasu</mark> bayam</h3>
+                <p>Karai-la padikka oru rupee kooda venaam: full-a free, forever, no card. Muthukuli-ku fees irukku, adha munnaadiye solrom: UPI, EMI, first-gen grads-ku scholarship.</p>
+                <p class="fear__ta" lang="ta">இலவசமா கத்துக்கோ. திட்டத்தோட வேலை வாங்கு.</p>
+              </li>
+              <li class="fear">
+                <h3 class="fear__name"><span class="fear__no" aria-hidden="true">04</span> <mark class="hl hl--sal">Connections</mark> illa bayam</h3>
+                <p>Bengaluru-la yaarayum theriyaadha? Paravaala. Mentors, PR reviews, mock interviews, referrals. Unga ooru senior-a naanga irukkom.</p>
+                <p class="fear__ta" lang="ta">தெரிஞ்சவங்க இல்லையா? இப்போ நாங்க இருக்கோம்.</p>
+              </li>
+              <li class="fear">
+                <h3 class="fear__name"><span class="fear__no" aria-hidden="true">05</span> <mark class="hl hl--lav">Time</mark> illa bayam</h3>
+                <p>College, arrears, veetu velai. Time enga irukku? Day-ku 30 to 40 nimisham podhum. Bus-la oru video, night-la oru problem. Steady-a pona podhum.</p>
+                <p class="fear__ta" lang="ta">தினம் கொஞ்சம். ஆனா தினமும்.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. KARAI (free) =================================================== -->
+    <section class="karai" id="karai" aria-labelledby="karai-title">
+      <svg class="shoreline" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0 0 H1440 V34 C1320 70 1220 18 1080 40 C 940 62 860 20 720 38 C 580 56 500 14 360 36 C 220 58 120 24 0 44 Z"/>
+      </svg>
+      <div class="karai__inner">
+        <header class="karai__head">
+          <p class="karai__ta" lang="ta" aria-hidden="true">கரை</p>
+          <h2 id="karai-title" class="karai__title">Karai. Free forever. <span>Kaal nanaichikko.</span></h2>
+          <p class="karai__lede">Six self-paced courses. No login to start: open a lesson and type. No card, no trial, no "limited offer". Tamil class, English notes.</p>
+          <p class="karai__note hand" aria-hidden="true">start here. seriously ↓</p>
+        </header>
+
+        <ul class="collage" id="karai-list" aria-label="Free courses">
+          <!-- rendered by js/main.js from FREE_COURSES -->
+        </ul>
+
+        <aside class="torn" id="resume" aria-labelledby="resume-title">
+          <div class="torn__paper">
+            <p class="torn__kicker">Free tool, not a course</p>
+            <h3 id="resume-title" class="torn__title">Resume Review</h3>
+            <p class="torn__ta" lang="ta">ரோபோ படிக்கும் முன்னாடி நாங்க படிக்கிறோம்.</p>
+            <p>Upload your resume, get an ATS score and three fixes in plain words. Three checks a day, free. Company-oda software un resume-a reject pannradhukku munnaadi, naanga paathudrom.</p>
+            <a class="btn btn--ink torn__link" href="flows.html#f3">Check my resume <span aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 6. ROUTE (tide line) ============================================== -->
+    <section class="route" id="route" aria-labelledby="route-title">
+      <div class="route__inner">
+        <h2 id="route-title" class="route__title"><span lang="ta">கரை</span> first. Then <span lang="ta">ஆழம்</span>.</h2>
+        <p class="route__lede">Free-la start pannu. Ready-nu thonuchaa, dive pannu. Yaarum unna push panna maattaanga.</p>
+
+        <div class="tide" data-reveal="tide">
+          <svg class="tide__h" viewBox="0 0 1200 220" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="pearl-grad" cx="38%" cy="34%" r="70%">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset=".55" stop-color="#ece7dc"/>
+                <stop offset="1" stop-color="#b9b6b0"/>
+              </radialGradient>
+            </defs>
+            <path class="tide__ghost" d="M0 168 C100 168 120 132 200 132 S 400 202 600 162 S 850 72 1000 102 S 1150 152 1200 142"/>
+            <path class="tide__ghost" d="M0 186 C100 186 120 150 200 150 S 400 220 600 180 S 850 90 1000 120 S 1150 170 1200 160"/>
+            <path class="tide__line" pathLength="1" d="M0 150 C100 150 120 114 200 114 S 400 184 600 144 S 850 54 1000 84 S 1150 134 1200 124"/>
+            <circle class="tide__pt tide__pt--shore" cx="200" cy="114" r="11"/>
+            <circle class="tide__pt tide__pt--wave" cx="600" cy="144" r="11"/>
+            <circle class="tide__pt tide__pt--pearl" cx="1000" cy="84" r="17" fill="url(#pearl-grad)"/>
+          </svg>
+          <svg class="tide__v" viewBox="0 0 60 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path class="tide__line" pathLength="1" d="M30 0 C 22 60, 38 120, 30 180 S 22 300, 30 360 S 38 480, 30 600"/>
+          </svg>
+
+          <ol class="tide__stops">
+            <li class="stop stop--shore">
+              <span class="stop__dot" aria-hidden="true"></span>
+              <p class="stop__ta" lang="ta">கரை</p>
+              <h3 class="stop__name">Karai, the shore</h3>
+              <p>Feet wet. Free. Python, Git, DSA, SQL, Docker, prompting. Unga speed-la, unga phone-la.</p>
+            </li>
+            <li class="stop stop--wave">
+              <span class="stop__dot" aria-hidden="true"></span>
+              <p class="stop__ta" lang="ta">அலை</p>
+              <h3 class="stop__name">Alai, the wave</h3>
+              <p>Build. Three projects on GitHub, one Resume Review, one honest look in the mirror. Ready-a? Nee dhaan decide pannuva.</p>
+            </li>
+            <li class="stop stop--pearl">
+              <span class="stop__dot" aria-hidden="true"></span>
+              <p class="stop__ta" lang="ta">முத்து</p>
+              <h3 class="stop__name">Muthu, the pearl</h3>
+              <p>Dive with a guide. Live cohort, mentor, scored mocks, capstone. The pearl is the offer letter.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6b. OPEN SOURCE BUILT IN TN (kadai veedhi of painted signboards) ===
+         Boards rendered by js/oss.js (OSS_PROJECTS). Styles: css/oss.css.
+         Sources for every project: research/oss-tn.md -->
+    <section class="oss" id="oss" aria-labelledby="oss-title">
+      <div class="oss__inner">
+        <div class="oss__head">
+          <div>
+            <h2 id="oss-title">
+              <span class="oss__ta" lang="ta">நம்ம ஊரு <span lang="en">code.</span></span>
+              <span class="oss__title">Built in Tamil Nadu. Open to you.</span>
+            </h2>
+            <p class="oss__lede"><strong>A real GitHub profile beats a certificate.</strong> Certificate-kulla code illa; un PR-la irukku. These projects are built in our own state, by IIT Madras labs, Chennai communities and Tamil computing folks. Oru project pick pannu, code-a padi, chinnadha ethavadhu anuppu.</p>
+            <p class="oss__aside hand">ellaam real projects. checked Oct 2026. fake stars illa.</p>
+          </div>
+
+          <div class="oss__menu">
+            <p class="oss__menu-k"><span lang="ta">இன்றைய ஸ்பெஷல்</span> · today's special</p>
+            <h3 class="oss__menu-h">Your first PR, <span lang="ta">மூணு</span> steps</h3>
+            <ol class="oss__steps">
+              <li><b>Fork pannu.</b> Project-a un GitHub account-ku copy pannu. Oru click dhaan.</li>
+              <li><b>Find a <code>good first issue</code>.</b> Label illaya? Docs typo, Tamil translation, oru TOSSHack problem. Chinnadha start pannu.</li>
+              <li><b>PR anuppu.</b> Small change, clear title, polite description. Review comments vandhaa, adhu dhaan free class.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="oss__tools">
+          <div class="oss__filters" id="oss-filters" role="group" aria-label="Filter projects by category" hidden></div>
+          <p class="oss__count" id="oss-count" role="status" aria-live="polite">12 projects</p>
+        </div>
+
+        <p class="oss__street-k"><span lang="ta">கடை வீதி</span> Kadai veedhi <span class="oss__swipe hand" aria-hidden="true">swipe →</span></p>
+        <div class="oss__street" id="oss-street" role="region" aria-label="Project boards">
+          <ul class="oss__boards" id="oss-list" aria-label="Open-source projects from Tamil Nadu">
+            <li class="oss__msg">Project list load aagala. Page-a refresh pannu.</li>
+          </ul>
+        </div>
+
+        <div class="oss__foot">
+          <div>
+            <p class="oss__foot-note hand">Unga project-um inga thongalaam.</p>
+            <p class="oss__fine">Open source, built in TN or for Tamil, with a public repo. Every board gets checked before it goes up.</p>
+          </div>
+          <a class="btn btn--stamp oss__cta" href="#mentors">Built something in TN? Add your project <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. MUTHUKULI (paid, ref 3 tickets) ================================ -->
+    <section class="muthukuli" id="muthukuli" aria-labelledby="muthukuli-title">
+      <div class="muthukuli__inner">
+        <header class="muthukuli__head">
+          <h2 id="muthukuli-title" class="muthukuli__title">Muthukuli</h2>
+          <span class="stamp stamp--head" aria-hidden="true">Live in Tamil</span>
+          <p class="muthukuli__ta" lang="ta">முத்துக்குளி</p>
+          <p class="muthukuli__sub">3 cohorts. Limited seats.</p>
+          <p class="muthukuli__lede">Thoothukudi's pearl divers never went down alone. One guide, one rope, one plan. Same here: live Tamil classes, a mentor who reviews your code, and a batch that dives together. Aazham-la dhaan muthu.</p>
+          <ul class="muthukuli__terms">
+            <li>UPI · EMI · scholarship for first-gen grads</li>
+            <li>One full class free to try</li>
+          </ul>
+        </header>
+
+        <ol class="tickets" id="muthukuli-list" aria-label="Paid cohorts">
+          <!-- rendered by js/main.js from PAID_COURSES -->
+        </ol>
+      </div>
+    </section>
+
+    <!-- 8. PROOF (postcards) ============================================== -->
+    <!-- PLACEHOLDER STORIES: replace with real, consented student stories before launch. -->
+    <section class="proof" id="proof" aria-labelledby="proof-title">
+      <div class="proof__inner">
+        <header class="proof__head">
+          <h2 id="proof-title" class="proof__title">Postcards home.</h2>
+          <p class="proof__ta" lang="ta">வீட்டுக்கு வந்த கடிதங்கள்.</p>
+          <p class="proof__lede">Not reviews. Letters our students wrote back to the people who sent them on the 6:40 bus.</p>
+        </header>
+
+        <ul class="postcards">
+          <li class="postcard">
+            <article aria-label="Postcard from Nandhini, Bengaluru, to Amma in Kovilpatti">
+              <div class="postcard__msg">
+                <p class="postcard__note hand">Amma, saapten, don't worry. Inniki en first pull request merge aachu. Team-la ellaarum "nice work" sonnaanga. Diwali-ku leave kedaichiruchu, varen.</p>
+                <p class="postcard__sign hand">Nandhini</p>
+                <p class="postcard__tag">Kovilpatti → Bengaluru · Muthu 01</p>
+              </div>
+              <div class="postcard__addr">
+                <span class="pstamp" aria-hidden="true"><span lang="ta">ஆழி</span><small>₹5</small></span>
+                <span class="postmark" aria-hidden="true"><span>KOVILPATTI</span><b>628501</b></span>
+                <p class="postcard__to">To: Amma<br>North Street<br>Kovilpatti 628501</p>
+              </div>
+            </article>
+          </li>
+          <li class="postcard">
+            <article aria-label="Postcard from Arun, Chennai, to Appa in Karur">
+              <div class="postcard__msg">
+                <p class="postcard__note hand">Appa, bus stand tea kadai-la ukkaandhu Python padichen. Ippo Chennai-la cloud team-la irukken. Unga scooter EMI ini naan kattren.</p>
+                <p class="postcard__sign hand">Arun</p>
+                <p class="postcard__tag">Karur → Chennai · Muthu 02</p>
+              </div>
+              <div class="postcard__addr">
+                <span class="pstamp pstamp--sea" aria-hidden="true"><span lang="ta">ஆழி</span><small>₹5</small></span>
+                <span class="postmark" aria-hidden="true"><span>KARUR</span><b>639001</b></span>
+                <p class="postcard__to">To: Appa<br>Kovai Road<br>Karur 639001</p>
+              </div>
+            </article>
+          </li>
+          <li class="postcard">
+            <article aria-label="Postcard from Meena, Hyderabad, to her younger sibling in Nagercoil">
+              <div class="postcard__msg">
+                <p class="postcard__note hand">Laptop illa-nu kavala padaadhe. Naan phone-la dhaan Git kaththukitten. Karai-la start pannu. Doubt-na call pannu, naan irukken.</p>
+                <p class="postcard__sign hand">Meena akka</p>
+                <p class="postcard__tag">Nagercoil → Hyderabad · Karai → Muthu 03</p>
+              </div>
+              <div class="postcard__addr">
+                <span class="pstamp pstamp--violet" aria-hidden="true"><span lang="ta">ஆழி</span><small>₹5</small></span>
+                <span class="postmark" aria-hidden="true"><span>NAGERCOIL</span><b>629001</b></span>
+                <p class="postcard__to">To: Thambi &amp; Thangachi<br>Court Road<br>Nagercoil 629001</p>
+              </div>
+            </article>
+          </li>
+          <li class="postcard">
+            <article aria-label="Postcard from Karthik, Bengaluru, to his school teacher in Salem">
+              <div class="postcard__msg">
+                <p class="postcard__note hand">Madam, "Tamil-medium paiyan"-nu kindal pannuvaanga. Inniki adhe naan English-la system design round clear pannitten. Neenga sonna maadhiri, bayapadala.</p>
+                <p class="postcard__sign hand">Karthik, 12-B</p>
+                <p class="postcard__tag">Salem → Bengaluru · Muthu 01</p>
+              </div>
+              <div class="postcard__addr">
+                <span class="pstamp pstamp--salmon" aria-hidden="true"><span lang="ta">ஆழி</span><small>₹5</small></span>
+                <span class="postmark" aria-hidden="true"><span>SALEM</span><b>636001</b></span>
+                <p class="postcard__to">To: Selvi Madam<br>Govt. Hr. Sec. School<br>Salem 636001</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 9. FAQ ============================================================= -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="faq__inner">
+        <header class="faq__head">
+          <h2 id="faq-title" class="faq__title">Doubt-a? Kelu.</h2>
+          <p class="faq__ta" lang="ta">கேள்வி கேக்குறது தப்பில்ல.</p>
+        </header>
+        <div class="faq__list">
+          <details class="qa">
+            <summary>English bayama irukku. Naan follow panna mudiyuma?</summary>
+            <div class="qa__a">
+              <p>Mudiyum. Every class is taught in Tamil. Notes are in simple English, so you learn the words interviewers use without memorising them. Code-ku grammar podhum, accent illa. Muthukuli cohorts also run spoken-English mock interviews, so the first time you explain a project in English isn't the real interview.</p>
+            </div>
+          </details>
+          <details class="qa">
+            <summary>Laptop illa. Phone-la padikka mudiyuma?</summary>
+            <div class="qa__a">
+              <p>For Karai, yes: the early lessons in Python, Git basics and prompting run in a phone browser. Honest-a sonna, Docker, Kubernetes and the paid cohorts need a laptop. 8 GB RAM is enough, no gaming machine needed. If that's the only thing stopping you, tell us when you apply for the first-gen scholarship.</p>
+            </div>
+          </details>
+          <details class="qa">
+            <summary>Fees evlo? EMI irukka?</summary>
+            <div class="qa__a">
+              <p>Karai is free forever. Muthukuli: Muthu 01 Backend is ₹14,999 or ₹1,999/month, Muthu 02 Cloud &amp; DevOps is ₹11,999 or ₹1,799/month, Muthu 03 AI Agents &amp; Data is ₹12,999 or ₹1,899/month. Pay by UPI, card or EMI. First-generation graduates can apply for a scholarship. Before you pay anything, attend one full class free.</p>
+            </div>
+          </details>
+          <details class="qa">
+            <summary>Naan Tamil-medium-la padichen. Enakku set aaguma?</summary>
+            <div class="qa__a">
+              <p>Set aagum. Logic-ku medium kidaiyaadhu. Many of our seniors studied in Tamil-medium schools; that's why we teach in Tamil. You'll pick up the English technical words naturally through the notes, one lesson at a time.</p>
+            </div>
+          </details>
+          <details class="qa">
+            <summary>Placement guarantee kudupeengala?</summary>
+            <div class="qa__a">
+              <p>Illa. Yaarum honest-a 100% guarantee kudukka mudiyaadhu, and you should be careful of anyone who does. Here is what we do promise in every cohort: two scored mock interviews, resume reviews until it's sharp, a capstone you can demo, system-design practice, and introductions to our alumni for referrals. The job comes from your work plus that plan.</p>
+            </div>
+          </details>
+          <details class="qa">
+            <summary>Day-ku evlo neram venum?</summary>
+            <div class="qa__a">
+              <p>Karai: 3 to 4 hours a week, at your own pace. Day-ku 30 to 40 nimisham podhum. Muthukuli: live classes 3 or 4 times a week, about 2 hours each and recorded if you miss one, plus 4 to 5 hours of practice a week. Semester exam time-la slow pannalaam; your mentor will plan around it.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. MENTORS (owned by the mentor agent: markup, css/mentors.css, js/mentors.js) -->
+    <section class="mentors" id="mentors" aria-labelledby="mentors-title">
+      <svg class="mentors__edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0 0 H1440 V22 C1330 48 1240 10 1110 26 C 980 42 900 8 760 24 C 620 40 540 6 400 22 C 260 38 150 12 0 30 Z"/>
+      </svg>
+
+      <div class="mentors__inner">
+        <div class="mentors__intro">
+          <p class="mentors__kicker">For seniors with Tamil Nadu roots</p>
+          <h2 id="mentors-title" class="mentors__title">
+            <span class="mentors__ta" lang="ta">ஊருக்குத் திருப்பிக் கொடு.</span>
+            <span class="mentors__en">Ooru-ku thiruppi kudu.</span>
+          </h2>
+          <p class="mentors__pitch">You took the 6:40 bus once. Now you design, code, ship and hire. Maasam-ku 2 mani neram kudunga: oru junior-oda route maarum.</p>
+
+          <ul class="mentors__ways" aria-label="Four ways to help">
+            <li class="way"><b class="way__name">Mentor</b><span class="way__sub">2 hrs a month. Oru student-a guide pannunga.</span></li>
+            <li class="way"><b class="way__name">Reviewer</b><span class="way__sub">Code, design, resume reviews.</span></li>
+            <li class="way"><b class="way__name">Referrer</b><span class="way__sub">Jobs, internships-ku refer pannunga.</span></li>
+            <li class="way"><b class="way__name">Guest kadai</b><span class="way__sub">Oru Sunday live talk, tea kadai style.</span></li>
+          </ul>
+
+          <p class="mentors__who">Engineers mattum illa. <mark class="hl hl--lav">Designers</mark>, PMs, QA, data, security: ellaarum venum.</p>
+
+          <div class="mentors__act">
+            <button class="btn btn--stamp mentors__cta" id="mentors-toggle" type="button" aria-expanded="true" aria-controls="mentors-panel">
+              Mentor aaganum <span class="mentors__cta-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="mentors__time">2 nimisham. No login.</p>
+          </div>
+          <!-- PLACEHOLDER COUNT: seeded in js/mentors.js (MENTOR_BASE) plus this browser's local sign-ups. Replace with the real count from the backend. -->
+          <p class="mentors__count" id="mentors-count"><b>142</b> mentors from <b>27</b> districts</p>
+        </div>
+
+        <figure class="mentors__badge" data-reveal aria-labelledby="mentors-sample-cap">
+          <span class="lanyard" aria-hidden="true"></span>
+          <div class="idcard idcard--sample" aria-hidden="true">
+            <span class="idcard__clip" aria-hidden="true"></span>
+            <p class="idcard__head"><span class="idcard__mark" lang="ta">ஆழி</span><span class="idcard__kind">Mentor ID</span></p>
+            <div class="idcard__body">
+              <span class="idcard__photo" aria-hidden="true"><span lang="ta">நீ</span></span>
+              <div class="idcard__who">
+                <p class="idcard__name">Unga peyar</p>
+                <p class="idcard__from">Unga ooru <span aria-hidden="true">→</span> ippo ooru</p>
+              </div>
+            </div>
+            <ul class="idcard__chips" aria-label="Expertise">
+              <li>Design</li><li>Backend</li><li>+ unga skill</li>
+            </ul>
+            <p class="idcard__no"><span>No.</span> ஆழி-M-0000</p>
+            <span class="idcard__bar" aria-hidden="true"></span>
+          </div>
+          <figcaption id="mentors-sample-cap" class="mentors__note hand"><span class="vh">A sample Aazhi mentor ID card. </span>idhu unga card aagalaam</figcaption>
+        </figure>
+
+        <div class="mentors__panel" id="mentors-panel" role="region" aria-labelledby="mentors-form-title">
+          <div class="mentors__sheet" id="mentors-sheet">
+            <p class="tape mentors__tape" aria-hidden="true">senior form · v1</p>
+            <h3 id="mentors-form-title" class="mentors__form-title">Unga senior card</h3>
+            <p class="mentors__form-lede" id="mentors-form-lede">Everything is needed except the ones marked optional. Your email never shows up on the site.</p>
+
+            <form class="mform" id="mentors-form" method="post" action="#mentors" novalidate aria-describedby="mentors-form-lede">
+              <div class="mform__grid">
+                <div class="field">
+                  <label class="field__label" for="m-name">Full name</label>
+                  <input class="field__input" id="m-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="m-name-err">
+                  <p class="field__err" id="m-name-err" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="m-email">Email</label>
+                  <input class="field__input" id="m-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required maxlength="120" aria-describedby="m-email-err">
+                  <p class="field__err" id="m-email-err" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="m-district">Hometown district <span class="field__ta" lang="ta">சொந்த ஊர்</span></label>
+                  <select class="field__input field__select" id="m-district" name="district" required aria-describedby="m-district-err">
+                    <option value="">Select your district</option>
+                    <option value="Ariyalur" data-ta="அரியலூர்">Ariyalur · அரியலூர்</option>
+                    <option value="Chengalpattu" data-ta="செங்கல்பட்டு">Chengalpattu · செங்கல்பட்டு</option>
+                    <option value="Chennai" data-ta="சென்னை">Chennai · சென்னை</option>
+                    <option value="Coimbatore" data-ta="கோயம்புத்தூர்">Coimbatore · கோயம்புத்தூர்</option>
+                    <option value="Cuddalore" data-ta="கடலூர்">Cuddalore · கடலூர்</option>
+                    <option value="Dharmapuri" data-ta="தருமபுரி">Dharmapuri · தருமபுரி</option>
+                    <option value="Dindigul" data-ta="திண்டுக்கல்">Dindigul · திண்டுக்கல்</option>
+                    <option value="Erode" data-ta="ஈரோடு">Erode · ஈரோடு</option>
+                    <option value="Kallakurichi" data-ta="கள்ளக்குறிச்சி">Kallakurichi · கள்ளக்குறிச்சி</option>
+                    <option value="Kancheepuram" data-ta="காஞ்சிபுரம்">Kancheepuram · காஞ்சிபுரம்</option>
+                    <option value="Kanniyakumari" data-ta="கன்னியாகுமரி">Kanniyakumari · கன்னியாகுமரி</option>
+                    <option value="Karur" data-ta="கரூர்">Karur · கரூர்</option>
+                    <option value="Krishnagiri" data-ta="கிருஷ்ணகிரி">Krishnagiri · கிருஷ்ணகிரி</option>
+                    <option value="Madurai" data-ta="மதுரை">Madurai · மதுரை</option>
+                    <option value="Mayiladuthurai" data-ta="மயிலாடுதுறை">Mayiladuthurai · மயிலாடுதுறை</option>
+                    <option value="Nagapattinam" data-ta="நாகப்பட்டினம்">Nagapattinam · நாகப்பட்டினம்</option>
+                    <option value="Namakkal" data-ta="நாமக்கல்">Namakkal · நாமக்கல்</option>
+                    <option value="Nilgiris" data-ta="நீலகிரி">Nilgiris · நீலகிரி</option>
+                    <option value="Perambalur" data-ta="பெரம்பலூர்">Perambalur · பெரம்பலூர்</option>
+                    <option value="Pudukkottai" data-ta="புதுக்கோட்டை">Pudukkottai · புதுக்கோட்டை</option>
+                    <option value="Ramanathapuram" data-ta="இராமநாதபுரம்">Ramanathapuram · இராமநாதபுரம்</option>
+                    <option value="Ranipet" data-ta="இராணிப்பேட்டை">Ranipet · இராணிப்பேட்டை</option>
+                    <option value="Salem" data-ta="சேலம்">Salem · சேலம்</option>
+                    <option value="Sivaganga" data-ta="சிவகங்கை">Sivaganga · சிவகங்கை</option>
+                    <option value="Tenkasi" data-ta="தென்காசி">Tenkasi · தென்காசி</option>
+                    <option value="Thanjavur" data-ta="தஞ்சாவூர்">Thanjavur · தஞ்சாவூர்</option>
+                    <option value="Theni" data-ta="தேனி">Theni · தேனி</option>
+                    <option value="Thoothukudi" data-ta="தூத்துக்குடி">Thoothukudi · தூத்துக்குடி</option>
+                    <option value="Tiruchirappalli" data-ta="திருச்சிராப்பள்ளி">Tiruchirappalli · திருச்சிராப்பள்ளி</option>
+                    <option value="Tirunelveli" data-ta="திருநெல்வேலி">Tirunelveli · திருநெல்வேலி</option>
+                    <option value="Tirupathur" data-ta="திருப்பத்தூர்">Tirupathur · திருப்பத்தூர்</option>
+                    <option value="Tiruppur" data-ta="திருப்பூர்">Tiruppur · திருப்பூர்</option>
+                    <option value="Tiruvallur" data-ta="திருவள்ளூர்">Tiruvallur · திருவள்ளூர்</option>
+                    <option value="Tiruvannamalai" data-ta="திருவண்ணாமலை">Tiruvannamalai · திருவண்ணாமலை</option>
+                    <option value="Tiruvarur" data-ta="திருவாரூர்">Tiruvarur · திருவாரூர்</option>
+                    <option value="Vellore" data-ta="வேலூர்">Vellore · வேலூர்</option>
+                    <option value="Viluppuram" data-ta="விழுப்புரம்">Viluppuram · விழுப்புரம்</option>
+                    <option value="Virudhunagar" data-ta="விருதுநகர்">Virudhunagar · விருதுநகர்</option>
+                  </select>
+                  <p class="field__err" id="m-district-err" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="m-city">Current city</label>
+                  <input class="field__input" id="m-city" name="city" type="text" autocomplete="address-level2" list="m-city-list" required maxlength="60" aria-describedby="m-city-err">
+                  <datalist id="m-city-list">
+                    <option value="Bengaluru"></option><option value="Chennai"></option><option value="Hyderabad"></option>
+                    <option value="Coimbatore"></option><option value="Pune"></option><option value="Remote, from my ooru"></option>
+                  </datalist>
+                  <p class="field__err" id="m-city-err" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="m-role">Role &amp; company <span class="field__opt">(optional)</span></label>
+                  <input class="field__input" id="m-role" name="role" type="text" autocomplete="organization-title" maxlength="80" placeholder="Product designer, Zoho">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="m-link">LinkedIn or portfolio <span class="field__opt">(optional)</span></label>
+                  <input class="field__input" id="m-link" name="link" type="url" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="linkedin.com/in/…" aria-describedby="m-link-err">
+                  <p class="field__err" id="m-link-err" hidden></p>
+                </div>
+              </div>
+
+              <fieldset class="group" id="m-expertise" aria-describedby="m-expertise-err">
+                <legend class="field__label">Your expertise <span class="field__hint">pick all that fit</span></legend>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="expertise" value="Backend"><span>Backend</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Frontend"><span>Frontend</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Mobile"><span>Mobile</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Cloud/DevOps"><span>Cloud / DevOps</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="AI/ML"><span>AI / ML</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Data"><span>Data</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Design"><span>Design (UI/UX)</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Product"><span>Product</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="QA"><span>QA</span></label>
+                  <label class="chip"><input type="checkbox" name="expertise" value="Security"><span>Security</span></label>
+                </div>
+                <p class="field__err" id="m-expertise-err" hidden></p>
+              </fieldset>
+
+              <fieldset class="group" id="m-roles" aria-describedby="m-roles-err">
+                <legend class="field__label">How you'll help <span class="field__hint">one or more</span></legend>
+                <div class="chips chips--roles">
+                  <label class="chip chip--role"><input type="checkbox" name="roles" value="Mentor"><span><b>Mentor</b><small>2 hrs a month</small></span></label>
+                  <label class="chip chip--role"><input type="checkbox" name="roles" value="Reviewer"><span><b>Reviewer</b><small>code · design · resume</small></span></label>
+                  <label class="chip chip--role"><input type="checkbox" name="roles" value="Referrer"><span><b>Referrer</b><small>jobs · internships</small></span></label>
+                  <label class="chip chip--role"><input type="checkbox" name="roles" value="Guest kadai"><span><b>Guest kadai</b><small>a Sunday live talk</small></span></label>
+                </div>
+                <p class="field__err" id="m-roles-err" hidden></p>
+              </fieldset>
+
+              <div class="mform__pair">
+                <fieldset class="group" id="m-hours" aria-describedby="m-hours-err">
+                  <legend class="field__label">Hours a month</legend>
+                  <div class="seg">
+                    <label class="seg__opt"><input type="radio" name="hours" value="2"><span>2</span></label>
+                    <label class="seg__opt"><input type="radio" name="hours" value="4"><span>4</span></label>
+                    <label class="seg__opt"><input type="radio" name="hours" value="8+"><span>8+</span></label>
+                  </div>
+                  <p class="field__err" id="m-hours-err" hidden></p>
+                </fieldset>
+
+                <fieldset class="group" id="m-tamil" aria-describedby="m-tamil-err">
+                  <legend class="field__label">Tamil comfort</legend>
+                  <div class="seg seg--wide">
+                    <label class="seg__opt"><input type="radio" name="tamil" value="speak"><span>Speak</span></label>
+                    <label class="seg__opt"><input type="radio" name="tamil" value="read-write"><span>Read + write</span></label>
+                    <label class="seg__opt"><input type="radio" name="tamil" value="both"><span>Both</span></label>
+                  </div>
+                  <p class="field__err" id="m-tamil-err" hidden></p>
+                </fieldset>
+              </div>
+
+              <div class="field field--check">
+                <label class="check" for="m-consent">
+                  <input id="m-consent" name="consent" type="checkbox" required aria-describedby="m-consent-err">
+                  <span>Students can contact me via Aazhi; my email isn't shown publicly.</span>
+                </label>
+                <p class="field__err" id="m-consent-err" hidden></p>
+              </div>
+
+              <div class="mform__trap" aria-hidden="true">
+                <label for="m-website">Leave this empty</label>
+                <input id="m-website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="mform__foot">
+                <button class="btn btn--ink mform__submit" type="submit">En card-a kudunga <span aria-hidden="true">→</span></button>
+                <p class="mform__status" id="mentors-status" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <template id="mentors-success-tpl">
+        <div class="mdone" tabindex="-1">
+          <div class="mdone__card">
+            <div class="idcard idcard--issued">
+              <span class="idcard__clip" aria-hidden="true"></span>
+              <p class="idcard__head"><span class="idcard__mark" lang="ta">ஆழி</span><span class="idcard__kind">Mentor ID</span></p>
+              <div class="idcard__body">
+                <span class="idcard__photo" aria-hidden="true"><span data-f="initials"></span></span>
+                <div class="idcard__who">
+                  <p class="idcard__name" data-f="name"></p>
+                  <p class="idcard__from"><span data-f="from-ta" lang="ta"></span> <span aria-hidden="true">→</span><span class="vh"> to </span> <span data-f="city"></span></p>
+                  <p class="idcard__role" data-f="role"></p>
+                </div>
+              </div>
+              <ul class="idcard__chips" aria-label="Expertise" data-f="expertise"></ul>
+              <p class="idcard__helps"><span>Helps as</span> <b data-f="roles"></b></p>
+              <p class="idcard__no"><span>No.</span> <b data-f="no"></b></p>
+              <span class="idcard__bar" aria-hidden="true"></span>
+              <span class="stamp idcard__stamp" aria-hidden="true">Welcome home<small lang="ta">ஊருக்கு நன்றி</small></span>
+            </div>
+          </div>
+          <div class="mdone__text">
+            <p class="mdone__kicker">Card issued · <span lang="ta">ஊருக்கு நன்றி</span></p>
+            <h3 class="mdone__title">Welcome home, <span data-f="first"></span>.</h3>
+            <p class="mdone__lede">You're mentor <b data-f="no"></b>, from <span data-f="district"></span>. Ooru-ku oru senior kedaichaachu.</p>
+            <p class="mdone__next hand">48 hours-la email varum. WhatsApp group link adhula irukkum.</p>
+            <div class="mshare" role="group" aria-labelledby="mshare-h">
+              <p class="mshare__h" id="mshare-h">Ooru-ku sollunga. <span lang="ta">பகிருங்க</span></p>
+              <div class="mshare__btns">
+                <button type="button" class="btn btn--ink" data-share="linkedin">Share on LinkedIn</button>
+                <button type="button" class="btn btn--line" data-share="download">Download card</button>
+                <button type="button" class="btn btn--line" data-share="copy">Copy image</button>
+                <button type="button" class="btn btn--line" data-share="native" hidden>More apps…</button>
+              </div>
+              <p class="mshare__status" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+
+    <!-- 11. TAKEOFF: a paper plane that casts a jet's shadow ================= -->
+    <section class="takeoff" id="takeoff" aria-labelledby="takeoff-title">
+      <div class="takeoff__inner">
+        <div class="takeoff__stage">
+          <div class="takeoff__art" aria-hidden="true">
+            <div class="takeoff__shadow">
+              <svg viewBox="0 0 300 200" focusable="false"><path fill="#4a423c" d="M292 100 262 94 215 92 92 24 74 26 112 92 62 93 34 58 20 58 34 95 22 97 22 103 34 105 20 142 34 142 62 107 112 108 74 174 92 176 215 108 262 106Z"/></svg>
+            </div>
+            <div class="takeoff__plane">
+              <svg viewBox="0 0 400 220" focusable="false">
+                <path fill="#f06a43" d="M8 118 392 14 196 112Z"/>
+                <path fill="#e5470e" d="M196 112 392 14 236 140Z"/>
+                <path fill="#b8360b" d="M196 112 236 140 168 206Z"/>
+                <path fill="#d4400c" d="M8 118 196 112 150 132Z"/>
+              </svg>
+            </div>
+          </div>
+          <ul class="takeoff__notes">
+            <li class="takeoff__note takeoff__note--1">Unnaala mudiyum. <small lang="ta">உன்னால முடியும்.</small></li>
+            <li class="takeoff__note takeoff__note--2">First-gen? First-class.</li>
+            <li class="takeoff__note takeoff__note--3">Un ooru, un perumai. <small lang="ta">உன் ஊர், உன் பெருமை.</small></li>
+            <li class="takeoff__note takeoff__note--4">Bayam vendaam, <span>nanba / nanbi.</span></li>
+          </ul>
+        </div>
+
+        <div class="takeoff__words">
+          <p class="takeoff__eyebrow">Use your imagination. <span lang="ta">கற்பனை பண்ணிப் பாரு.</span></p>
+          <h2 id="takeoff-title" class="takeoff__title">
+            <span class="ta" lang="ta"><span>இன்னைக்கு காகித விமானம்.</span> <span>நாளைக்கு ஜெட்.</span></span>
+            <span class="en"><span>Today a paper plane.</span> <span>Tomorrow, a jet.</span></span>
+          </h2>
+          <p class="takeoff__lede">As a boy in <strong>Rameswaram</strong>, Dr. A. P. J. Abdul Kalam sold newspapers and watched seabirds to learn how wings work. He grew up to help build India's rockets. Your pin code doesn't decide how high you fly.</p>
+          <div class="takeoff__ctas">
+            <a class="btn btn--ink" href="#karai">Fold your first plane, free <span aria-hidden="true">→</span></a>
+            <a class="btn btn--line" href="#mentors">Help someone fly</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. FOOTER ========================================================== -->
+  <footer class="foot" role="contentinfo">
+    <div class="foot__inner">
+      <p class="foot__tagline">Creating the next big tech minds from Tamil rural roots.</p>
+      <p class="foot__line">Free-a kaththukko. Plan-oda velai vaangu.</p>
+      <nav aria-label="Footer">
+        <ul class="foot__links">
+          <li><a href="#karai">Karai (free)</a></li>
+          <li><a href="#muthukuli">Muthukuli (cohorts)</a></li>
+          <li><a href="#resume">Resume Review</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="flows.html">Flows</a></li>
+          <li><a href="brand.html">Brand</a></li>
+          <li><a href="mark.html">Brand mark</a></li>
+        </ul>
+      </nav>
+      <p class="foot__made">Made in Tamil Nadu, for every one of its 38 districts.</p>
+    </div>
+    <div class="logo logo--h logo--compact logo--on-dark foot__logo" aria-hidden="true">
+      <svg class="logo__mark" viewBox="0 0 100 92" focusable="false"><path class="logo__wing" d="M40 62H99.5L40 69.97Z"/><path class="logo__fold" d="M40 69.97L99.5 62L40 77.95Z"/><path class="logo__ltr" d="M0 4.5L13 1V46H38V25.5A25.5 25.5 0 0 1 89 25.5V37A20 20 0 0 1 69 57H51V66A25.5 25.5 0 0 1 0 66V62H13V66A12.5 12.5 0 0 0 38 66V57H0ZM51 46V24A12.5 12.5 0 0 1 76 24V37A9 9 0 0 1 67 46Z"/></svg><span class="logo__word"><span class="logo__ta" lang="ta">ஆழி</span><span class="logo__en">aazhi<b>.</b></span></span>
+    </div>
+  </footer>
+</body>
+</html>

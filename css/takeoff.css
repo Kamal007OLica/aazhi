@@ -1,0 +1,144 @@
+/* ஆழி — closing "takeoff" section: a paper plane that casts a jet's shadow.
+   Fits one screen (100svh): art + margin notes on one side, words on the other.
+   Phones: one tidy column, eyebrow → art → headline → lede → CTAs. */
+
+.takeoff {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 100vh; min-height: 100svh;
+  display: grid; align-content: center;
+  padding: clamp(1.25rem, 4svh, 3.5rem) var(--gutter);
+  background: radial-gradient(120% 90% at 35% 45%, #f4f1eb 0%, #ebe7df 60%, #e0dbd1 100%);
+  color: var(--ink);
+}
+/* land exactly on the section when jumped to, so it reads as one screen */
+section.takeoff { scroll-margin-top: 0; }
+.takeoff::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: var(--grain); opacity: .35; mix-blend-mode: multiply;
+}
+
+.takeoff__inner {
+  width: 100%; max-width: 1240px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+/* ---------- the stage: plane + jet shadow + margin notes ---------- */
+.takeoff__stage {
+  position: relative;
+  container-type: size;
+  height: min(76svh, 46vw, 600px);
+}
+.takeoff__art { position: absolute; inset: 0; }
+.takeoff__art svg { display: block; width: 100%; height: auto; }
+
+.takeoff__plane {
+  position: absolute; z-index: 2;
+  left: 60%; top: 17%;
+  width: min(44cqw, 58cqh);
+  transform: translateX(-50%) rotate(-4deg);
+  filter: drop-shadow(0 6px 6px rgba(120, 30, 5, .18));
+}
+.takeoff__shadow {
+  position: absolute; z-index: 1;
+  left: 41%; top: 58%;
+  width: min(58cqw, 74cqh);
+  transform: translate(-50%, -50%) rotate(-18deg);
+  opacity: .58;
+  filter: blur(3px);
+}
+
+.takeoff__notes { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; z-index: 3; }
+.takeoff__note {
+  position: absolute; margin: 0;
+  max-width: 48cqw;
+  font: 700 clamp(1.05rem, 4.4cqw, 1.6rem)/1.1 var(--f-hand);
+  color: var(--biro);
+  transform: rotate(var(--r, -3deg));
+}
+.takeoff__note small {
+  display: block; margin-top: .15em;
+  font: 700 clamp(.78rem, 2.5cqw, .95rem)/1.35 var(--f-tamil);
+  color: var(--ink-2);
+}
+.takeoff__note--1 { left: 1%;  top: 1%;    --r: -4deg; }
+.takeoff__note--2 { right: 1%; top: 0;     --r: 3deg; text-align: right; max-width: 44cqw; }
+.takeoff__note--3 { left: 0;   bottom: 1%; --r: 2deg; color: var(--stamp); }
+.takeoff__note--4 { right: 1%; bottom: 3%; --r: -3deg; text-align: right; max-width: 50cqw; }
+.takeoff__note--4 span { white-space: nowrap; }
+
+/* ---------- words ---------- */
+.takeoff__eyebrow {
+  margin: 0;
+  font: 600 var(--t-sm)/1.4 var(--f-body);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+/* Tamil never gets tracking or case transforms */
+.takeoff__eyebrow [lang="ta"] {
+  display: inline-block;
+  letter-spacing: 0; text-transform: none;
+  font: 700 1.08em/1.4 var(--f-tamil);
+}
+
+.takeoff__title { margin: clamp(.6rem, 1.6svh, 1.1rem) 0 0; }
+/* break between sentences, never inside one */
+.takeoff__title .ta > span, .takeoff__title .en > span { display: inline-block; }
+.takeoff__title .ta {
+  display: block;
+  font: 900 clamp(1.2rem, min(.7rem + 2.1vmin, 2.4vw), 2.25rem)/1.3 var(--f-tamil);
+  text-wrap: balance;
+}
+.takeoff__title .en {
+  display: block; margin-top: .35rem;
+  font: 400 clamp(2.1rem, .9rem + 4.6vmin, 4.8rem)/.92 var(--f-display);
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--chilli);
+  text-wrap: balance;
+}
+.takeoff__lede {
+  max-width: 46ch; margin: clamp(.8rem, 2.2svh, 1.4rem) 0 0;
+  font-size: var(--t-md); line-height: 1.55; color: var(--ink-2);
+}
+.takeoff__lede strong { color: var(--ink); }
+.takeoff__ctas {
+  display: flex; flex-wrap: wrap; gap: .8rem 1rem;
+  margin-top: clamp(1rem, 3svh, 2rem);
+}
+
+/* ---------- motion (off under reduced motion) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .takeoff__plane  { animation: takeoff-glide 7s ease-in-out infinite; }
+  .takeoff__shadow { animation: takeoff-shadow 7s ease-in-out infinite; }
+  @keyframes takeoff-glide {
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(-4deg); }
+    50%      { transform: translateX(-46%) translateY(-12px) rotate(-7deg); }
+  }
+  @keyframes takeoff-shadow {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-18deg) scale(1); opacity: .58; filter: blur(3px); }
+    50%      { transform: translate(-48%, -50%) rotate(-20deg) scale(1.04); opacity: .48; filter: blur(4.5px); }
+  }
+}
+
+/* ---------- phones + narrow tablets: one column ---------- */
+@media (max-width: 819px) {
+  .takeoff { padding-block: clamp(1rem, 3svh, 2rem); }
+  .takeoff__inner { grid-template-columns: minmax(0, 1fr); gap: clamp(.5rem, 1.6svh, 1rem); text-align: center; }
+  .takeoff__words { display: contents; }
+  .takeoff__eyebrow { order: -1; letter-spacing: .2em; }
+  .takeoff__stage { height: min(36svh, 82vw, 380px); width: 100%; max-width: 520px; justify-self: center; }
+  .takeoff__plane { top: 22%; }
+  .takeoff__shadow { top: 60%; }
+  .takeoff__title { margin-top: 0; }
+  .takeoff__title .ta { font-size: min(1.45rem, 5.3vw); }
+  .takeoff__lede { margin: 0 auto; font-size: .97rem; line-height: 1.5; }
+  .takeoff__note { font-size: clamp(1.1rem, 4.4cqw, 1.45rem); }
+  .takeoff__ctas { justify-content: center; margin-top: .25rem; }
+}
+@media (max-width: 480px) {
+  .takeoff__ctas { flex-direction: column; align-items: stretch; gap: .6rem; }
+}

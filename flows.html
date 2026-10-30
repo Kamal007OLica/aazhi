@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ஆழி Flows: கரை → அலை → முத்து</title>
+  <link rel="icon" href="assets/mark/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Aazhi user flows: free first, no login wall for lesson 1, honest upgrade moments, built for shared phones on patchy 4G.">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/flows.css">
+<link rel="stylesheet" href="css/logo.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="logo logo--h" href="index.html" aria-label="Aazhi home"><svg class="logo__mark" viewBox="0 0 100 92" aria-hidden="true" focusable="false"><path class="logo__wing" d="M40 62H99.5L40 69.97Z"/><path class="logo__fold" d="M40 69.97L99.5 62L40 77.95Z"/><path class="logo__ltr" d="M0 4.5L13 1V46H38V25.5A25.5 25.5 0 0 1 89 25.5V37A20 20 0 0 1 69 57H51V66A25.5 25.5 0 0 1 0 66V62H13V66A12.5 12.5 0 0 0 38 66V57H0ZM51 46V24A12.5 12.5 0 0 1 76 24V37A9 9 0 0 1 67 46Z"/></svg><span class="logo__word" aria-hidden="true"><span class="logo__ta" lang="ta">ஆழி</span><span class="logo__en">aazhi<b>.</b></span></span></a>
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="index.html#karai">Karai (free)</a></li>
+      <li><a href="index.html#muthukuli">Muthukuli (cohorts)</a></li>
+      <li><a href="flows.html" aria-current="page">Flows</a></li>
+      <li><a href="brand.html">Brand</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- 1. HEADER -->
+<section class="hero" aria-labelledby="title">
+  <div class="wrap">
+    <p class="kicker">aazhi · product flows · draft v0.1 for founder review</p>
+    <h1 id="title"><span class="en">Flows:</span> <span class="ta" lang="ta">கரை → அலை → முத்து</span></h1>
+    <p class="gloss">shore → wave → pearl &nbsp;/&nbsp; free → hooked → hired</p>
+    <p class="hero-meta"><span>30 Oct 2026</span><span>owner: product design</span><span>status: rough, but argue with it</span></p>
+
+    <div class="hero-sheets">
+      <div class="sheet stacked principle tilt-l">
+        <span class="clip" aria-hidden="true"></span>
+        <p class="kicker">The principle</p>
+        <p class="lead">Free first. Lesson 1 opens with <mark>no login wall</mark>, and every upgrade moment is one we can defend to a student's Amma.</p>
+        <p>A 19-year-old in Kovilpatti taps a reel on a shared phone with two bars of Jio. Within two taps they should be inside lesson 1: no signup, no OTP, no form. We ask for an account only when it does something for them (saving progress at lesson 3, so it survives a phone swap). We ask for money only at honest moments: they finished a course, they sat a live class, or their resume score told them the truth. The free path is always shown next to the paid one. Every screen is designed for a 6-inch phone on patchy 4G first: light pages, text-first notes, low-data video, progress that survives a dropped connection, and accounts that make it obvious whose phone it is.</p>
+        <p class="ta-line" lang="ta">கரை first. Then ஆழம்.</p>
+        <ul class="stamps" aria-label="Design rules">
+          <li><span class="stamp">Free first</span></li>
+          <li><span class="stamp">No login · lesson 1</span></li>
+          <li><span class="stamp">Honest upgrade</span></li>
+          <li><span class="stamp">Phone + 4G first</span></li>
+        </ul>
+      </div>
+
+      <div class="sheet legend tilt-r">
+        <h2>How to read the diagrams</h2>
+        <dl>
+          <dt><span class="lg-node" aria-hidden="true"></span></dt><dd><b>Step / screen.</b> Grey mono line is the route or screen; quoted italics is the user-facing copy (Tanglish).</dd>
+          <dt><span class="lg-dec" aria-hidden="true"></span></dt><dd><b>Decision.</b> The main lane carries the happy answer; other answers drop below.</dd>
+          <dt><span class="lg-entry" aria-hidden="true"></span></dt><dd><b>Entry point</b>, in stamp red: where people arrive from.</dd>
+          <dt><span class="lg-drop" aria-hidden="true"></span></dt><dd><b>Drop-off risk</b>, dashed stamp red, with the fix we are designing for.</dd>
+          <dt><span class="lg-goal" aria-hidden="true"></span></dt><dd><b>Goal</b> of the flow, or the hand-off to the next flow.</dd>
+          <dt><span class="lg-why" aria-hidden="true">why?</span></dt><dd><b>Hand note</b> in biro: the design reason for a key step.</dd>
+        </dl>
+        <p class="note">Each diagram scrolls sideways inside its own sheet. A plain-text version sits under every diagram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="toc" aria-label="On this page">
+  <div class="wrap">
+    <ol>
+      <li><a href="#ia"><b>02</b> Sitemap</a></li>
+      <li><a href="#f1"><b>F1</b> First lesson</a></li>
+      <li><a href="#f2"><b>F2</b> Save + streak</a></li>
+      <li><a href="#f3"><b>F3</b> Free → paid</a></li>
+      <li><a href="#f4"><b>F4</b> Checkout</a></li>
+      <li><a href="#f5"><b>F5</b> Returning</a></li>
+      <li><a href="#metrics"><b>04</b> Metrics + screens</a></li>
+      <li><a href="#questions"><b>05</b> Open questions</a></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- 2. SITEMAP / IA -->
+<section class="sec" id="ia" aria-labelledby="ia-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">02 · Sitemap / IA</p>
+      <h2 id="ia-h">Where everything lives</h2>
+      <p class="ta" lang="ta">ஒரு bus stand. எல்லா route-um இங்கிருந்து.</p>
+      <p class="intro">Flat and shallow on purpose: any lesson is at most two taps from a reel. Course and lesson URLs are stable and shareable, because a WhatsApp forward is our biggest distribution channel. The access tag on each page says what it costs the visitor to see it.</p>
+    </div>
+
+    <ul class="acc-key" aria-label="Access tags">
+      <li><span class="acc open">Open</span> anyone, no account</li>
+      <li><span class="acc in">Sign-in</span> free account (Google or phone OTP)</li>
+      <li><span class="acc paid">Paid</span> cohort ticket holders</li>
+    </ul>
+
+    <div class="ia-root"><span>Home</span> <code>/</code> <span class="acc open">Open</span></div>
+    <ul class="ia">
+      <li>
+        <div class="ia-row">
+          <span class="pg major"><b>Karai · <span lang="ta">கரை</span></b><code>/karai</code><span class="acc open">Open</span></span>
+          <span class="to" aria-hidden="true">→</span>
+          <span class="pg"><b>Course detail</b><code>/c/:course</code><span class="acc open">Open</span></span>
+          <span class="to" aria-hidden="true">→</span>
+          <span class="pg"><b>Lesson player</b><code>/c/:course/:lesson</code><span class="acc open">Open 1–3</span><span class="acc in">Sign-in 4+</span></span>
+          <ul class="kids" aria-label="Free courses">
+            <li>Python <code>/c/f-python</code></li>
+            <li>Git &amp; GitHub <code>/c/f-git</code></li>
+            <li>DSA Patterns <code>/c/f-dsa</code></li>
+            <li>PostgreSQL <code>/c/f-sql</code></li>
+            <li>Docker + load testing <code>/c/f-docker</code></li>
+            <li>Prompt Engineering <code>/c/f-prompt</code></li>
+            <li>Resume Review tool <code>/resume</code> · 3 a day · sign-in to save the report</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="ia-row">
+          <span class="pg major"><b>Muthukuli · <span lang="ta">முத்துக்குளி</span></b><code>/muthukuli</code><span class="acc open">Open</span></span>
+          <span class="to" aria-hidden="true">→</span>
+          <span class="pg"><b>Cohort detail (ticket)</b><code>/m/:cohort</code><span class="acc open">Open</span></span>
+          <span class="to" aria-hidden="true">→</span>
+          <span class="pg"><b>Try one class free</b><code>/m/:cohort/try</code><span class="acc in">Sign-in</span></span>
+          <ul class="kids" aria-label="Paid cohorts">
+            <li>Muthu 01 · Backend → Offer Letter <code>/m/p-backend</code></li>
+            <li>Muthu 02 · Cloud &amp; DevOps <code>/m/p-cloud</code></li>
+            <li>Muthu 03 · AI Agents &amp; Data <code>/m/p-ai</code></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="ia-row">
+          <span class="pg major"><b>Checkout</b><code>/checkout/:cohort</code><span class="acc in">Sign-in</span></span>
+          <span class="to" aria-hidden="true">→</span>
+          <span class="pg"><b>Ticket (confirmation)</b><code>/ticket/:id</code><span class="acc paid">Paid</span></span>
+          <ul class="kids" aria-label="Checkout side pages">
+            <li>Scholarship form <code>/scholarship</code> · sign-in</li>
+            <li>Parent page, Tamil <code>/amma-appa/:token</code> · open via link, no login</li>
+            <li>Payment pending / failed <code>/checkout/:cohort/status</code></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="ia-row">
+          <span class="pg major"><b>Dashboard</b><code>/me</code><span class="acc in">Sign-in</span></span>
+          <ul class="kids" aria-label="Dashboard parts">
+            <li>Continue (last lesson)</li>
+            <li>Streak + freeze</li>
+            <li>Weekly challenge <code>/challenge</code></li>
+            <li>My tickets + live class link <span class="acc paid">Paid</span></li>
+            <li>Settings: WhatsApp nudges, profile switch</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="ia-row">
+          <span class="pg major"><b>Community</b><code>/community</code><span class="acc open">Read open</span><span class="acc in">Post: sign-in</span></span>
+          <span class="to" aria-hidden="true">→</span>
+          <span class="pg"><b>Job board</b><code>/jobs</code><span class="acc open">Listings open</span><span class="acc in">Referrals: earned</span></span>
+          <ul class="kids" aria-label="Community parts">
+            <li>Town circles (Madurai, Salem, Karur…)</li>
+            <li>Doubt threads, Tamil or English</li>
+            <li>Challenge threads + PR wall</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="ia-row">
+          <span class="pg major"><b>FAQ</b><code>/faq</code><span class="acc open">Open</span></span>
+          <p class="ia-note hand">Sign-in is a bottom sheet, never a page. Nobody should "land" on a login screen.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. FLOWS -->
+
+<!-- F1 -->
+<section class="sec" id="f1" aria-labelledby="f1-h">
+  <div class="wrap-wide">
+    <div class="flow-head">
+      <span class="flow-no" aria-hidden="true">F1</span>
+      <div>
+        <p class="kicker">Flow 1 · <span lang="ta">கரை</span></p>
+        <h2 id="f1-h">First visit → first lesson, no signup</h2>
+        <p class="ta" lang="ta">Reel பாத்தாச்சு. பத்து நிமிஷத்துல first program.</p>
+      </div>
+    </div>
+    <div class="persona">
+      <p class="hand">Nandhini, 19, 2nd-year ECE, Kovilpatti. Amma's Redmi, Jio, two bars at the bus stand. Saw a reel: "Python-la un first game, 20 nimisham."</p>
+      <ul class="facts">
+        <li><b>Entry</b> IG reel · YouTube · WhatsApp forward</li>
+        <li><b>Device</b> Android, in-app browser</li>
+        <li><b>Goal</b> first output in &lt; 10 min</li>
+      </ul>
+    </div>
+
+    <p class="scroll-hint" aria-hidden="true"><span class="hand">← side-ways scroll pannunga →</span><span>7 steps</span></p>
+    <div class="flow-scroll" role="region" tabindex="0" aria-label="Flow 1 diagram, scrolls sideways. The same flow is written out as a list below.">
+      <div class="dg" style="--cols:7" aria-hidden="true">
+        <p class="why" style="--c:2">Deep-link to the course, never Home. Every extra tap on 4G loses people.</p>
+        <p class="why" style="--c:3">Data pack is someone's money. Show the MB before it's spent.</p>
+        <p class="why" style="--c:5">First win inside 10 min, or we lose them to the next reel.</p>
+
+        <div class="n entry" style="--c:1">
+          <span class="k">00 · arrives from</span>
+          <ul class="src"><li>IG reel · link sticker</li><li>YouTube · pinned comment</li><li>WhatsApp class-group forward</li></ul>
+        </div>
+        <div class="n" style="--c:2">
+          <span class="k">01 · /c/f-python?src=ig</span>
+          <b>Course page, inside the IG browser</b>
+          <q>Lesson 1 ippove paaru. Login venaam.</q>
+        </div>
+        <div class="d" style="--c:3">Net strong-aa?<small>auto-detect · 480p</small><span class="yes">aama</span></div>
+        <div class="n" style="--c:4">
+          <span class="k">02 · /c/f-python/1</span>
+          <b>Lesson 1 player, 8 min</b>
+          <small>Tamil class, English notes under the video. Code runs in the browser.</small>
+          <q>Phone-la type pannu. Laptop appuram.</q>
+        </div>
+        <div class="n" style="--c:5">
+          <span class="k">03 · in-player moment</span>
+          <b>First output</b>
+          <q>print("vanakkam") odichu! Un first program. Semma.</q>
+        </div>
+        <div class="d" style="--c:6">Lesson 2?<span class="yes">aama</span></div>
+        <div class="n goal end" style="--c:7">
+          <span class="k">04 · /c/f-python/2</span>
+          <b>Lesson 2 starts, still no login</b>
+          <small>→ F2: soft gate at lesson 3</small>
+        </div>
+
+        <div class="b drop" style="--c:2">
+          <span class="tag">Drop-off</span>
+          <span>In-app browser + 2 bars = blank screen for 6 s.</span>
+          <span class="fix">&lt;150 KB first paint, text first, poster image, no autoplay.</span>
+        </div>
+        <div class="b alt" style="--c:3">
+          <span class="no">illa</span>
+          <b>Low-data mode</b>
+          <span>240p, or audio + notes only. Counter shows "≈ 9 MB".</span>
+        </div>
+        <div class="b drop" style="--c:4">
+          <span class="tag">Drop-off</span>
+          <span>Typing code on a phone keyboard.</span>
+          <span class="fix">Snippet chips for ( ) : " and fill-the-blank before full typing.</span>
+        </div>
+        <div class="b alt" style="--c:6">
+          <span class="no">illa, later</span>
+          <b>Leaves, progress kept on device</b>
+          <q>Link-a WhatsApp-la unakke anuppu.</q>
+          <small>Self-share, no signup.</small>
+        </div>
+        <div class="b drop" style="--c:6;--r:4">
+          <span class="tag">Drop-off</span>
+          <span>Comes back on a sibling's phone: progress gone.</span>
+          <span class="fix">That pain is the F2 hook: "save" means "follows you".</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="txt">
+      <summary>Read F1 as a list</summary>
+      <ol>
+        <li><span class="ent">Entry:</span> taps a link from an Instagram reel (link sticker), a YouTube video (pinned comment) or a WhatsApp class-group forward.</li>
+        <li>Lands on the course page <code>/c/f-python</code> inside the in-app browser, not on Home. Copy: "Lesson 1 ippove paaru. Login venaam."
+          <ul><li class="whyt">Why: deep-link to the course; every extra tap on 4G loses people.</li>
+          <li class="risk">Drop-off risk: blank screen for seconds on a slow in-app browser. Fix: under 150 KB first paint, text first, poster image, no autoplay video.</li></ul></li>
+        <li>Decision: is the network strong? Detected automatically. Yes: 480p video. No: low-data mode (240p, or audio plus notes), with a visible data estimate ("≈ 9 MB").
+          <ul><li class="whyt">Why: the data pack is someone's money; show the MB before it's spent.</li></ul></li>
+        <li>Lesson 1 player, 8 minutes: Tamil class, English notes under the video, code runs in the browser. Copy: "Phone-la type pannu. Laptop appuram."
+          <ul><li class="risk">Drop-off risk: typing code on a phone keyboard. Fix: snippet chips for brackets, colons and quotes; fill-the-blank exercises before full typing.</li></ul></li>
+        <li>First output moment: print("vanakkam") runs. Copy: "Un first program. Semma."
+          <ul><li class="whyt">Why: a first win inside 10 minutes, or we lose them to the next reel.</li></ul></li>
+        <li>Decision: start lesson 2? Yes: continue. Not now: they leave, progress is kept on the device, and we offer "Link-a WhatsApp-la unakke anuppu" (send the link to yourself, no signup).
+          <ul><li class="risk">Drop-off risk: they return on a sibling's phone and progress is gone. This is the hook for F2: saving means progress follows you.</li></ul></li>
+        <li>Goal: lesson 2 starts, still without login. Hands off to F2 (soft gate at lesson 3).</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<!-- F2 -->
+<section class="sec" id="f2" aria-labelledby="f2-h">
+  <div class="wrap-wide">
+    <div class="flow-head">
+      <span class="flow-no" aria-hidden="true">F2</span>
+      <div>
+        <p class="kicker">Flow 2 · <span lang="ta">கரை → அலை</span></p>
+        <h2 id="f2-h">Lesson 3 soft-gate → save progress → 7-day streak</h2>
+        <p class="ta" lang="ta">Free தான். Save பண்ண மட்டும் account.</p>
+      </div>
+    </div>
+    <div class="persona">
+      <p class="hand">Same Nandhini, next evening. Lesson 2 done on Amma's phone. Tomorrow she might be on her brother's.</p>
+      <ul class="facts">
+        <li><b>Entry</b> lesson 2 done, anonymous</li>
+        <li><b>Ask</b> phone OTP or Google</li>
+        <li><b>Goal</b> 7-day streak</li>
+      </ul>
+    </div>
+
+    <p class="scroll-hint" aria-hidden="true"><span class="hand">← side-ways scroll pannunga →</span><span>9 steps</span></p>
+    <div class="flow-scroll" role="region" tabindex="0" aria-label="Flow 2 diagram, scrolls sideways. The same flow is written out as a list below.">
+      <div class="dg" style="--cols:9" aria-hidden="true">
+        <p class="why" style="--c:2">Gate at lesson 3, not 1: they've felt the value. Ask after the lesson starts, never before.</p>
+        <p class="why" style="--c:4">Shared phone: the Google account is often Appa's. OTP first.</p>
+        <p class="why" style="--c:7">Opt-in, never pre-ticked. Reply STOP works. Consent logged.</p>
+        <p class="why" style="--c:9">A streak that punishes a power cut is a streak they quit.</p>
+
+        <div class="n entry" style="--c:1">
+          <span class="k">00 · arrives from</span>
+          <ul class="src"><li>Straight on from F1</li><li>Self-shared WhatsApp link</li><li>Same phone, next day</li></ul>
+        </div>
+        <div class="n" style="--c:2">
+          <span class="k">01 · /c/:course/3 + sheet at 60 s</span>
+          <b>Save-progress bottom sheet</b>
+          <q>2 lessons mudichitta! Save pannalaama? Phone maarinaalum continue aagum.</q>
+        </div>
+        <div class="d" style="--c:3">Save now?<span class="yes">aama</span></div>
+        <div class="d" style="--c:4">OTP or Google?<small>OTP is default</small><span class="yes">OTP</span></div>
+        <div class="n" style="--c:5">
+          <span class="k">02 · OTP sheet</span>
+          <b>Phone number + OTP, auto-read</b>
+          <q>6-digit code anuppirukkom. 30 sec-la varalanna WhatsApp-la anuppuvom.</q>
+        </div>
+        <div class="n" style="--c:6">
+          <span class="k">03 · /welcome</span>
+          <b>Two fields, then progress merges</b>
+          <q>Unga per enna? Certificate-la idhu dhaan varum.</q>
+          <small>✓ Lesson 1, 2 saved</small>
+        </div>
+        <div class="d" style="--c:7">WhatsApp nudge?<span class="yes">aama</span></div>
+        <div class="n" style="--c:8">
+          <span class="k">04 · slot picker</span>
+          <b>Pick a time that fits the day</b>
+          <q>6:40 bus-la? 7 PM college mudinji? 9:30 saapta appuram?</q>
+        </div>
+        <div class="n goal end" style="--c:9">
+          <span class="k">05 · /me · streak</span>
+          <b>7-day streak, as kolam dots</b>
+          <small>1 lesson or 10 min practice a day. 1 free freeze a week.</small>
+          <small>→ F5 returning loop</small>
+        </div>
+
+        <div class="b alt" style="--c:3">
+          <span class="no">ippo venaam</span>
+          <b>Skip is allowed</b>
+          <span>Lesson 3 continues. Lesson 4+ needs a free account, said up front.</span>
+        </div>
+        <div class="b alt" style="--c:4">
+          <span class="no">Google</span>
+          <b>One-tap, account shown big</b>
+          <q>appa.r…@gmail.com-aa? Vera account use pannu.</q>
+        </div>
+        <div class="b drop" style="--c:5">
+          <span class="tag">Drop-off</span>
+          <span>SMS late, DND, or no balance.</span>
+          <span class="fix">Resend at 30 s, WhatsApp OTP, voice-call fallback.</span>
+        </div>
+        <div class="b alt" style="--c:7">
+          <span class="no">illa</span>
+          <b>No nudges</b>
+          <span>In-app streak only. Ask again once, after day 7.</span>
+        </div>
+        <div class="b drop" style="--c:9">
+          <span class="tag">Drop-off</span>
+          <span>Day 3–4 slump, exams, power cuts.</span>
+          <span class="fix">Day-3 nudge with a 5-min "chinna lesson"; freeze auto-applies on exam weeks they mark.</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="txt">
+      <summary>Read F2 as a list</summary>
+      <ol>
+        <li><span class="ent">Entry:</span> lesson 2 finished without an account, either straight on from F1, via a self-shared WhatsApp link, or on the same phone the next day.</li>
+        <li>Lesson 3 opens. After 60 seconds a bottom sheet asks: "2 lessons mudichitta! Save pannalaama? Phone maarinaalum continue aagum."
+          <ul><li class="whyt">Why: gate at lesson 3, not lesson 1, because they have felt the value. Ask after the lesson starts, never before it.</li></ul></li>
+        <li>Decision: save now? Yes: continue to sign-in. "Ippo venaam": skip is allowed, lesson 3 continues; lesson 4 onwards needs a free account, and that is said up front.</li>
+        <li>Decision: phone OTP or Google? Phone OTP is the default. Google one-tap shows the account email large with a "Vera account use pannu" option.
+          <ul><li class="whyt">Why: on a shared phone the signed-in Google account is often a parent's.</li></ul></li>
+        <li>Phone number and OTP, auto-read. Copy: "30 sec-la varalanna WhatsApp-la anuppuvom."
+          <ul><li class="risk">Drop-off risk: SMS is late, blocked by DND, or the SIM has no balance. Fix: resend at 30 seconds, WhatsApp OTP, voice-call fallback.</li></ul></li>
+        <li>Welcome screen with two fields (name, year; college and town optional). Copy: "Unga per enna? Certificate-la idhu dhaan varum." Device progress merges: lessons 1 and 2 saved.</li>
+        <li>Decision: WhatsApp reminders? Unticked by default. Yes: pick a slot. No: in-app streak only; we ask once more after day 7.
+          <ul><li class="whyt">Why: opt-in only, replying STOP works, consent is logged.</li></ul></li>
+        <li>Slot picker matched to their day: the 6:40 morning bus, 7 PM after college, or 9:30 PM after dinner.</li>
+        <li>Goal: a 7-day streak, drawn as kolam dots. One lesson or ten minutes of practice counts as a day; one free streak freeze per week. Leads into F5.
+          <ul><li class="whyt">Why: a streak that punishes a power cut is a streak they quit.</li>
+          <li class="risk">Drop-off risk: the day 3–4 slump, exams, power cuts. Fix: a day-3 nudge with a five-minute lesson; the freeze applies automatically in exam weeks they mark.</li></ul></li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<!-- F3 -->
+<section class="sec" id="f3" aria-labelledby="f3-h">
+  <div class="wrap-wide">
+    <div class="flow-head">
+      <span class="flow-no" aria-hidden="true">F3</span>
+      <div>
+        <p class="kicker">Flow 3 · <span lang="ta">அலை → முத்து</span></p>
+        <h2 id="f3-h">Free → paid: three honest triggers, one seat</h2>
+        <p class="ta" lang="ta">காசு கேக்கறதுக்கு முன்னாடி, உண்மை சொல்லு.</p>
+      </div>
+    </div>
+    <div class="persona">
+      <p class="hand">Arun, 21, final-year IT, Karur. Finished Karai Python + Git on a shared laptop. Placement season in 4 months. Appa asks "enna aachu?" every Sunday.</p>
+      <ul class="facts">
+        <li><b>Triggers</b> course done · live trial · resume &lt; 70</li>
+        <li><b>Ask</b> ₹0 seat hold</li>
+        <li><b>Goal</b> a held seat</li>
+      </ul>
+    </div>
+
+    <p class="scroll-hint" aria-hidden="true"><span class="hand">← side-ways scroll pannunga →</span><span>7 steps</span></p>
+    <div class="flow-scroll" role="region" tabindex="0" aria-label="Flow 3 diagram, scrolls sideways. The same flow is written out as a list below.">
+      <div class="dg" style="--cols:7" aria-hidden="true">
+        <p class="why" style="--c:2">Every upgrade card also shows the free next step. Push paid on a 62 score and the whole town hears.</p>
+        <p class="why" style="--c:4">Say what paid does NOT add: same notes, same videos. Trust beats conversion.</p>
+        <p class="why" style="--c:6">Money is a family decision. A free 48 h hold gives time to ask Amma/Appa.</p>
+
+        <div class="n entry" style="--c:1">
+          <span class="k">00 · 3 triggers</span>
+          <ul class="src"><li>T1 · finished a free course</li><li>T2 · "Try one class free" live</li><li>T3 · resume score below 70</li></ul>
+        </div>
+        <div class="n" style="--c:2">
+          <span class="k">01 · trigger card</span>
+          <b>Honest upgrade card</b>
+          <q>Karai mudinjichu! Adutha step paid: mentor, mocks, review. Free-la continue pannalaam, adhuvum OK.</q>
+        </div>
+        <div class="n" style="--c:3">
+          <span class="k">02 · /m/p-backend</span>
+          <b>Cohort page as a ticket</b>
+          <q>Muthu 01 · ₹14,999 or ₹1,999/mo · 16 Nov · 17 seats left</q>
+          <small>Real seat count. No fake countdown.</small>
+        </div>
+        <div class="n" style="--c:4">
+          <span class="k">03 · compare</span>
+          <b>Karai vs Muthukuli, side by side</b>
+          <small>Paid adds: live Tamil class, mentor 1:20, 2 scored mocks, capstone review, referral board.</small>
+        </div>
+        <div class="d" style="--c:5">Fits me?<small>year · hrs/week · laptop</small><span class="yes">fit</span></div>
+        <div class="n" style="--c:6">
+          <span class="k">04 · seat picker</span>
+          <b>Reserve seat: ₹0, held 48 h</b>
+          <q>Seat 11 unakku hold pannirukkom. 48 mani neram. Veetla pesu.</q>
+        </div>
+        <div class="n goal end" style="--c:7">
+          <span class="k">05 · hand-off</span>
+          <b>Seat held</b>
+          <small>→ F4 checkout</small>
+        </div>
+
+        <div class="b alt" style="--c:2">
+          <b>T3 · resume 62/100</b>
+          <span>Gaps: no Git link, nothing deployed. Free fix first: Karai Git + Docker. Cohort shown as the guided route.</span>
+        </div>
+        <div class="b alt" style="--c:2;--r:4">
+          <b>T2 · live trial on a phone</b>
+          <span>Audio-first + slides. Real Q&amp;A, mentor intro, a 2-min pitch. No timer.</span>
+        </div>
+        <div class="b drop" style="--c:3">
+          <span class="tag">Drop-off</span>
+          <span>Price shock.</span>
+          <span class="fix">Full price and EMI together; scholarship link right under, not buried.</span>
+        </div>
+        <div class="b alt" style="--c:5">
+          <span class="no">not yet</span>
+          <b>Waitlist, with a plan</b>
+          <q>Python + Git mudichittu vaa. Next batch-ku 10 naal munnaadi solrom.</q>
+        </div>
+        <div class="b drop" style="--c:5;--r:4">
+          <span class="tag">Drop-off</span>
+          <span>"Laptop illa."</span>
+          <span class="fix">Weeks 1–6 work on a phone; laptop from week 7. Said before they pay.</span>
+        </div>
+        <div class="b drop" style="--c:6">
+          <span class="tag">Drop-off</span>
+          <span>Hold expires quietly.</span>
+          <span class="fix">Reminders at 24 h and 4 h, plus a ready parent-share link.</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="txt">
+      <summary>Read F3 as a list</summary>
+      <ol>
+        <li><span class="ent">Entry, three triggers:</span> T1, they finish a free course; T2, they attend the "Try one class free" live session; T3, their Resume Review score is below 70.
+          <ul><li>T2 detail: the live class runs audio-first with slides for low data, and ends with real Q&amp;A, a mentor introduction and a two-minute pitch, with no countdown timer.</li>
+          <li>T3 detail: a score of 62 lists the gaps (no Git link, nothing deployed) and points to the free fix first (Karai Git and Docker), with the cohort shown as the guided route.</li></ul></li>
+        <li>Honest upgrade card. Copy: "Karai mudinjichu! Adutha step paid: mentor, mocks, review. Free-la continue pannalaam, adhuvum OK."
+          <ul><li class="whyt">Why: every upgrade card also shows the free next step; pushing paid on a weak score costs trust across the whole town.</li></ul></li>
+        <li>Cohort page styled as a ticket: Muthu 01, ₹14,999 or ₹1,999 a month, batch 16 Nov, 17 seats left (the real count, no fake countdown).
+          <ul><li class="risk">Drop-off risk: price shock. Fix: show full price and EMI together, with the scholarship link right under them.</li></ul></li>
+        <li>Free versus paid comparison, side by side. Paid adds live Tamil classes, a 1:20 mentor ratio, two scored mock interviews, capstone review and the referral board.
+          <ul><li class="whyt">Why: also say what paid does not add (same notes, same videos). Trust beats conversion.</li></ul></li>
+        <li>Decision: a three-question fit check (year, hours per week, laptop). Fit: continue. Not yet: join the waitlist with a plan ("Python + Git mudichittu vaa"), pinged 10 days before the next batch.
+          <ul><li class="risk">Drop-off risk: no laptop. Fix: say clearly before payment that weeks 1–6 work on a phone and a laptop is needed from week 7.</li></ul></li>
+        <li>Seat picker: reserve a seat for ₹0, held for 48 hours. Copy: "Seat 11 unakku hold pannirukkom. Veetla pesu."
+          <ul><li class="whyt">Why: money is a family decision; a free hold gives time to talk to parents.</li>
+          <li class="risk">Drop-off risk: the hold expires quietly. Fix: reminders at 24 hours and 4 hours, plus a ready-made parent-share link.</li></ul></li>
+        <li>Goal: seat held. Hands off to F4 checkout.</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<!-- F4 -->
+<section class="sec" id="f4" aria-labelledby="f4-h">
+  <div class="wrap-wide">
+    <div class="flow-head">
+      <span class="flow-no" aria-hidden="true">F4</span>
+      <div>
+        <p class="kicker">Flow 4 · <span lang="ta">முத்து</span></p>
+        <h2 id="f4-h">Checkout: UPI first, family in the loop</h2>
+        <p class="ta" lang="ta">Ticket கையில. வீட்டுல எல்லாருக்கும் தெரியும்.</p>
+      </div>
+    </div>
+    <div class="persona">
+      <p class="hand">Arun has 48 hours and a held seat. Appa will pay half, and wants to read about it in Tamil first.</p>
+      <ul class="facts">
+        <li><b>Pay</b> UPI · EMI · scholarship · parent pays</li>
+        <li><b>Proof</b> a ticket, not a receipt</li>
+        <li><b>Goal</b> paid + week-0 started</li>
+      </ul>
+    </div>
+
+    <p class="scroll-hint" aria-hidden="true"><span class="hand">← side-ways scroll pannunga →</span><span>6 steps · 3 side paths</span></p>
+    <div class="flow-scroll" role="region" tabindex="0" aria-label="Flow 4 diagram, scrolls sideways. The same flow is written out as a list below.">
+      <div class="dg" style="--cols:6" aria-hidden="true">
+        <p class="why" style="--c:2">Refund rule in the summary, not in T&amp;C. It's the first thing parents ask.</p>
+        <p class="why" style="--c:3">UPI first: it's how they pay for everything. Cards hide under "More".</p>
+        <p class="why" style="--c:5">The ticket is proof for the family and a WhatsApp status. Make it beautiful.</p>
+
+        <div class="n entry" style="--c:1">
+          <span class="k">00 · arrives from</span>
+          <ul class="src"><li>Seat hold from F3</li><li>Parent taps the share link</li><li>Scholarship approved</li></ul>
+        </div>
+        <div class="n" style="--c:2">
+          <span class="k">01 · /checkout/p-backend</span>
+          <b>Summary on one screen</b>
+          <q>Muthu 01 · 16 Nov · ₹14,999. Mudhal 2 class pidikkalanna full refund.</q>
+        </div>
+        <div class="d" style="--c:3">Eppadi pay?<small>UPI is default</small><span class="yes">UPI</span></div>
+        <div class="n" style="--c:4">
+          <span class="k">02 · UPI intent</span>
+          <b>GPay / PhonePe / Paytm opens</b>
+          <small>Desktop shows a QR instead.</small>
+        </div>
+        <div class="n" style="--c:5">
+          <span class="k">03 · /ticket/:id</span>
+          <b>Confirmation as a ticket</b>
+          <q>GATE 01 · ROW 3 · SEAT 11 · 16 Nov 2026</q>
+          <small>Add to calendar · Amma/Appa-ku anuppu</small>
+        </div>
+        <div class="n goal end" style="--c:6">
+          <span class="k">04 · week 0</span>
+          <b>Onboarding checklist</b>
+          <q>Batch WhatsApp group join pannu · laptop setup · intro call Sat 7 PM</q>
+        </div>
+
+        <div class="b alt" style="--c:3">
+          <span class="no">EMI</span>
+          <b>₹1,999 × 8</b>
+          <span>Cardless EMI or UPI Autopay. Lender says no? 3-part Aazhi plan, no lender.</span>
+        </div>
+        <div class="b alt" style="--c:3;--r:4">
+          <span class="no">or</span>
+          <b>Scholarship · first-gen grads</b>
+          <span>5 questions + 100 words, Tamil or English. Seat stays held. Answer in 5 days: 50% or 100%.</span>
+        </div>
+        <div class="b alt" style="--c:3;--r:5">
+          <span class="no">or</span>
+          <b>Amma/Appa-ku anuppu</b>
+          <span>WhatsApp link to a Tamil page for parents, with a UPI "Pay" button and a call-back number.</span>
+        </div>
+        <div class="b drop" style="--c:4">
+          <span class="tag">Drop-off</span>
+          <span>Pending, or the UPI app never returns.</span>
+          <span class="fix">Poll 2 min. "Paisa pochaa? Thirumba pay pannaadheenga." Auto-refund in 48 h.</span>
+        </div>
+        <div class="b drop" style="--c:2">
+          <span class="tag">Drop-off</span>
+          <span>Total looks big on a phone at night.</span>
+          <span class="fix">EMI line and "ask a parent" sit next to the total.</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="txt">
+      <summary>Read F4 as a list</summary>
+      <ol>
+        <li><span class="ent">Entry:</span> a held seat from F3, a parent tapping the share link, or an approved scholarship.</li>
+        <li>Checkout summary on one screen: Muthu 01, batch 16 Nov, ₹14,999, and the refund rule ("Mudhal 2 class pidikkalanna full refund").
+          <ul><li class="whyt">Why: the refund rule belongs in the summary, not the terms; it is the first thing parents ask.</li>
+          <li class="risk">Drop-off risk: the total looks big on a phone late at night. Fix: the EMI line and the "ask a parent" option sit next to the total.</li></ul></li>
+        <li>Decision: how to pay. UPI is the default; cards are under "More options".
+          <ul><li class="whyt">Why: UPI is how they pay for everything else.</li>
+          <li>EMI: ₹1,999 × 8 through cardless EMI or UPI Autopay. If a lender declines (common with no credit history), offer a three-part Aazhi plan with no lender.</li>
+          <li>Scholarship for first-generation graduates: five questions and a 100-word answer in Tamil or English. The seat stays held during review; decision in five days, 50% or 100%.</li>
+          <li>"Amma/Appa-ku anuppu": a WhatsApp link to a Tamil page for parents explaining the cohort, with a UPI pay button and a call-back number. A parent can pay from their own phone.</li></ul></li>
+        <li>UPI intent opens GPay, PhonePe or Paytm; desktop shows a QR code.
+          <ul><li class="risk">Drop-off risk: payment stays pending or the app never returns. Fix: poll status for two minutes, tell them not to pay twice ("Thirumba pay pannaadheenga"), auto-refund within 48 hours if it fails.</li></ul></li>
+        <li>Confirmation as a ticket: GATE 01, ROW 3, SEAT 11, 16 Nov 2026, with "Add to calendar" and "Amma/Appa-ku anuppu" to share it.
+          <ul><li class="whyt">Why: the ticket is proof for the family and something they post on their status.</li></ul></li>
+        <li>Goal: week-0 onboarding checklist (join the batch WhatsApp group, laptop setup, intro call Saturday 7 PM).</li>
+      </ol>
+    </details>
+
+    <div class="aside-row">
+      <div>
+        <p class="sketch-label">Sketch · parent page <code>/amma-appa/:token</code> (copy draft)</p>
+        <div class="phone" lang="ta">
+          <h3>அம்மா, அப்பா: இந்த வகுப்பு என்ன?</h3>
+          <p>உங்கள் பிள்ளை சேர நினைக்கும் வகுப்பு: Muthu 01, Backend. ஒன்பது மாதம்.</p>
+          <p>வகுப்புகள் தமிழில், மாலை 7 மணிக்கு. கல்லூரி நேரத்தோடு மோதாது.</p>
+          <p>மொத்த கட்டணம் ₹14,999. மாதம் ₹1,999 ஆகவும் கட்டலாம்.</p>
+          <p>முதல் 2 வகுப்புகள் பிடிக்கவில்லை என்றால், முழு பணமும் திருப்பித் தருவோம்.</p>
+          <div class="btns" aria-hidden="true"><span>UPI-ல் கட்டுங்கள்</span><span>எங்களிடம் பேசுங்கள்</span></div>
+        </div>
+        <p class="hand" style="margin-top:14px;font-size:1.2rem">Parents decide, or pay. Talk to them in Tamil, with numbers, not hype. No login on this page.</p>
+      </div>
+      <div>
+        <p class="sketch-label">Sketch · confirmation ticket <code>/ticket/:id</code></p>
+        <div class="ticket-mini">
+          <div class="main">
+            <p class="caps">Muthukuli · batch 07</p>
+            <p class="t">Muthu 01 · Backend</p>
+            <p class="caps">Starts 16 Nov 2026 · 7 PM IST</p>
+            <div class="barcode" aria-hidden="true"></div>
+          </div>
+          <div class="stub"><span>GATE 01</span><span>ROW 3</span><span>SEAT 11</span></div>
+          <span class="stamp" aria-hidden="true">Confirmed</span>
+        </div>
+        <p class="hand" style="margin-top:22px;font-size:1.2rem">Status-share size crop (9:16) generated automatically. Name optional on the shared image.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- F5 -->
+<section class="sec" id="f5" aria-labelledby="f5-h">
+  <div class="wrap-wide">
+    <div class="flow-head">
+      <span class="flow-no" aria-hidden="true">F5</span>
+      <div>
+        <p class="kicker">Flow 5 · <span lang="ta">ஆழம்</span></p>
+        <h2 id="f5-h">Returning learner: continue → challenge → community → jobs</h2>
+        <p class="ta" lang="ta">தினமும் கொஞ்சம். வாரம் ஒரு challenge. ஒரு நாள் offer.</p>
+      </div>
+    </div>
+    <div class="persona">
+      <p class="hand">Priya, 22, Theni, 3 weeks in. Opens Aazhi from the 7 PM WhatsApp nudge, between tuition and dinner.</p>
+      <ul class="facts">
+        <li><b>Entry</b> WhatsApp nudge · home-screen icon</li>
+        <li><b>Loop</b> weekly</li>
+        <li><b>Goal</b> referral-ready → offer</li>
+      </ul>
+    </div>
+
+    <p class="scroll-hint" aria-hidden="true"><span class="hand">← side-ways scroll pannunga →</span><span>8 steps</span></p>
+    <div class="flow-scroll" role="region" tabindex="0" aria-label="Flow 5 diagram, scrolls sideways. The same flow is written out as a list below.">
+      <div class="dg" style="--cols:8" aria-hidden="true">
+        <p class="why" style="--c:2">A launcher, not a report. One big button. "Is this you?" because phones are shared.</p>
+        <p class="why" style="--c:4">Town leaderboards: local pride beats being #48,201 in India.</p>
+        <p class="why" style="--c:7">Show the bar honestly: a checklist, not a vague "premium only".</p>
+
+        <div class="n entry" style="--c:1">
+          <span class="k">00 · arrives from</span>
+          <ul class="src"><li>WhatsApp nudge → exact lesson</li><li>Home-screen icon (PWA)</li><li>Typed the address</li></ul>
+        </div>
+        <div class="n" style="--c:2">
+          <span class="k">01 · /me</span>
+          <b>Dashboard: one big Continue</b>
+          <q>Lesson 7: SQL JOINs · 6 min baaki</q>
+          <small>Chip: "Idhu neengalaa, Priya? Switch"</small>
+        </div>
+        <div class="n" style="--c:3">
+          <span class="k">02 · player</span>
+          <b>Resume at the exact second</b>
+          <small>Notes cached offline; video resumes at 03:12.</small>
+        </div>
+        <div class="n" style="--c:4">
+          <span class="k">03 · /challenge</span>
+          <b>Weekly challenge, Monday drop</b>
+          <q>Indha vaaram: Karai / Alai / Aazham. Theni vs Karur leaderboard.</q>
+        </div>
+        <div class="d" style="--c:5">Stuck-aa?<span class="yes">aama</span></div>
+        <div class="n" style="--c:6">
+          <span class="k">04 · /community</span>
+          <b>Town circle + doubt thread</b>
+          <q>Doubt kelu, bayam venaam. Tamil-la ketta podhum.</q>
+        </div>
+        <div class="n" style="--c:7">
+          <span class="k">05 · /jobs</span>
+          <b>Job board + referral checklist</b>
+          <q>Referral-ku: capstone + 4 challenges + 1 merged PR.</q>
+        </div>
+        <div class="n goal end" style="--c:8">
+          <span class="k">06 · the pearl</span>
+          <b>Interview → offer → postcard on the Proof wall</b>
+          <q>Theni → Chennai.</q>
+        </div>
+
+        <div class="b drop" style="--c:2">
+          <span class="tag">Drop-off</span>
+          <span>Wrong person on a shared phone.</span>
+          <span class="fix">Profile switch in the header; progress per profile.</span>
+        </div>
+        <div class="b alt" style="--c:3">
+          <b>Nudge skips the dashboard</b>
+          <span>A reminder deep-links straight into the lesson.</span>
+        </div>
+        <div class="b alt" style="--c:5">
+          <span class="no">illa</span>
+          <b>Submit, then share</b>
+          <span>Solution unlocks; post it in the challenge thread (also community).</span>
+        </div>
+        <div class="b drop" style="--c:6">
+          <span class="tag">Drop-off</span>
+          <span>A doubt with no reply. They go quiet.</span>
+          <span class="fix">Answer in &lt; 12 h: TA rota + peers earn the <span lang="ta">கலங்கரை விளக்கம்</span> (lighthouse) badge.</span>
+        </div>
+        <div class="b alt" style="--c:7">
+          <span class="no">not yet</span>
+          <b>Listings still open</b>
+          <q>Innum 2 challenges baaki.</q>
+        </div>
+      </div>
+    </div>
+
+    <details class="txt">
+      <summary>Read F5 as a list</summary>
+      <ol>
+        <li><span class="ent">Entry:</span> a WhatsApp reminder that deep-links to the exact lesson (skipping the dashboard), the home-screen icon, or typing the address.</li>
+        <li>Dashboard with one large Continue button: "Lesson 7: SQL JOINs · 6 min baaki", and a header chip "Idhu neengalaa, Priya? Switch".
+          <ul><li class="whyt">Why: the dashboard is a launcher, not a report; the "is this you?" chip exists because phones are shared.</li>
+          <li class="risk">Drop-off risk: the wrong person is signed in on a shared phone. Fix: profile switch in the header, progress kept per profile.</li></ul></li>
+        <li>Lesson player resumes at the exact second; notes are cached for offline reading.</li>
+        <li>Weekly challenge, released on Monday, in three levels (Karai, Alai, Aazham) with a town-versus-town leaderboard.
+          <ul><li class="whyt">Why: local pride beats being ranked 48,201st in India.</li></ul></li>
+        <li>Decision: stuck? Yes: ask in the community. No: submit, the solution unlocks, and they share it in the challenge thread (which is also in the community).</li>
+        <li>Community: town circles and doubt threads. Copy: "Doubt kelu, bayam venaam. Tamil-la ketta podhum."
+          <ul><li class="risk">Drop-off risk: a doubt gets no reply and the learner goes quiet. Fix: answer within 12 hours through a TA rota, and peers who answer earn the lighthouse (கலங்கரை விளக்கம்) badge.</li></ul></li>
+        <li>Job board with a referral checklist: capstone, four challenges, one merged pull request. Not yet eligible: listings stay open and the checklist shows what is left ("Innum 2 challenges baaki").
+          <ul><li class="whyt">Why: show the bar honestly as a checklist, not a vague "premium only".</li></ul></li>
+        <li>Goal: interview, offer, and a postcard on the Proof wall ("Theni → Chennai").</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<!-- 4. METRICS + SCREENS -->
+<section class="sec" id="metrics" aria-labelledby="m-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">04 · Funnel metrics + key screens</p>
+      <h2 id="m-h">What we measure <span class="stamp ph-stamp">Placeholder targets</span></h2>
+      <p class="ta" lang="ta">எண்ணிக்கை பொய் சொல்லாது. ஆனா target இன்னும் guess தான்.</p>
+      <p class="intro">Targets are first guesses to argue with, not commitments. Each stage names the analytics event engineering should fire, so the dashboard exists from day one. No personal data goes in event properties; the source (<code>src=ig</code>) is the only campaign tag.</p>
+    </div>
+
+    <div class="tbl-wrap" role="region" tabindex="0" aria-label="Funnel metrics table, scrolls sideways on small screens">
+      <table class="metrics">
+        <caption>Funnel stages per flow, with placeholder targets and the event that measures each one.</caption>
+        <thead><tr><th scope="col">Flow</th><th scope="col">Stage</th><th scope="col">Metric</th><th scope="col">Target</th><th scope="col">Event</th></tr></thead>
+        <tbody>
+          <tr class="first"><th scope="row" rowspan="5">F1</th><td>Course page → lesson 1</td><td>Visitors who press play</td><td class="tgt">55%<span class="bar" style="--v:55" aria-hidden="true"></span></td><td><code>lesson_play {n:1}</code></td></tr>
+          <tr><td>Lesson 1 → first output</td><td>Players whose code runs</td><td class="tgt">60%<span class="bar" style="--v:60" aria-hidden="true"></span></td><td><code>code_run_ok {first}</code></td></tr>
+          <tr><td>First output → lesson 2</td><td>Start lesson 2, no login</td><td class="tgt">45%<span class="bar" style="--v:45" aria-hidden="true"></span></td><td><code>lesson_play {n:2}</code></td></tr>
+          <tr><td>Speed</td><td>Median time to first output</td><td class="tgt">&lt; 10 min</td><td><code>code_run_ok.t</code></td></tr>
+          <tr><td>Weight</td><td>p75 LCP on 4G, in-app browser</td><td class="tgt">&lt; 2.5 s</td><td><code>web_vitals</code></td></tr>
+
+          <tr class="first"><th scope="row" rowspan="4">F2</th><td>Save sheet → account</td><td>Sheet views that sign in</td><td class="tgt">40%<span class="bar" style="--v:40" aria-hidden="true"></span></td><td><code>auth_ok {method}</code></td></tr>
+          <tr><td>OTP sent → verified</td><td>OTP success, all fallbacks</td><td class="tgt">85%<span class="bar" style="--v:85" aria-hidden="true"></span></td><td><code>otp_verified</code></td></tr>
+          <tr><td>WhatsApp opt-in</td><td>New accounts who opt in</td><td class="tgt">35%<span class="bar" style="--v:35" aria-hidden="true"></span></td><td><code>wa_optin {slot}</code></td></tr>
+          <tr><td>Streak</td><td>New accounts reaching day 7</td><td class="tgt">20%<span class="bar" style="--v:20" aria-hidden="true"></span></td><td><code>streak_7</code></td></tr>
+
+          <tr class="first"><th scope="row" rowspan="4">F3</th><td>Course done → cohort page</td><td>Completers who view a cohort</td><td class="tgt">30%<span class="bar" style="--v:30" aria-hidden="true"></span></td><td><code>cohort_view {src}</code></td></tr>
+          <tr><td>Live trial</td><td>Registered who attend</td><td class="tgt">50%<span class="bar" style="--v:50" aria-hidden="true"></span></td><td><code>live_attend</code></td></tr>
+          <tr><td>Resume &lt; 70</td><td>Click the free fix first</td><td class="tgt">40%<span class="bar" style="--v:40" aria-hidden="true"></span></td><td><code>resume_fix_click</code></td></tr>
+          <tr><td>Cohort page → seat hold</td><td>Cohort viewers who hold a seat</td><td class="tgt">8%<span class="bar" style="--v:8" aria-hidden="true"></span></td><td><code>seat_hold</code></td></tr>
+
+          <tr class="first"><th scope="row" rowspan="4">F4</th><td>Seat hold → paid</td><td>Holds that convert in 48 h</td><td class="tgt">45%<span class="bar" style="--v:45" aria-hidden="true"></span></td><td><code>payment_ok {method}</code></td></tr>
+          <tr><td>UPI</td><td>First-attempt success</td><td class="tgt">90%<span class="bar" style="--v:90" aria-hidden="true"></span></td><td><code>upi_status</code></td></tr>
+          <tr><td>Parent link</td><td>Shared links that get opened</td><td class="tgt">60%<span class="bar" style="--v:60" aria-hidden="true"></span></td><td><code>parent_view</code></td></tr>
+          <tr><td>Refunds</td><td>Refund requests, first 2 classes</td><td class="tgt">&lt; 5%</td><td><code>refund_req</code></td></tr>
+
+          <tr class="first"><th scope="row" rowspan="4">F5</th><td>Weekly active</td><td>Signed-in learners active weekly</td><td class="tgt">35%<span class="bar" style="--v:35" aria-hidden="true"></span></td><td><code>wau</code></td></tr>
+          <tr><td>Challenge</td><td>Weekly actives who submit</td><td class="tgt">20%<span class="bar" style="--v:20" aria-hidden="true"></span></td><td><code>challenge_submit</code></td></tr>
+          <tr><td>Community</td><td>Doubts answered in &lt; 12 h</td><td class="tgt">90%<span class="bar" style="--v:90" aria-hidden="true"></span></td><td><code>doubt_answered</code></td></tr>
+          <tr><td>Jobs</td><td>Referral-eligible who apply</td><td class="tgt">50%<span class="bar" style="--v:50" aria-hidden="true"></span></td><td><code>job_apply</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="screens-h">Key screens per flow</h3>
+    <ul class="screens" aria-label="Key screens per flow">
+      <li><h4><span>F1</span> Key screens</h4><ol>
+        <li>Course page (deep-link landing)</li><li>Low-data mode toggle + MB counter</li><li>Lesson player with snippet chips</li><li>First-output moment</li><li>"Send to yourself" share sheet</li></ol></li>
+      <li><h4><span>F2</span> Key screens</h4><ol>
+        <li>Lesson-3 save sheet (skippable)</li><li>Phone OTP + fallbacks</li><li>Google account check state</li><li>Welcome, two fields</li><li>WhatsApp opt-in + slot picker</li><li>Streak tracker + freeze</li></ol></li>
+      <li><h4><span>F3</span> Key screens</h4><ol>
+        <li>Course-complete card</li><li>Live trial: register, room, end</li><li>Resume report, score &lt; 70</li><li>Cohort ticket page</li><li>Free vs paid comparison</li><li>Fit check + waitlist</li><li>Seat hold (48 h)</li></ol></li>
+      <li><h4><span>F4</span> Key screens</h4><ol>
+        <li>Checkout summary</li><li>Payment chooser</li><li>UPI pending / failed</li><li>EMI + fallback plan</li><li>Scholarship form + status</li><li>Parent page (Tamil)</li><li>Ticket confirmation</li><li>Week-0 checklist</li></ol></li>
+      <li><h4><span>F5</span> Key screens</h4><ol>
+        <li>Dashboard + profile switch</li><li>Player resume</li><li>Weekly challenge + town board</li><li>Community doubt thread</li><li>Job board + referral checklist</li><li>Offer postcard</li></ol></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. OPEN QUESTIONS -->
+<section class="sec oxblood" id="questions" aria-labelledby="q-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">05 · For the founder</p>
+      <h2 id="q-h">Open questions</h2>
+      <p class="ta" lang="ta">முடிவு உங்க கையில. Default எங்க கையில.</p>
+      <p class="intro">Each one blocks a real screen. If there's no answer before the first batch, we ship the default written on the card.</p>
+    </div>
+    <ol class="qs">
+      <li class="q">
+        <span class="stamp" aria-hidden="true">Q1</span>
+        <h3>Pricing</h3>
+        <p>Are ₹14,999 / ₹11,999 / ₹12,999 right for tier-2 families?</p>
+        <ul><li>One price everywhere, or a "home town" price?</li><li>No-cost EMI: do we absorb the lender's cut?</li><li>Is the ₹0 48-hour hold OK, or a ₹499 refundable token?</li></ul>
+        <p class="def"><b>Default:</b> placeholders as listed, one price, EMI cost absorbed, ₹0 hold.</p>
+        <p class="blocks">BLOCKS · F3 cohort page · F4 summary · parent page</p>
+        <p class="call" aria-hidden="true">Founder's call: ____________</p>
+      </li>
+      <li class="q">
+        <span class="stamp" aria-hidden="true">Q2</span>
+        <h3>Mentor capacity</h3>
+        <p>We assumed 1 mentor : 20 learners, 60 seats a batch.</p>
+        <ul><li>How many mentors and TAs per batch, really?</li><li>Who answers free learners' doubts in &lt; 12 h?</li><li>How many live trial classes a month can we run?</li></ul>
+        <p class="def"><b>Default:</b> 3 mentors + 2 TAs per batch; free doubts on a TA rota, 24 h SLA until staffed.</p>
+        <p class="blocks">BLOCKS · F3 seat count · F5 doubt SLA</p>
+        <p class="call" aria-hidden="true">Founder's call: ____________</p>
+      </li>
+      <li class="q">
+        <span class="stamp" aria-hidden="true">Q3</span>
+        <h3>Certificate</h3>
+        <p>What does a certificate prove, and to whom?</p>
+        <ul><li>Free courses: completion certificate, or none?</li><li>Paid: graded on the capstone, with a verify link / QR?</li><li>Can the name from the welcome form be changed later?</li></ul>
+        <p class="def"><b>Default:</b> free = completion (verify link); paid = capstone-reviewed; one free name correction.</p>
+        <p class="blocks">BLOCKS · F2 welcome copy · F3 comparison</p>
+        <p class="call" aria-hidden="true">Founder's call: ____________</p>
+      </li>
+      <li class="q">
+        <span class="stamp" aria-hidden="true">Q4</span>
+        <h3>Refund policy</h3>
+        <p>The parent page promises a refund. We need the exact rule.</p>
+        <ul><li>Full refund after the first 2 live classes?</li><li>Pro-rata after that, or nothing?</li><li>EMI and scholarship seats: same rule?</li></ul>
+        <p class="def"><b>Default:</b> full refund within the first 2 classes, none after; EMI cancelled at the same point.</p>
+        <p class="blocks">BLOCKS · F4 summary · parent page · ticket</p>
+        <p class="call" aria-hidden="true">Founder's call: ____________</p>
+      </li>
+      <li class="q">
+        <span class="stamp" aria-hidden="true">Q5</span>
+        <h3>Scholarship budget</h3>
+        <p>How many first-gen seats per batch, and who decides?</p>
+        <ul><li>Split between 50% and 100% waivers?</li><li>Self-declared income, or documents?</li></ul>
+        <p class="def"><b>Default:</b> 6 seats per batch (10%), self-declared, reviewed by 2 people in 5 days.</p>
+        <p class="blocks">BLOCKS · F4 scholarship path</p>
+        <p class="call" aria-hidden="true">Founder's call: ____________</p>
+      </li>
+      <li class="q">
+        <span class="stamp" aria-hidden="true">Q6</span>
+        <h3>Shared phones + WhatsApp</h3>
+        <p>Several learners per phone is the norm, not the edge case.</p>
+        <ul><li>Multiple profiles per device: allowed?</li><li>WhatsApp message budget per learner per week?</li><li>Under-18 learners: parent consent for nudges?</li></ul>
+        <p class="def"><b>Default:</b> up to 3 profiles per device; max 5 nudges a week; nudges 18+ only.</p>
+        <p class="blocks">BLOCKS · F2 opt-in · F5 profile switch</p>
+        <p class="call" aria-hidden="true">Founder's call: ____________</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="mega" lang="ta">ஆழி</p>
+    <div>
+      <p><a href="index.html">Landing page</a> · <a href="brand.html">Brand + voice</a> · <a href="#title">Back to top</a></p>
+      <p>Flows v0.1 · placeholders everywhere a number appears · Built in Tamil Nadu.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

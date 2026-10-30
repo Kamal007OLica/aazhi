@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 18 571 130" role="img" aria-labelledby="t">
+  <title id="t">ஆழி aazhi. horizontal lockup: the ழ mark with the wordmark</title>
+  <!-- Mark 1.2× the type size, its waterline on the text baseline (y 100). Gap = 0.42em.
+       ஆழி: Catamaran 900. aazhi.: Archivo 800 at 0.4em, chilli full stop.
+       An <img> cannot load web fonts: outline the text before print or app-store use.
+       On the web, build the lockup with css/logo.css (the horizontal logo class) and live text. -->
+  <g transform="translate(0 25.652) scale(1.30435)">
+    <path fill="#3a3430" d="M40 62H99.5L40 69.97Z"/>
+    <path fill="#161311" d="M40 69.97L99.5 62L40 77.95Z"/>
+    <path fill="#e5470e" fill-rule="evenodd" d="M0 4.5L13 1V46H38V25.5A25.5 25.5 0 0 1 89 25.5V37A20 20 0 0 1 69 57H51V66A25.5 25.5 0 0 1 0 66V62H13V66A12.5 12.5 0 0 0 38 66V57H0ZM51 46V24A12.5 12.5 0 0 1 76 24V37A9 9 0 0 1 67 46Z"/>
+  </g>
+  <text x="172.43" y="100" fill="#161311" font-family="Catamaran, 'Noto Sans Tamil', 'Tamil Sangam MN', sans-serif" font-weight="900" font-size="100" letter-spacing="-0.5">ஆழி</text>
+  <text x="450.93" y="100" fill="#161311" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="40" letter-spacing="-0.8">aazhi<tspan fill="#e5470e">.</tspan></text>
+</svg>

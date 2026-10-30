@@ -1,0 +1,414 @@
+/* ஆழி — hero, round 3: the classic split, print-like on fog.
+   Left: the pitch. Right: an ASCII tribute to Dr. A. P. J. Abdul Kalam, a pencil sketch
+   (assets/portrait/kalam-source.png) turned into ink characters by js/ascii-hero.js.
+   Light touches only: a faint ASCII sea along the bottom (ஆழி, the deep sea) whose swell rolls
+   in every 10s, the SLV-3 trajectory as a dotted arc behind the portrait with a small chilli
+   paper plane at its tip, and a biro note on a taped paper scrap. Fog ground, ink type.
+   Loaded after site.css; overrides the round-1 hero rules there. No box grids. */
+
+.hero {
+  --sea-h: clamp(46px, 7svh, 70px);
+  --nav-h: 70px;
+  padding: 0 var(--gutter) clamp(2.25rem, 5vw, 3.5rem);
+  background:
+    radial-gradient(36% 46% at 74% 44%, #d4d3d0 0%, rgba(212, 211, 208, 0) 70%),
+    var(--fog);
+}
+
+/* ---------- the split: fits one screen on desktop ---------- */
+.hero__split {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100svh - var(--nav-h));
+  margin-inline: calc(-1 * var(--gutter));
+  padding: clamp(1.25rem, 3.5svh, 2.75rem) var(--gutter) calc(var(--sea-h) + clamp(.5rem, 2svh, 1.25rem));
+  display: grid;
+  align-items: center;
+}
+.hero__inner {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+/* ---------- the sea: a faint ASCII swell along the bottom ---------- */
+.hero__sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero__sea { position: absolute; inset: 0; --sun-x: -100%; }   /* no sun on the fog: the glint stays off-screen */
+.hero__sea pre {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  white-space: pre;
+  font-family: var(--f-mono);
+  letter-spacing: 0;
+  font-variant-ligatures: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.sea__sky { display: none; }
+.sea__water {
+  left: 0; right: 0; bottom: 0;
+  height: var(--sea-h);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.15;
+  color: rgba(22, 19, 17, .16);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.sea__water .sea-layer--crest { color: rgba(22, 19, 17, .32); }
+.sea__water .sea-layer--glint { color: rgba(197, 58, 8, .55); }
+
+/* ---------- left: the pitch ---------- */
+.hero__copy { max-width: 40rem; }
+.hero__eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .2rem .6rem;
+  margin: 0 0 clamp(.9rem, 2.2svh, 1.4rem);
+  font: 700 var(--t-xs)/1.4 var(--f-narrow);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.hero__eyebrow::before {
+  content: "";
+  width: 1.6rem;
+  height: 3px;
+  background: var(--chilli);
+}
+
+.hero .hero__title {
+  max-width: 15.5ch;
+  margin: 0;
+  font: 400 clamp(2.6rem, min(5.1vw, 8.6svh), 5.4rem)/1 var(--f-display);
+  letter-spacing: -.005em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+/* the manifesto's highlighter block, handles and all (.hl in site.css); an inline-block the
+   height of the line, so the lavender never spills onto the lines above and below */
+.hero__hl {
+  display: inline-block;
+  padding: .04em .1em 0;
+  line-height: .96;
+  color: var(--ink);
+}
+
+.hero__tamil {
+  margin: clamp(.8rem, 2svh, 1.2rem) 0 0;
+  font: 900 clamp(1.3rem, .7rem + 1.3vw, 1.95rem)/1.3 var(--f-tamil);
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.hero__sub {
+  max-width: 34rem;
+  margin: clamp(.6rem, 1.6svh, 1rem) 0 0;
+  font: 500 var(--t-md)/1.5 var(--f-body);
+  color: var(--ink-2);
+}
+.hero .hero__ctas { margin-top: clamp(1.1rem, 3svh, 1.75rem); }
+.hero__ctas .btn { min-height: 50px; }
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 0;
+  list-style: none;
+  margin: clamp(1.1rem, 2.8svh, 1.6rem) 0 0;
+  padding: 0;
+  font: 700 var(--t-xs)/1.4 var(--f-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.hero__trust { gap: .35rem 1.4rem; }
+.hero__trust li { display: inline-flex; align-items: center; gap: .55em; }
+.hero__trust li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--chilli);
+  transform: rotate(45deg);
+}
+
+/* ---------- right: the tribute ---------- */
+.hero .hero__portrait {
+  /* the art is square (the sketch is 400 × 400) */
+  --plate-w: min(100%, 560px, calc(100svh - var(--nav-h) - var(--sea-h) - 7.5rem));
+  position: relative;
+  isolation: isolate;
+  justify-self: center;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+/* the SLV-3 trajectory: a dotted arc rising out of the sea beside the portrait to a small
+   chilli paper plane (the closing section's plane, in flight) */
+.hero__flight {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 0;
+  pointer-events: none;
+}
+.hero__flight svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.hero__flight-path {
+  stroke: rgba(22, 19, 17, .45);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 0 9;
+}
+.hero__flight-tag {
+  position: absolute;
+  right: max(-1.5rem, calc(50% - var(--plate-w) / 2 - 2.6rem));
+  top: 34%;
+  writing-mode: vertical-rl;
+  font: 700 10px/1 var(--f-mono);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.hero__plane {
+  position: absolute;
+  left: 101%;
+  top: 6%;
+  width: clamp(40px, 4.2vw, 58px);
+  transform: translate(-50%, -50%) rotate(-66deg);
+}
+.hero__plane svg { display: block; width: 100%; height: auto; }
+
+/* the portrait: ink characters straight on the fog, like the very first hero */
+.hero__arch {
+  position: relative;
+  z-index: 1;
+  width: var(--plate-w);
+  margin: 0 auto;
+}
+.hero__arch .hero__ascii {
+  --ah-base: var(--ink);
+  --ah-kaavi: var(--chilli);          /* the shimmer flicks through code in chilli */
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  contain: inline-size;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--ah-base);
+  font-family: var(--f-mono);
+  font-weight: 700;
+  font-size: clamp(5px, .62vw, 8px);
+  line-height: 1;
+  white-space: pre;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero .hero__caption {
+  margin: .9rem auto 0;
+  max-width: var(--plate-w);
+  font: 700 var(--t-xs)/1.6 var(--f-mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--ink-2);
+}
+.hero .hero__caption [lang="ta"] {
+  font-family: var(--f-tamil);
+  font-weight: 700;
+  font-size: 1.25em;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}
+
+/* a biro note on a scrap of paper, taped over the corner of the portrait */
+.hero__hand {
+  position: absolute;
+  z-index: 2;
+  left: max(-3rem, calc(50% - var(--plate-w) / 2 - 5rem));
+  bottom: 10%;
+  width: 10.5rem;
+  margin: 0;
+  padding: .7rem .85rem .75rem;
+  font-size: 1.3rem;
+  line-height: 1.05;
+  text-align: left;
+  color: var(--biro);
+  background: var(--paper) var(--fibers);
+  box-shadow: var(--shadow-sheet);
+  transform: rotate(-5deg);
+}
+.hero__hand span { display: block; margin-top: .3rem; color: var(--stamp); }
+.hero__hand::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 62px;
+  height: 20px;
+  transform: translateX(-50%) rotate(4deg);
+  background: rgba(236, 231, 220, .7);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
+}
+
+/* ---------- below the split: the quiet bilingual strip ---------- */
+.hero .hero__cols { margin-top: clamp(.5rem, 2vw, 1.25rem); }
+
+/* ---------- motion (none under reduced motion) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* the trajectory draws in once, bottom to top; the plane arrives, then drifts */
+  .hero__flight svg { animation: hero-draw 2.6s var(--ease-out) .5s both; }
+  .hero__plane { animation: hero-plane-in .9s var(--ease-out) 2.4s both, hero-bob 6s ease-in-out 3.3s infinite; }
+}
+@keyframes hero-draw { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(-10% -10% 0 0); } }
+@keyframes hero-plane-in {
+  from { opacity: 0; transform: translate(-50%, 60%) rotate(-66deg); }
+  to { opacity: 1; transform: translate(-50%, -50%) rotate(-66deg); }
+}
+@keyframes hero-bob {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-66deg); }
+  50% { transform: translate(-38%, -62%) rotate(-60deg); }
+}
+
+/* ---------- tablet + phone: text first, then the portrait ---------- */
+@media (max-width: 1023px) {
+  .hero { --sea-h: clamp(40px, 7svh, 60px); }
+  .hero__split { min-height: 0; padding-top: clamp(2rem, 6vw, 3rem); }
+  .hero__inner { grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 6vw, 3rem); }
+  .hero__copy { max-width: 42rem; }
+  .hero .hero__title { max-width: 14ch; font-size: clamp(2.5rem, 1.2rem + 6vw, 4.8rem); }
+  .hero .hero__portrait { --plate-w: min(100%, 460px); }
+  .hero__arch .hero__ascii { font-size: clamp(4px, 1vw, 7px); }
+  .hero__hand {
+    position: relative;
+    left: auto; bottom: auto;
+    width: auto; max-width: 17rem;
+    margin: 1.2rem auto 0;
+    transform: rotate(-2.5deg);
+  }
+}
+@media (max-width: 480px) {
+  .hero .hero__portrait { --plate-w: min(100%, 360px); }
+  .hero__flight-tag { display: none; }
+  .hero__plane { left: 96%; }
+  .hero__dot { display: none; }
+  .hero__eyebrow { row-gap: .1rem; }
+}
+
+@media (forced-colors: active) {
+  .hero__hl { forced-color-adjust: none; }
+}
+
+/* =====================================================================
+   The random-person "vaasal at dawn" plate (round 2), used by hero-lab.html
+   without ?portrait=kalam: the person stands in a temple-wall doorway.
+   ===================================================================== */
+.ah-doorway {
+  --ah-chaanam: #1b1310;
+  --ah-chaanam-glow: #33231a;
+  --ah-wall-kaavi: #b8432a;
+  --ah-wall-sunnam: #ebe3d0;
+  --ah-base: #eee3cb;
+  --ah-maavu: rgba(238, 227, 203, .3);
+  --ah-mudi: rgba(238, 227, 203, .55);
+  --ah-kumkum: #ec2f45;
+  --ah-manjal: #f0ac1d;
+  --ah-malli: #fffdf4;
+  --ah-pon: #e2b453;
+  --ah-ilai: #82b04a;
+  --ah-kaavi: #e06a3c;
+  --ah-padi: #d99a1c;
+  --ah-max: 580px;
+  position: relative;
+  width: min(100%, var(--ah-max));
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.ah-doorway .hero__ascii {
+  --wall: clamp(12px, 2.4vw, 22px);
+  --lintel: clamp(18px, 3.4vw, 30px);
+  --stripe: clamp(8px, 1.45vw, 13px);
+  position: relative;
+  isolation: isolate;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  contain: inline-size;
+  min-height: calc((min(100vw - 2 * var(--gutter, 16px), var(--ah-max)) - 2 * var(--wall)) * 1.2222 + var(--lintel));
+  border-style: solid;
+  border-color: transparent;
+  border-width: var(--lintel) var(--wall) 0;
+  border-radius: 2px 2px 0 0;
+  background:
+    radial-gradient(62% 46% at 50% 40%, var(--ah-chaanam-glow) 0%, rgba(51, 35, 26, 0) 100%) padding-box,
+    linear-gradient(var(--ah-chaanam), var(--ah-chaanam)) padding-box,
+    linear-gradient(180deg, rgba(255, 250, 235, .14), rgba(40, 10, 0, .16)) border-box,
+    repeating-linear-gradient(90deg, var(--ah-wall-kaavi) 0 var(--stripe), var(--ah-wall-sunnam) var(--stripe) calc(2 * var(--stripe))) border-box;
+  box-shadow: inset 0 10px 18px -8px rgba(0, 0, 0, .7);
+  color: var(--ah-base);
+  font-family: var(--f-mono);
+  font-weight: 700;
+  line-height: 1;
+  white-space: pre;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ah-doorway .hero__ascii::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: 180px 180px;
+  opacity: .32;
+  mix-blend-mode: multiply;
+}
+.ah-doorway .ascii-layer--malli { text-shadow: 0 0 .55em rgba(255, 248, 228, .55); }
+.ah-doorway .ascii-layer--pon { text-shadow: 0 0 .5em rgba(226, 170, 60, .45); }
+.ah-doorway .ascii-layer--kumkum { text-shadow: 0 0 .4em rgba(236, 47, 69, .35); }
+.ah-doorway .ascii-layer--manjal { text-shadow: 0 0 .4em rgba(240, 172, 29, .3); }
+.ah-doorway figcaption { position: relative; padding-top: 10px; }
+.ah-doorway figcaption::before {
+  content: "";
+  display: block;
+  height: 9px;
+  margin: -10px 0 0;
+  background:
+    radial-gradient(circle, var(--ah-kumkum) 0 2.3px, rgba(236, 47, 69, 0) 2.9px) 50% 50% / 38px 9px repeat-x,
+    linear-gradient(180deg, rgba(255, 255, 255, .18), rgba(80, 30, 0, .18)),
+    var(--ah-padi);
+}
+.ah-doorway .hero__caption {
+  margin: .9rem 0 0;
+  font: 700 var(--t-xs)/1.6 var(--f-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.ah-doorway .hero__caption [lang="ta"] {
+  font-family: var(--f-tamil);
+  font-weight: 700;
+  font-size: 1.32em;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}

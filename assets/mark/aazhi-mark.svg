@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 92" role="img" aria-labelledby="t">
+  <title id="t">ஆழி (Aazhi) mark: the Tamil letter ழ, its root folded into a paper plane</title>
+  <!-- ழ on one stroke (W = 13) and one angle (15°). Waterline y 57; the roots hang from y 62.
+       The letter is flat. Its tail is a paper plane folded once: lit facet over shade facet. -->
+  <!-- primary, for light grounds (paper, fog): chilli letter, ink wing -->
+  <path fill="#3a3430" d="M40 62H99.5L40 69.97Z"/>
+  <path fill="#161311" d="M40 69.97L99.5 62L40 77.95Z"/>
+  <path fill="#e5470e" fill-rule="evenodd" d="M0 4.5L13 1V46H38V25.5A25.5 25.5 0 0 1 89 25.5V37A20 20 0 0 1 69 57H51V66A25.5 25.5 0 0 1 0 66V62H13V66A12.5 12.5 0 0 0 38 66V57H0ZM51 46V24A12.5 12.5 0 0 1 76 24V37A9 9 0 0 1 67 46Z"/>
+</svg>

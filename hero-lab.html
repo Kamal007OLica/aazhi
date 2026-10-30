@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ஆழி · hero lab</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/hero.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--fog);
+    color: var(--ink);
+    font-family: var(--f-body);
+    min-height: 100vh;
+  }
+  body.kalam { background: var(--fog); }
+  .bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;
+    padding: 14px var(--gutter);
+    font-family: var(--f-narrow); text-transform: uppercase; letter-spacing: .18em; font-size: var(--t-xs);
+    border-bottom: 1px solid rgba(22, 19, 17, .18);
+  }
+  .bar strong { font-family: var(--f-tamil); font-weight: 900; font-size: 1.4rem; letter-spacing: 0; text-transform: none; }
+  .bar a { color: var(--biro); }
+  .bar .sp { flex: 1; }
+  button {
+    font: 700 var(--t-xs)/1 var(--f-mono); text-transform: uppercase; letter-spacing: .14em;
+    background: var(--ink); color: var(--fog); border: 0; padding: 12px 18px; border-radius: 2px; cursor: pointer;
+  }
+  button:hover { background: var(--ink-2); }
+  button:focus-visible { outline: 3px solid var(--biro); outline-offset: 3px; }
+
+  .stage { padding: clamp(16px, 3vw, 40px) var(--gutter) 48px; }
+  /* same markup + css/hero.css as the landing page, so the lab matches it */
+  .stage .hero__portrait { margin: 0 auto; text-align: center; }
+  .lab-kalam { --plate-w: min(100%, var(--lab-w, 560px)); }
+  .lab-kalam .hero__caption { margin: 1.1rem auto 0; font: 700 var(--t-xs)/1.6 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+  .lab-kalam .hero__ascii { font-size: 7px; }
+
+  /* ?debug: source canvas beside the ASCII */
+  .debug .stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+  .debug .stage .ah-doorway { --ah-max: 620px; }
+  .src { display: none; }
+  .debug .src { display: block; }
+  .src canvas { width: 100%; height: auto; image-rendering: pixelated; background: #fff; display: block; }
+  .src pre { font: 12px/1.5 var(--f-mono); white-space: pre-wrap; margin: 12px 0 0; color: inherit; opacity: .8; }
+  @media (max-width: 720px) { .debug .stage { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <strong>ஆழி</strong>
+    <span>hero lab · ascii portrait engine</span>
+    <span class="sp"></span>
+    <span id="lab-mode"></span>
+    <button id="next" type="button">next →</button>
+  </div>
+
+  <main class="stage">
+    <div class="src" aria-hidden="true">
+      <canvas id="src" width="180" height="200"></canvas>
+      <pre id="src-info"></pre>
+    </div>
+    <div id="slot"></div>
+  </main>
+
+<script type="module">
+  import { mountAsciiHero } from './js/ascii-hero.js';
+
+  const q = new URLSearchParams(location.search);
+  const debug = q.has('debug');
+  const portrait = q.get('portrait') || undefined;     // ?portrait=kalam → the tribute portrait
+  const kalam = portrait === 'kalam';
+  const seed = q.has('seed') ? Number(q.get('seed')) : undefined;
+  const cols = q.has('cols') ? Number(q.get('cols')) : undefined;
+  // ?tone=lo:0.14,gamma:0.9 → rasteriser overrides, for tuning
+  let tone = q.has('tone') ? Object.fromEntries(q.get('tone').split(',').map((kv) => kv.split(':')).map(([k, v]) => [k, Number(v)])) : undefined;
+  if (q.has('ramp')) Object.assign((tone ??= {}), { ramp: ' ' + q.get('ramp') });   // ?ramp=.:-=+*#%@ (the leading space is implied)
+  const kv = (name) => (q.has(name) ? Object.fromEntries(q.get(name).split(',').map((p) => p.split(':')).map(([k, v]) => [k, Number(v)])) : undefined);
+  const imageOpts = kv('img');                          // ?img=local:0.5,blur:1 → image pre-pass
+  const interval = q.has('interval') ? Number(q.get('interval')) : (kalam ? 2400 : 10000);
+  if (debug) document.body.classList.add('debug');
+  if (kalam) document.body.classList.add('kalam');
+  if (q.has('w')) document.documentElement.style.setProperty('--lab-w', q.get('w') + 'px');
+
+  document.getElementById('slot').innerHTML = kalam
+    ? `<figure class="hero__portrait lab-kalam"><div class="hero__arch"><pre id="ascii-hero" class="hero__ascii" aria-hidden="true"></pre></div>
+       <figcaption><p id="ascii-caption" class="hero__caption"></p></figcaption></figure>`
+    : `<figure class="hero__portrait ah-doorway"><pre id="ascii-hero" class="hero__ascii" aria-hidden="true"></pre>
+       <figcaption><p id="ascii-caption" class="hero__caption"></p></figcaption></figure>`;
+
+  const mode = document.getElementById('lab-mode');
+  const keep = (extra) => { const p = new URLSearchParams(location.search); for (const [k, v] of Object.entries(extra)) v == null ? p.delete(k) : p.set(k, v); return '?' + p; };
+  mode.innerHTML = (debug ? `debug on · <a href="${keep({ debug: null })}">hide source</a>` : `<a href="${keep({ debug: '' })}">show source (?debug)</a>`)
+    + ` · <a href="${kalam ? keep({ portrait: null }) : keep({ portrait: 'kalam' })}">${kalam ? 'random person' : 'kalam tribute'}</a>`;
+
+  const canvas = document.getElementById('src');
+  const info = document.getElementById('src-info');
+  const ctx = canvas.getContext('2d');
+
+  function drawSource({ seed, traits, img, caption }) {
+    if (!debug) return;
+    canvas.width = img.w; canvas.height = img.h;
+    const data = ctx.createImageData(img.w, img.h);
+    for (let i = 0; i < img.lum.length; i++) {
+      const v = Math.round(img.lum[i] * 255);
+      data.data[i * 4] = data.data[i * 4 + 1] = data.data[i * 4 + 2] = v;
+      data.data[i * 4 + 3] = 255;
+    }
+    ctx.putImageData(data, 0, 0);
+    if (traits.portrait) { info.textContent = `portrait: ${traits.portrait}\n${caption}`; return; }
+    const pick = ['hair', 'fem', 'facial', 'top', 'hood', 'mark', 'neck', 'thundu', 'jasmine', 'stud', 'earrings', 'kajal', 'audio', 'specs', 'lanyard', 'light', 'yaw', 'tilt'];
+    info.textContent = `seed ${seed}   (reload with ?debug&seed=${seed})\n${caption}\n\n` +
+      pick.map((k) => `${k.padEnd(9)} ${typeof traits[k] === 'number' ? +traits[k].toFixed(2) : traits[k]}`).join('\n') +
+      `\nkolam     ${traits.kolam.shape} n${traits.kolam.n}`;
+  }
+
+  const hero = mountAsciiHero(document.getElementById('ascii-hero'), {
+    caption: document.getElementById('ascii-caption'),
+    portrait,
+    imageOpts,
+    interval: kalam ? 10000 : interval,
+    shimmer: kalam ? interval : undefined,
+    seed,
+    cols,
+    tone,
+    onChange: drawSource,
+  });
+  document.getElementById('next').addEventListener('click', () => hero.next());
+  window.__hero = hero;   // poke from the console: __hero.next(), __hero.destroy()
+</script>
+</body>
+</html>

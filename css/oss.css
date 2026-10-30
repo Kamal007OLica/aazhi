@@ -1,0 +1,430 @@
+/* ஆழி — #oss "நம்ம ஊரு code": open source built in Tamil Nadu.
+   Metaphor: a kadai veedhi (shop street) of hand-painted signboards, each hung
+   from a nail on two strings. Sea-teal ground (between paper #route and oxblood #muthukuli).
+   Desktop: boards hang in a loose, tilted street. Phones: a scroll-snap rail.
+   No box grids: paint, grain, strings, nails, a chalk menu board. */
+
+.oss {
+  --oss-sea-lift: color-mix(in srgb, var(--sea) 82%, var(--paper));
+  --focus: var(--paper);
+  position: relative; isolation: isolate; overflow: hidden;
+  background:
+    radial-gradient(120% 70% at 78% 0%, var(--oss-sea-lift) 0%, transparent 62%),
+    radial-gradient(90% 60% at 0% 100%, color-mix(in srgb, var(--sea) 70%, #000) 0%, transparent 70%),
+    var(--sea);
+  color: var(--paper);
+  padding: clamp(3.5rem, 7vw, 6rem) var(--gutter) clamp(3.5rem, 7vw, 5.5rem);
+}
+.oss::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image: var(--grain);
+  opacity: .5; mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+.oss__inner { max-width: var(--max); margin: 0 auto; }
+
+/* ---------- head: title + chalk menu board ---------- */
+.oss__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+#oss-title { margin: 0; font-weight: 400; }
+.oss__ta {
+  display: block;
+  font: 900 clamp(2.6rem, 1.6rem + 4vw, 5.2rem)/1.05 var(--f-tamil);
+  color: var(--salmon);
+}
+.oss__ta [lang="en"] { font-family: var(--f-mono); font-weight: 700; font-size: .78em; color: var(--paper); }
+.oss__title {
+  display: block;
+  margin: .5rem 0 0;
+  font: 400 var(--t-xl)/.92 var(--f-display);
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.oss__lede { margin: 1.2rem 0 0; max-width: 52ch; color: var(--paper-2); }
+.oss__lede strong { color: var(--paper); }
+.oss__aside {
+  margin: 1rem 0 0;
+  font-size: 1.45rem;
+  color: var(--lavender);
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+
+/* tea-kadai chalk menu board: "how to make your first PR" */
+.oss__menu {
+  position: relative;
+  margin: 1.5rem 0 0;
+  padding: 1.6rem 1.5rem 1.4rem;
+  background: var(--ink);
+  border: 10px solid #5a3a26;          /* a small tint between --maroon and --ink-2: wooden frame */
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.4), 0 26px 40px -22px rgba(0,0,0,.7);
+  transform: rotate(1.4deg);
+  --focus: var(--salmon);
+}
+.oss__menu::before { /* chalk dust */
+  content: "";
+  position: absolute; inset: 0;
+  background-image: var(--grain);
+  opacity: .22; mix-blend-mode: screen;
+  pointer-events: none;
+}
+.oss__menu::after { /* the nail it hangs on */
+  content: "";
+  position: absolute; left: 50%; top: -30px;
+  width: 12px; height: 12px; margin-left: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, var(--paper-3) 45%, #6b625a);
+  box-shadow: 0 2px 2px rgba(0,0,0,.5);
+}
+.oss__menu-k [lang="ta"] { letter-spacing: 0; font-weight: 700; color: var(--paper); }
+.oss__menu-k {
+  margin: 0;
+  font: 700 var(--t-xs)/1.3 var(--f-narrow);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--paper-3);
+}
+.oss__menu-h {
+  margin: .25rem 0 .9rem;
+  font: 400 var(--t-lg)/1 var(--f-display);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--paper);
+}
+.oss__menu-h [lang="ta"] { font-weight: 900; text-transform: none; color: var(--salmon); }
+.oss__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: .85rem; counter-reset: step; }
+.oss__steps li {
+  position: relative;
+  padding-left: 2.6rem;
+  counter-increment: step;
+  font-size: var(--t-sm);
+  color: var(--paper-2);
+}
+.oss__steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: -.1em;
+  font: 700 2rem/1 var(--f-hand);
+  color: var(--salmon);
+}
+.oss__steps b {
+  display: block;
+  font: 700 1.5rem/1.05 var(--f-hand);
+  color: var(--paper);
+}
+.oss__steps code {
+  font: 700 .62em/1.4 var(--f-mono);
+  white-space: nowrap;
+  padding: .1em .35em;
+  border: 1.5px dashed rgba(236, 231, 220, .55);
+  border-radius: 3px;
+  color: var(--paper);
+}
+
+/* ---------- filter chips (price tags) + live count ---------- */
+.oss__tools {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .9rem 1.5rem;
+}
+.oss__filters { display: flex; flex-wrap: wrap; gap: .55rem; }
+.oss__filters[hidden] { display: none; }
+.oss-chip {
+  position: relative;
+  display: inline-flex; align-items: center; gap: .5em;
+  min-height: 44px;
+  padding: .55em .95em .55em 1.6em;
+  font: 700 var(--t-sm)/1 var(--f-narrow);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: rgba(236, 231, 220, .08);
+  border: 2px solid rgba(236, 231, 220, .7);
+  border-radius: 3px 10px 10px 3px;
+  cursor: pointer;
+  transition: background-color .18s, color .18s, transform .18s var(--ease-out);
+}
+.oss-chip::before { /* the tag's punched hole */
+  content: "";
+  position: absolute; left: .55em; top: 50%;
+  width: 7px; height: 7px; margin-top: -3.5px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+.oss-chip:hover { background: rgba(236, 231, 220, .18); }
+.oss-chip[aria-pressed="true"] {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+  transform: rotate(-2deg);
+}
+.oss-chip__n {
+  font: 700 var(--t-xs)/1 var(--f-mono);
+  letter-spacing: 0;
+  opacity: .8;
+}
+.oss__count {
+  margin: 0;
+  font: 700 var(--t-xs)/1.3 var(--f-mono);
+  letter-spacing: .04em;
+  color: var(--paper-2);
+}
+
+/* ---------- the street ---------- */
+.oss__street-k {
+  margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+  display: flex; align-items: center; gap: 1rem;
+  font: 700 var(--t-xs)/1.3 var(--f-narrow);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--paper-3);
+}
+.oss__street-k::after { /* the wire the boards hang from */
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(236,231,220,.55), rgba(236,231,220,.15));
+}
+.oss__street-k [lang="ta"] { font-weight: 900; letter-spacing: 0; font-size: 1.2em; color: var(--paper); }
+.oss__swipe { display: none; }
+
+.oss__street { position: relative; }
+.oss__street:focus-visible { outline-offset: 6px; }
+
+.oss__boards {
+  list-style: none; margin: 0; padding: 3.2rem 0 1rem;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+  gap: 4.4rem clamp(1.1rem, 2.2vw, 2rem);
+}
+
+.oss__msg { color: var(--paper); font-weight: 600; }
+
+.oss-board {
+  --paint: var(--paper);
+  --paint-ink: var(--ink);
+  --frame: var(--stamp);
+  --stamp-c: var(--stamp);
+  --edge: color-mix(in srgb, var(--paint) 70%, #000);
+  --focus: var(--paint-ink);
+  position: relative;
+  flex: 1 1 15rem;
+  max-width: 19.5rem;
+  display: flex;
+  transform: rotate(var(--r, 0deg));
+  transform-origin: 50% -46px;           /* swings from its nail */
+  transition: transform .5s var(--ease-spring);
+}
+.oss-board[hidden] { display: none; }
+/* boards hang at different drops and widths: a street, not a grid */
+.oss-board:nth-child(3n+1) { flex-basis: 17rem; max-width: 21.5rem; }
+.oss-board:nth-child(4n+2) { margin-top: 1.8rem; }
+.oss-board:nth-child(4n+3) { margin-top: .5rem; }
+.oss-board:nth-child(4n)   { margin-top: 2.6rem; }
+.oss-board:hover, .oss-board:focus-within { transform: rotate(calc(var(--r, 0deg) * -0.6)); }
+
+/* two strings from the board's screws up to one nail */
+.oss-board__hang {
+  position: absolute; left: 22%; right: 22%; top: -44px; height: 44px;
+  background:
+    linear-gradient(to top left, transparent calc(50% - 1px), rgba(236,231,220,.75) calc(50% - 1px), rgba(236,231,220,.75) calc(50% + .5px), transparent calc(50% + .5px)) left / 50% 100% no-repeat,
+    linear-gradient(to top right, transparent calc(50% - 1px), rgba(236,231,220,.75) calc(50% - 1px), rgba(236,231,220,.75) calc(50% + .5px), transparent calc(50% + .5px)) right / 50% 100% no-repeat;
+  pointer-events: none;
+}
+.oss-board__hang::after {
+  content: "";
+  position: absolute; left: 50%; top: -6px;
+  width: 12px; height: 12px; margin-left: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, var(--paper-3) 45%, #6b625a);
+  box-shadow: 0 2px 2px rgba(0,0,0,.5);
+}
+
+.oss-board__plate {
+  position: relative; isolation: isolate;
+  width: 100%;
+  display: flex; flex-direction: column;
+  padding: 1.5rem 1.35rem 1.25rem;
+  background: var(--paint);
+  color: var(--paint-ink);
+  border: 4px solid var(--edge);
+  border-radius: 6px;
+  /* hand-painted pinstripe frame inside the edge */
+  box-shadow:
+    inset 0 0 0 5px var(--paint),
+    inset 0 0 0 7px var(--frame),
+    0 24px 34px -20px rgba(0,0,0,.75),
+    0 6px 10px -6px rgba(0,0,0,.45);
+}
+.oss-board__plate::before { /* the two screws the strings tie to */
+  content: "";
+  position: absolute; left: 22%; right: 22%; top: 7px; height: 8px;
+  background:
+    radial-gradient(circle 4px at 4px 4px, var(--edge) 92%, transparent) left / 8px 8px no-repeat,
+    radial-gradient(circle 4px at 4px 4px, var(--edge) 92%, transparent) right / 8px 8px no-repeat;
+  transform: translateX(0);
+  margin: 0 -4px;
+}
+.oss-board__plate::after { /* paint texture */
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image: var(--fibers), var(--grain);
+  background-size: 400px, 200px;
+  opacity: .35; mix-blend-mode: multiply;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.oss-board__trade {
+  margin: 0;
+  font: 700 var(--t-xs)/1.3 var(--f-narrow);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.oss-board__trade [lang="ta"] { letter-spacing: 0; font-weight: 700; }
+.oss-board[data-long] .oss-board__name { font-size: clamp(1.6rem, 1.3rem + .9vw, 2rem); }
+.oss-board__name {
+  margin: .4rem 0 0;
+  font: 400 clamp(1.9rem, 1.5rem + 1.2vw, 2.5rem)/.92 var(--f-display);
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 color-mix(in srgb, var(--frame) 55%, transparent);
+  overflow-wrap: anywhere;
+}
+.oss-board__ta {
+  margin: .45rem 0 0;
+  font: 800 var(--t-md)/1.3 var(--f-tamil);
+}
+.oss-board__desc { margin: .7rem 0 0; font-size: var(--t-sm); line-height: 1.45; }
+.oss-board__prop {
+  margin: .85rem 0 0;
+  padding-top: .65rem;
+  border-top: 2px dotted color-mix(in srgb, var(--paint-ink) 45%, transparent);
+  font: 600 var(--t-xs)/1.35 var(--f-body);
+}
+.oss-board__prop-k { font: italic 700 1.05em/1 var(--f-hand); font-size: 1.3em; margin-right: .2em; }
+.oss-board__meta {
+  margin: .5rem 0 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .7rem;
+  font: 700 var(--t-xs)/1.3 var(--f-mono);
+}
+.oss-board__lic { /* licence, as a small painted tag */
+  padding: .1em .45em;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+}
+.oss-board__link {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: .35em;
+  min-height: 44px;
+  margin-top: auto;
+  padding-top: .6rem;
+  font: 800 var(--t-sm)/1 var(--f-body);
+  color: var(--paint-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .22em;
+}
+.oss-board__link:hover { text-decoration-thickness: 4px; }
+.oss-board__stamp {
+  position: absolute; bottom: 1.2rem; right: 1rem;
+  padding: .3em .45em .25em;
+  font: 400 var(--t-xs)/1 var(--f-display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stamp-c);
+  border: 2px solid currentColor;
+  outline: 1px solid currentColor; outline-offset: 2px;
+  border-radius: 3px;
+  transform: rotate(9deg);
+  opacity: .92;
+}
+.oss-board__note {
+  margin-top: .3rem;
+  font-size: 1.2rem;
+  color: var(--paint-ink);
+  transform: rotate(-1.5deg);
+  transform-origin: left center;
+}
+
+/* paints, by trade */
+.oss-board--hardware  { --paint: var(--chilli);   --paint-ink: var(--ink);   --frame: var(--paper);  --stamp-c: var(--ink); }
+.oss-board--ai        { --paint: var(--lavender); --paint-ink: var(--ink);   --frame: var(--violet); --stamp-c: var(--stamp); }
+.oss-board--tamil     { --paint: var(--paper);    --paint-ink: var(--ink);   --frame: var(--stamp);  --stamp-c: var(--stamp); }
+.oss-board--apps      { --paint: var(--salmon);   --paint-ink: var(--ink);   --frame: var(--ink);    --stamp-c: var(--oxblood); }
+.oss-board--fonts     { --paint: var(--ink);      --paint-ink: var(--paper); --frame: var(--salmon); --stamp-c: var(--salmon); --edge: #000; }
+.oss-board--community { --paint: var(--violet);   --paint-ink: var(--paper); --frame: var(--paper);  --stamp-c: var(--paper); }
+.oss-board--fonts .oss-board__plate::after,
+.oss-board--community .oss-board__plate::after { mix-blend-mode: soft-light; opacity: .5; }
+
+/* ---------- CTA ---------- */
+.oss__foot {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem 2rem;
+}
+.oss__foot-note { margin: 0; font-size: 1.45rem; color: var(--paper); transform: rotate(-1.5deg); transform-origin: left center; }
+.oss__fine {
+  margin: .7rem 0 0;
+  font: 500 var(--t-xs)/1.4 var(--f-mono);
+  color: var(--paper-2);
+}
+.oss__cta { --focus: var(--paper); }
+
+/* ---------- layout breakpoints ---------- */
+@media (max-width: 900px) {
+  .oss__head { grid-template-columns: 1fr; }
+  .oss__menu { max-width: 34rem; margin-top: 2.2rem; }
+}
+
+/* phones: the street becomes a scroll-snap rail */
+@media (max-width: 760px) {
+  .oss__swipe { display: inline; font-size: 1.25rem; letter-spacing: 0; text-transform: none; color: var(--lavender); }
+  .oss__street {
+    margin-inline: calc(var(--gutter) * -1);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(236,231,220,.5) transparent;
+  }
+  .oss__boards {
+    flex-wrap: nowrap; justify-content: flex-start;
+    gap: 1.1rem;
+    padding: 3.4rem var(--gutter) 1.6rem;
+    width: max-content;
+  }
+  .oss-board,
+  .oss-board:nth-child(3n+1) {
+    flex: 0 0 min(80vw, 19.5rem);
+    max-width: none;
+    scroll-snap-align: start;
+    transform: rotate(calc(var(--r, 0deg) * .5));
+  }
+  .oss-board:nth-child(n) { margin-top: 0; }
+  .oss-board:hover, .oss-board:focus-within { transform: rotate(0deg); }
+}
+
+/* ---------- motion: boards drop onto their nails ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .oss--ready .oss-board:not(.is-in) {
+    opacity: 0;
+    transform: translateY(-26px) rotate(calc(var(--r, 0deg) * 5));
+  }
+  .oss--ready .oss-board {
+    transition: transform .9s var(--ease-spring) var(--d, 0s), opacity .4s var(--d, 0s);
+  }
+  .oss--ready .oss-board.is-in:hover,
+  .oss--ready .oss-board.is-in:focus-within { transition-delay: 0s; transition-duration: .5s; }
+}
+
+@media (forced-colors: active) {
+  .oss-board__plate, .oss__menu { border: 2px solid CanvasText; }
+  .oss-chip[aria-pressed="true"] { outline: 3px solid Highlight; }
+}
