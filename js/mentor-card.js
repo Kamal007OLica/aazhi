@@ -299,14 +299,14 @@ export async function renderMentorCard(d) {
   track(ctx, 0);
   ctx.fillStyle = C.paper;
   ctx.font = `900 64px ${F.tamil}`;
-  ctx.fillText('ஊருக்குத்', 72, 214);
-  ctx.fillText('திருப்பிக்', 72, 300);
-  ctx.fillText('கொடு.', 72, 386);
+  ctx.fillText('ஏறிய', 72, 214);
+  ctx.fillText('ஏணியை', 72, 300);
+  ctx.fillText('இறக்கிவிடு.', 72, 386);
 
   ctx.fillStyle = C.lavender;
   ctx.font = `400 74px ${F.display}`;
-  ctx.fillText('OORU-KU', 72, 488);
-  ctx.fillText('THIRUMBI KUDU.', 72, 566);
+  ctx.fillText('SEND THE LADDER', 72, 488);
+  ctx.fillText('BACK DOWN.', 72, 566);
 
   ctx.fillStyle = C.paper;
   ctx.font = `500 25px ${F.body}`;
@@ -331,10 +331,7 @@ export async function renderMentorCard(d) {
   ctx.fillStyle = C.ink;
   ctx.font = `900 58px ${F.tamil}`;
   track(ctx, 0);
-  ctx.fillText('ஆழி', 72, SIZE - 46);
-  const markW = ctx.measureText('ஆழி').width;
-  ctx.font = `700 22px ${F.mono}`;
-  ctx.fillText('aazhi.', 72 + markW + 14, SIZE - 50);
+  ctx.fillText('ஆழி', 72, SIZE - 46);   // the logo is Tamil only
   ctx.textAlign = 'right';
   ctx.font = `700 21px ${F.narrow}`;
   track(ctx, 3);
@@ -352,5 +349,5 @@ export function cardBlob(canvas) {
 
 // Post text: carries the mentor number, never name or email.
 export function shareText(no) {
-  return `I just signed up to mentor students from Tamil Nadu's small towns with ஆழி (Aazhi), mentor ${no}.\n\n${TAGLINE}. If you have Tamil Nadu roots and an hour a month, join us: ooru-ku thirumbi kudu.\n\n#Aazhi #OoruKuThirumbiKudu #TamilTech #Mentorship`;
+  return `I just signed up to mentor students from Tamil Nadu's small towns with ஆழி (Aazhi), mentor ${no}.\n\n${TAGLINE}. If you have Tamil Nadu roots and an hour a month, send the ladder back down with us.\n\n#Aazhi #SendTheLadderDown #TamilTech #Mentorship`;
 }

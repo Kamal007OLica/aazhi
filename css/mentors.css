@@ -1,4 +1,4 @@
-/* ஆழி: mentor sign-up ("Ooru-ku thirumbi kudu"). Loads after site.css.
+/* ஆழி: mentor sign-up ("Send the ladder back down"). Loads after site.css.
    Deep-sea band under the FAQ paper. A lanyard + college ID card motif, paper luggage
    tags for the four ways to help, and a paper sheet for the form. No box grids. */
 
@@ -499,3 +499,6 @@
 @media (max-width: 480px) {
   .mshare__btns .btn { flex: 1 1 100%; justify-content: center; }
 }
+
+/* even line breaks for the English heading */
+.mentors__en { text-wrap: balance; }

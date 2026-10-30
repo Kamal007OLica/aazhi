@@ -146,6 +146,19 @@ html[data-hero-bg="oxblood"] :is(.nav, .hero) .btn--ink,
 html[data-hero-bg="sea"] :is(.nav, .hero) .btn--ink,
 html[data-hero-bg="ink"] :is(.nav, .hero) .btn--ink { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
+/* the "tech minds" selection: ink handles vanish on a dark ground, so the edge bars move
+   outside the lavender and bars + dots take the ground's accent */
+html:is([data-hero-bg="oxblood"], [data-hero-bg="sea"], [data-hero-bg="ink"]) .hero .hl {
+  box-shadow: -3px 0 0 var(--hb-accent), 3px 0 0 var(--hb-accent);
+}
+html:is([data-hero-bg="oxblood"], [data-hero-bg="sea"], [data-hero-bg="ink"]) .hero .hl::before,
+html:is([data-hero-bg="oxblood"], [data-hero-bg="sea"], [data-hero-bg="ink"]) .hero .hl::after {
+  width: 10px; height: 10px;
+  background: var(--hb-accent);
+}
+html:is([data-hero-bg="oxblood"], [data-hero-bg="sea"], [data-hero-bg="ink"]) .hero .hl::before { left: -6px; top: -9px; }
+html:is([data-hero-bg="oxblood"], [data-hero-bg="sea"], [data-hero-bg="ink"]) .hero .hl::after { right: -6px; bottom: -9px; }
+
 /* grain reads as dust on light grounds, as film on dark ones */
 html[data-hero-bg="oxblood"] .hero::after,
 html[data-hero-bg="sea"] .hero::after,
