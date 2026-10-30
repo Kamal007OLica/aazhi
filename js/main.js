@@ -180,12 +180,16 @@ async function boot() {
     if (!mod?.mountAsciiHero || !pre) return;
     try {
       // the Kalam tribute: scrambles in once, then shimmers; the dawn sea behind it cycles every 10s
-      mod.mountAsciiHero(pre, {
+      // dark hero colourways (js/hero-bg.js) draw the sketch as a positive in light characters
+      const darkBg = () => ['oxblood', 'sea', 'ink'].includes(document.documentElement.dataset.heroBg);
+      const hero = mod.mountAsciiHero(pre, {
         portrait: 'kalam',
         caption: document.getElementById('ascii-caption'),
         backdrop: document.getElementById('hero-sea'),
         interval: 10000,
+        tone: darkBg() ? { invert: true } : undefined,
       });
+      document.addEventListener('aazhi:herobg', () => hero.retone?.({ invert: darkBg() }));
     } catch (err) {
       console.warn('[aazhi] ASCII hero failed to mount; static face stays.', err);
     }

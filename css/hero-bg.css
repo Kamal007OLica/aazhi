@@ -1,0 +1,188 @@
+/* ஆழி — hero background colourways. Loaded after hero.css.
+   Set with <html data-hero-bg="…">: paper, chilli, manjal, oxblood, sea, ink.
+   No attribute = the default fog. The nav follows the hero so the top of the page reads as one plane.
+   Each colourway retunes text, the ASCII portrait, the sea, the logo and the buttons so
+   every text pair stays AA. */
+
+html[data-hero-bg] {
+  --hb-glow: transparent;
+}
+
+/* ---------- light grounds: ink type ---------- */
+html[data-hero-bg="paper"] {
+  --hb-bg: var(--paper);
+  --hb-glow: #f5f1e8;
+  --hb-fg: var(--ink);
+  --hb-fg2: var(--ink-2);
+  --hb-ascii: var(--ink);
+  --hb-faint: rgba(22, 19, 17, .16);
+  --hb-crest: rgba(22, 19, 17, .32);
+  --hb-accent: var(--chilli);
+  --hb-link: var(--biro);
+}
+html[data-hero-bg="chilli"] {
+  --hb-bg: var(--chilli);
+  --hb-glow: #ee5a22;
+  --hb-fg: var(--ink);
+  --hb-fg2: var(--oxblood);          /* 4.57:1 on chilli */
+  --hb-ascii: var(--ink);
+  --hb-faint: rgba(43, 9, 8, .22);
+  --hb-crest: rgba(43, 9, 8, .42);
+  --hb-accent: var(--ink);
+  --hb-link: var(--ink);
+  --hb-shimmer: var(--paper);
+  --hb-shadow: var(--oxblood);
+}
+html[data-hero-bg="manjal"] {
+  --hb-bg: #e3a21a;                  /* turmeric, the hero's kolam accent */
+  --hb-glow: #ecb43c;
+  --hb-fg: var(--ink);
+  --hb-fg2: #33261a;
+  --hb-ascii: var(--ink);
+  --hb-faint: rgba(22, 19, 17, .2);
+  --hb-crest: rgba(22, 19, 17, .38);
+  --hb-accent: var(--stamp);
+  --hb-link: var(--ink);
+  --hb-shimmer: var(--stamp);
+}
+
+/* ---------- dark grounds: paper type ---------- */
+html[data-hero-bg="oxblood"] {
+  --hb-bg: var(--oxblood);
+  --hb-glow: #4a1511;
+  --hb-fg: var(--paper);
+  --hb-fg2: var(--fog);              /* 10.3:1 */
+  --hb-ascii: #efe6d4;
+  --hb-faint: rgba(236, 231, 220, .14);
+  --hb-crest: rgba(236, 231, 220, .3);
+  --hb-accent: var(--salmon);
+  --hb-link: var(--salmon);
+  --hb-shimmer: var(--salmon);
+  --hb-dark: 1;
+}
+html[data-hero-bg="sea"] {
+  --hb-bg: var(--sea);
+  --hb-glow: #165059;
+  --hb-fg: var(--paper);
+  --hb-fg2: #c9d6d3;
+  --hb-ascii: #eef0e6;
+  --hb-faint: rgba(236, 240, 230, .14);
+  --hb-crest: rgba(236, 240, 230, .3);
+  --hb-accent: var(--salmon);
+  --hb-link: var(--lavender);
+  --hb-shimmer: var(--salmon);
+  --hb-dark: 1;
+}
+html[data-hero-bg="ink"] {
+  --hb-bg: #0d0b0a;
+  --hb-glow: #1d1916;
+  --hb-fg: var(--paper);
+  --hb-fg2: var(--fog);
+  --hb-ascii: #e6e6e6;               /* the light-grey shards of the logo reference */
+  --hb-faint: rgba(230, 230, 230, .12);
+  --hb-crest: rgba(230, 230, 230, .28);
+  --hb-accent: var(--chilli);
+  --hb-link: var(--lavender);
+  --hb-shimmer: var(--chilli);
+  --hb-dark: 1;
+}
+
+/* ---------- apply ---------- */
+html[data-hero-bg] .nav {
+  background: var(--hb-bg);
+  border-bottom-color: color-mix(in srgb, var(--hb-fg) 35%, transparent);
+  color: var(--hb-fg);
+}
+html[data-hero-bg] .hero {
+  background:
+    radial-gradient(36% 46% at 74% 44%, var(--hb-glow) 0%, transparent 70%),
+    var(--hb-bg);
+  color: var(--hb-fg);
+}
+html[data-hero-bg] .nav,
+html[data-hero-bg] .hero { transition: background-color .45s var(--ease-out), color .45s var(--ease-out); }
+
+html[data-hero-bg] .nav__links a,
+html[data-hero-bg] .hero .hero__title,
+html[data-hero-bg] .hero__tamil,
+html[data-hero-bg] .hero .hero__caption [lang="ta"],
+html[data-hero-bg] .hero__col-h { color: var(--hb-fg); }
+
+html[data-hero-bg] .nav__sub,
+html[data-hero-bg] .hero__eyebrow,
+html[data-hero-bg] .hero__sub,
+html[data-hero-bg] .hero__trust,
+html[data-hero-bg] .hero__flight-tag,
+html[data-hero-bg] .hero .hero__caption,
+html[data-hero-bg] .hero__col p { color: var(--hb-fg2); }
+
+html[data-hero-bg] .hero__eyebrow::before,
+html[data-hero-bg] .hero__trust li::before { background: var(--hb-accent); }
+
+html[data-hero-bg] .hero__arch .hero__ascii {
+  --ah-base: var(--hb-ascii);
+  --ah-kaavi: var(--hb-shimmer, var(--chilli));
+}
+html[data-hero-bg] .hero__flight-path { stroke: var(--hb-crest); }
+html[data-hero-bg] .sea__water pre { color: var(--hb-faint); }
+html[data-hero-bg] .sea__water .sea-layer--crest { color: var(--hb-crest); }
+
+html[data-hero-bg] .hero .hero__cols { border-top-color: var(--hb-fg); }
+html[data-hero-bg] .hero__links a { color: var(--hb-link); }
+
+/* the logo: keep the chilli ழ unless the ground is chilli or turmeric */
+html[data-hero-bg="chilli"] .nav .logo { --logo-ink: var(--paper); --logo-wing: var(--oxblood); --logo-fold: var(--ink); }
+html[data-hero-bg="manjal"] .nav .logo { --logo-ink: var(--stamp); }
+html[data-hero-bg="oxblood"] .nav .logo,
+html[data-hero-bg="sea"] .nav .logo,
+html[data-hero-bg="ink"] .nav .logo { --logo-text: var(--paper); --logo-wing: var(--fog); --logo-fold: var(--paper); }
+
+/* buttons in the nav and hero */
+html[data-hero-bg] :is(.nav, .hero) .btn--ink { box-shadow: 4px 4px 0 var(--hb-shadow, var(--chilli)); }
+html[data-hero-bg] :is(.nav, .hero) .btn--line { color: var(--hb-fg); border-color: var(--hb-fg); }
+html[data-hero-bg] :is(.nav, .hero) .btn--line:hover { background: var(--hb-fg); color: var(--hb-bg); }
+
+html[data-hero-bg="oxblood"] :is(.nav, .hero) .btn--ink,
+html[data-hero-bg="sea"] :is(.nav, .hero) .btn--ink,
+html[data-hero-bg="ink"] :is(.nav, .hero) .btn--ink { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+/* grain reads as dust on light grounds, as film on dark ones */
+html[data-hero-bg="oxblood"] .hero::after,
+html[data-hero-bg="sea"] .hero::after,
+html[data-hero-bg="ink"] .hero::after { mix-blend-mode: screen; opacity: .12; }
+
+/* focus ring must show on every ground */
+html[data-hero-bg] :is(.nav, .hero) { --focus: var(--hb-fg); }
+
+/* ---------- the localhost-only picker (js/hero-bg.js) ---------- */
+.bgpick {
+  position: fixed;
+  z-index: 999;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; gap: .5rem;
+  padding: .55rem .7rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  font: 700 var(--t-xs)/1 var(--f-narrow);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.bgpick__label { margin-right: .2rem; }
+.bgpick__sw {
+  width: 30px; height: 30px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--sw);
+  cursor: pointer;
+}
+.bgpick__sw[aria-pressed="true"] { outline: 3px solid var(--ink); outline-offset: 2px; }
+.bgpick__sw:focus-visible { outline: 3px solid var(--biro); outline-offset: 2px; }
+.bgpick__name { min-width: 5.5em; }
+@media (max-width: 520px) {
+  .bgpick { left: 16px; right: 16px; flex-wrap: wrap; justify-content: center; }
+  .bgpick__label { flex-basis: 100%; text-align: center; margin: 0 0 .25rem; }
+}

@@ -1517,6 +1517,9 @@ export function sceneToAscii(sc, cols, cellAspect = 0.6, opts) {
       d = Math.pow(d, gamma);
       const s2 = d < 0.5 ? 2 * d * d : 1 - 2 * (1 - d) * (1 - d);
       d = d + (s2 - d) * punch;
+      // light characters on a dark ground: the drawing's lit paper becomes the dense glyphs,
+      // inside its own coverage only, so the face reads as a positive, not a photo negative
+      if (ink && opts.invert) d = (1 - d) * sstep(0.25, 0.7, m);
       const dith = (bayer[(r & 3) * 4 + (c & 3)] / 16 - 0.47) * (ink ? opts.dither ?? 0.06 : m > 0.5 ? 0.14 : 0.22);
       let lv = d < 0.02 ? 0 : clamp(Math.round(d * levels + dith), 0, levels);
       if (m > 0.35 && m < 0.92 && lv === 0) lv = 1;   // keep silhouettes a little lit
@@ -1906,6 +1909,8 @@ export function mountAsciiHero(pre, { caption, interval = 10000, seed, cols: fix
 
   return {
     next() { if (destroyed) return; disarm(); remaining = period; advance(); arm(); },
+    // change tone options (e.g. { invert: true } on a dark ground) and redraw in place
+    retone(patch) { if (destroyed) return; tone = { ...(tone || {}), ...patch }; layout(true); },
     destroy() {
       if (destroyed) return;
       destroyed = true;
